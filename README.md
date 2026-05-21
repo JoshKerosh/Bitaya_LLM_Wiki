@@ -10,6 +10,7 @@ Construido sobre el patrón [LLM Wiki de Andrej Karpathy (abril 2026)](https://g
 
 Para el hackatón, leer en este orden:
 
+0. **[docs/00-ESTADO.md](docs/00-ESTADO.md)** — 🩺 Reporte de salud auditado: qué está listo, qué está vacío por diseño, sin issues abiertos.
 1. **[docs/01-PITCH.md](docs/01-PITCH.md)** — Problema, solución, impacto. _(para audiencia y jurado)_
 2. **[docs/02-ARQUITECTURA.md](docs/02-ARQUITECTURA.md)** — Patrón LLM Wiki, anatomía del repo, por qué no RAG. _(para jurado técnico)_
 3. **[docs/03-GUIA-DE-USO.md](docs/03-GUIA-DE-USO.md)** — Roles, comandos, reglas duras, workflow. _(para operadores)_

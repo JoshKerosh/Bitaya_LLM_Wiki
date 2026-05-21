@@ -4,11 +4,12 @@ type: source
 tags: []
 created: YYYY-MM-DD
 updated: YYYY-MM-DD
-author: <autor o organización>
+author: <autor o organización oficial — ej. Asamblea Legislativa, Sala Constitucional, INAMU>
 published: YYYY-MM-DD
-url: <enlace original o ruta a raw/>
-medium: article | paper | podcast | video | book-chapter | transcript | image | other
+url: <enlace oficial — scij.go.cr, sitio .go.cr, etc.>
+medium: ley | decreto | reglamento | sentencia | protocolo | manual | guia | tratado | otro
 status: stable
+ultima_verificacion: YYYY-MM-DD   # fecha en que se reconfirmó que la URL sigue viva y la fuente sigue vigente
 ---
 
 <una frase resumen de la fuente — esto es lo único que se lee al escanear>
@@ -23,28 +24,30 @@ status: stable
 
 ### Claims principales
 
-- **Claim:** <afirmación>. <fuente: párrafo X / minuto Y / página Z>
-- **Claim:** <afirmación>. Contradice [[concepts/...]] (resuelto inline en esa página).
+- **Claim:** <afirmación textual o parafraseada>. <ubicación: art. X / pág. Y / considerando Z>
+- **Claim:** <afirmación>. Contradice [[<pagina-afectada>]] (marcar con `> [!contradiccion]` en esa página).
 
-### Entidades mencionadas
+### Instituciones mencionadas
 
-- [[entities/nombre]] — rol en esta fuente
-- [[entities/otro]]
+- [[<institucion>]] — rol en esta fuente (autoridad de aplicación, vía de denuncia, etc.)
 
-### Conceptos referenciados
+### Derechos protegidos
 
-- [[concepts/nombre]]
-- [[concepts/otro]]
+- [[<derecho>]]
 
-## Citas
+### Conceptos / términos técnicos
+
+- [[<termino>]] — agregado al glosario.
+
+## Citas textuales
 
 > Cita textual relevante.
-> — autor, ubicación
+> — autor, ubicación (art. / pág.)
 
 ## Notas
 
-Comentarios del lector, contexto, conexiones con otras fuentes.
+Comentarios del curador: contexto, conexiones con otras fuentes, reformas posteriores conocidas.
 
 ## Preguntas abiertas
 
-- Pregunta que esta fuente no responde y que vale investigar.
+- Lo que esta fuente no responde y vale investigar.
