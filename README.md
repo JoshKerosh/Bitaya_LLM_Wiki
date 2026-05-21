@@ -14,6 +14,7 @@ Para el hackatón, leer en este orden:
 2. **[docs/02-ARQUITECTURA.md](docs/02-ARQUITECTURA.md)** — Patrón LLM Wiki, anatomía del repo, por qué no RAG. _(para jurado técnico)_
 3. **[docs/03-GUIA-DE-USO.md](docs/03-GUIA-DE-USO.md)** — Roles, comandos, reglas duras, workflow. _(para operadores)_
 4. **[docs/04-DEMO.md](docs/04-DEMO.md)** — Script paso a paso para la demo en vivo de 5 min.
+5. **[docs/05-GUIA-CURADOR.md](docs/05-GUIA-CURADOR.md)** — ⭐ **Si vas a alimentar el wiki, leé esto primero.** Cómo subir fuentes a `raw/`, qué entra y qué no, naming, checklist antes de `/ingest`.
 
 El **schema completo** del agente vive en [`CLAUDE.md`](CLAUDE.md) — ese archivo es el "código fuente" del comportamiento del LLM.
 
