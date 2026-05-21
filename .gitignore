@@ -1,9 +1,6 @@
-# Obsidian workspace files (personales, no compartibles)
-.obsidian/workspace
-.obsidian/workspace.json
-.obsidian/workspace-mobile.json
-.obsidian/cache
-.obsidian/graph.json
+# Obsidian config personal (cada usuario configura el suyo).
+# Recomendaciones de setup en docs/03-GUIA-DE-USO.md.
+.obsidian/
 
 # macOS
 .DS_Store
