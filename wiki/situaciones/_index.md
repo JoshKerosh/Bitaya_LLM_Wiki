@@ -19,7 +19,19 @@ Cada situación responde, en orden: ¿esto está mal? → qué te protege → qu
 - [[mi-pareja-me-amenaza]] — violencia psicológica/amenazas. No tenés que esperar a que te pegue para protegerte.
 - [[mi-pareja-lastima-a-mi-hijo-para-hacerme-dano]] — violencia vicaria (reconocida en CR desde 2025). PANI + INAMU + medidas extendidas.
 
-_(próximamente: `mi-pareja-me-quita-el-dinero`, `mi-pareja-me-controla`, situaciones para niñez, adultos mayores, discapacidad, migrantes, LGBTIQ+, trabajo informal.)_
+### Niñez y adolescencia
+- [[mi-vecino-le-pega-a-sus-hijos]] — denuncia al PANI, anónima posible. 9-1-1 si hay riesgo inminente.
+- [[sospecho-que-abusan-de-mi-hijo]] — abuso sexual o físico contra tu hijo. Protección inmediata + Cámara Gesell.
+
+### Personas con discapacidad
+- [[el-cole-no-acepta-a-mi-hija-con-discapacidad]] — negarte matrícula por discapacidad es discriminación. Amparo gratis.
+- [[me-niegan-trabajo-por-mi-discapacidad]] — discriminación laboral. Cuota 5% en sector público. MTSS + CONAPDIS.
+
+### Adultos mayores
+- [[mi-mama-mayor-esta-en-abandono]] — Línea Dorada 1165 (CONAPAM, gratis 24/7). Activa Red de Cuido.
+- [[abusan-de-mi-abuelita]] — maltrato físico, psicológico o patrimonial. Medidas de protección + denuncia penal.
+
+_(próximamente: situaciones para migrantes, LGBTIQ+, indígenas, trabajadoras informales, salud sin seguro.)_
 
 ---
 

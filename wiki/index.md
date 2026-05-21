@@ -16,21 +16,24 @@ Catálogo de todo el wiki. El agente lee este archivo **primero** al responder c
 
 | Sección | Para qué | Páginas |
 |---|---|---|
-| [[situaciones/_index\|🆘 situaciones]] | Puerta de entrada. Escenarios reales en primera persona. | **3** |
-| [[derechos/_index\|⚖️ derechos]] | Derechos específicos protegidos por ley y tratados. | **1** |
-| [[leyes/_index\|📜 leyes]] | Leyes, códigos y decretos costarricenses. | **1** |
-| [[instituciones/_index\|🏛️ instituciones]] | Entidades que ayudan (PANI, INAMU, MTSS, CCSS, etc.). | **2** |
-| [[procedimientos/_index\|🧭 procedimientos]] | Pasos formales (denuncia, amparo, prestaciones). | **2** |
-| [[glosario/_index\|📖 glosario]] | Términos legales en castellano simple. | **2** |
-| [[sources/_index\|📂 sources]] | Una página por fuente oficial ingerida. | **1** |
+| [[situaciones/_index\|🆘 situaciones]] | Puerta de entrada. Escenarios reales en primera persona. | **8** |
+| [[derechos/_index\|⚖️ derechos]] | Derechos específicos protegidos por ley y tratados. | **4** |
+| [[leyes/_index\|📜 leyes]] | Leyes, códigos y decretos costarricenses. | **4** |
+| [[instituciones/_index\|🏛️ instituciones]] | Entidades que ayudan (PANI, INAMU, MTSS, CCSS, etc.). | **5** |
+| [[procedimientos/_index\|🧭 procedimientos]] | Pasos formales (denuncia, amparo, prestaciones). | **4** |
+| [[glosario/_index\|📖 glosario]] | Términos legales en castellano simple. | **5** |
+| [[sources/_index\|📂 sources]] | Una página por fuente oficial ingerida. | **4** |
 | [[synthesis/_index\|🧪 synthesis]] | Respuestas reutilizables y comparaciones. | 0 |
+
+**Total páginas wiki: 34** (sin contar índices ni este archivo).
 
 ---
 
 ## Estado
 
-- **Última fuente ingerida:** [[2026-05-21-ley-7586-violencia-domestica]] (2026-05-21).
-- **Última auditoría (`/lint`):** ninguna.
+- **Últimas fuentes ingeridas:** Ley 7586 (violencia doméstica), Ley 7739 (niñez), Ley 7600 (discapacidad), Ley 7972 (financiamiento adultos mayores) — todas el 2026-05-21.
+- **Poblaciones cubiertas:** mujeres víctimas de violencia, niñez, personas con discapacidad, adultos mayores. **4 de 9.**
+- **Última auditoría (`/lint`):** ninguna — recomendado correr `/lint` ahora.
 - **Foco activo:** [[_hot]].
 - **Log completo:** [[log]].
 

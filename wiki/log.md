@@ -6,6 +6,26 @@ Operaciones: `init`, `ingest`, `query`, `lint`, `synthesis`.
 
 ---
 
+## [2026-05-21] ingest | 3 leyes — Niñez (7739), Discapacidad (7600), Adultos Mayores (7972)
+
+- **Fuentes:** raw/2026-05-21-ley-7739-codigo-ninez-adolescencia.md, raw/2026-05-21-ley-7600-igualdad-oportunidades-discapacidad.md, raw/2026-05-21-ley-7972-persona-adulta-mayor-conapam.md.
+- **Páginas creadas (22):**
+  - **Sources (3):** ley-7739, ley-7600, ley-7972.
+  - **Leyes (3):** códigos correspondientes en castellano simple.
+  - **Derechos (3):** protección integral niñez, igualdad de oportunidades, protección del adulto mayor.
+  - **Instituciones (3):** [[pani]], [[conapdis]] (tel 2280-6500), [[conapam]] (Línea Dorada 1165).
+  - **Procedimientos (2):** [[denuncia-pani]] (anónima posible), [[reclamar-accesibilidad-o-inclusion]] (3 vías).
+  - **Situaciones (6):** [[mi-vecino-le-pega-a-sus-hijos]], [[sospecho-que-abusan-de-mi-hijo]], [[el-cole-no-acepta-a-mi-hija-con-discapacidad]], [[me-niegan-trabajo-por-mi-discapacidad]], [[mi-mama-mayor-esta-en-abandono]], [[abusan-de-mi-abuelita]].
+  - **Glosario (3):** [[interes-superior-del-nino]], [[accesibilidad]], [[equiparacion-de-oportunidades]].
+- **Índices actualizados:** los 7 _index.md + wiki/index.md + wiki/_hot.md.
+- **Datos institucionales reusados de Pablo:** teléfonos verificados de PANI, CONAPDIS, CONAPAM tomados de llm-wiki/raw/institutions/ (carpeta paralela), citados como fuente complementaria — sin modificarla.
+- **Cobertura por población antes vs después:**
+  - Antes: 1 (mujeres víctimas violencia).
+  - **Después: 4 (mujeres, niñez, discapacidad, adultos mayores).**
+- **Wikilinks pendientes (stubs por crear):** [[mep]], [[ccss]], [[mtss]], [[fuerza-publica]], [[ministerio-publico]], [[defensoria-de-los-habitantes]], [[imas]].
+- **Calidad:** todas las páginas públicas con aviso legal + citas a fuente + ultima_verificacion: 2026-05-21.
+- **Fanout total:** 22 páginas creadas + 9 actualizadas = **31 archivos**. Tres ingests paralelos con fanout promedio de 7.3 por fuente.
+
 ## [2026-05-21] ingest | Ley 7586 — Ley contra la Violencia Doméstica
 
 - **Fuente:** `raw/2026-05-21-ley-7586-violencia-domestica.md` (SCIJ, oficial).

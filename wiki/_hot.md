@@ -10,41 +10,55 @@ Resumen vivo (~500 palabras máx) de **qué cubre el wiki densamente hoy** y **d
 
 ## Qué cubre densamente
 
-> **Violencia doméstica contra mujeres (Ley 7586)** — primera fuente ingerida. Cubre las 5 modalidades (física, psicológica, sexual, patrimonial, **vicaria** — esta última agregada por reforma 2025). Tres situaciones completas: [[me-pega-mi-pareja]], [[mi-pareja-me-amenaza]], [[mi-pareja-lastima-a-mi-hijo-para-hacerme-dano]]. Procedimiento [[solicitar-medidas-de-proteccion]] paso a paso. Instituciones [[poder-judicial]] e [[inamu]] documentadas con teléfonos verificados al 2026-05-21. Glosario inicial con [[medida-de-proteccion]] y [[violencia-vicaria]].
+> **Violencia doméstica (Ley 7586)** — primera fuente ingerida. Cubre las 5 modalidades incluyendo **violencia vicaria** (reforma 2025). 3 situaciones: [[me-pega-mi-pareja]], [[mi-pareja-me-amenaza]], [[mi-pareja-lastima-a-mi-hijo-para-hacerme-dano]]. [[poder-judicial]] e [[inamu]] documentadas con teléfonos verificados.
+
+> **Niñez (Ley 7739)** — Código de la Niñez y Adolescencia. Principio del [[interes-superior-del-nino]]. [[pani]] como rector. 2 situaciones: [[mi-vecino-le-pega-a-sus-hijos]], [[sospecho-que-abusan-de-mi-hijo]]. Procedimiento [[denuncia-pani]] paso a paso (anónimo posible).
+
+> **Discapacidad (Ley 7600)** — Igualdad de oportunidades. Reformada por Ley 9207/2014 al modelo social (CDPD-ONU). [[conapdis]] como rector con tel verificado 2280-6500. 2 situaciones: [[el-cole-no-acepta-a-mi-hija-con-discapacidad]], [[me-niegan-trabajo-por-mi-discapacidad]]. Procedimiento [[reclamar-accesibilidad-o-inclusion]] con 3 vías incluyendo amparo.
+
+> **Adultos mayores (Ley 7972 — financiamiento)** — La ley sustantiva 7935 está pendiente. [[conapam]] documentada con Línea Dorada 1165 (gratuita, 24/7). 2 situaciones: [[mi-mama-mayor-esta-en-abandono]], [[abusan-de-mi-abuelita]].
 
 ## Densidad actual por sección
 
 | Sección | Páginas | Profundidad |
 |---|---|---|
-| situaciones/ | 3 | violencia doméstica básica |
-| derechos/ | 1 | derecho a vivir sin violencia |
-| leyes/ | 1 | Ley 7586 completa |
-| instituciones/ | 2 | Poder Judicial + INAMU |
-| procedimientos/ | 2 | medidas de protección + denuncia penal |
-| glosario/ | 2 | medida de protección + violencia vicaria |
-| sources/ | 1 | Ley 7586 |
+| situaciones/ | 8 | violencia/niñez/discapacidad/adulto mayor |
+| derechos/ | 4 | uno por población principal cubierta |
+| leyes/ | 4 | 7586 + 7739 + 7600 + 7972 |
+| instituciones/ | 5 | INAMU, PJ, PANI, CONAPDIS, CONAPAM |
+| procedimientos/ | 4 | medidas, denuncia VD, denuncia PANI, amparo discapacidad |
+| glosario/ | 5 | medida de protección, violencia vicaria, interés superior, accesibilidad, equiparación |
+| sources/ | 4 | las 4 leyes ingeridas |
 | synthesis/ | 0 | — |
 
 ## Huecos conocidos (priorizar para próximos `/ingest`)
 
-**Por urgencia:**
-1. **Niñez en riesgo** — falta Ley 7739 (Código de la Niñez y la Adolescencia). Pablo ya la subió a `raw/`. Faltan situaciones tipo `mi-vecino-le-pega-a-sus-hijos`, `mi-papa-me-toca`, página de [[pani]].
-2. **Adultos mayores en abandono** — Ley 7972 está en `raw/`. Falta CONAPAM como institución.
-3. **Personas con discapacidad** — Ley 7600 está en `raw/`. Falta CONAPDIS, MEP, situaciones de educación inclusiva.
+**Por urgencia (leyes sustantivas que faltan):**
+1. **Ley 7935** (Ley Integral para la Persona Adulta Mayor) — sustantiva, no solo financiera.
+2. **Ley 8589** (Penalización de Violencia contra las Mujeres) — complementa la 7586 con sanciones penales.
+3. **Código de Trabajo** — para situaciones laborales (despido, acoso, prestaciones).
+4. **Ley de Migración** (8764) — refugiados y migrantes.
 
-**Wikilinks creados pero sin página destino (crear como stub para evitar ghost files):**
-- [[pani]] — referenciado en 4+ páginas.
-- [[fuerza-publica]] — referenciado en 5+ páginas.
-- [[ministerio-publico]] — referenciado en 3+ páginas.
+**Wikilinks creados pero sin página destino (crear como stubs):**
+- [[mep]] — referenciado en 4+ páginas (educación inclusiva).
+- [[ccss]] — referenciado en 5+ páginas (salud, pensiones).
+- [[mtss]] — referenciado en 4+ páginas (empleo).
+- [[fuerza-publica]] — referenciado en 6+ páginas.
+- [[ministerio-publico]] — referenciado en 4+ páginas.
+- [[defensoria-de-los-habitantes]] — referenciado en 8+ páginas.
+- [[imas]] — referenciado en 3+ páginas.
+
+> Nota: Pablo creó algunas de estas en `llm-wiki/raw/institutions/` con datos verificados. Próximo `/ingest` puede consolidar.
 
 **Por población sub-cubierta:**
 - Migrantes y refugiados — 0 páginas.
 - LGBTIQ+ — 0 páginas.
 - Indígenas — 0 páginas.
-- Trabajadoras informales — 0 páginas.
+- Trabajadoras informales / trabajadoras del hogar — 0 páginas.
 
 ## Próximas acciones sugeridas
 
-1. **Ingerir Ley 7739 (Código Niñez)** — desbloquea PANI como institución completa y al menos 3 situaciones de niñez.
-2. **Crear stubs** para [[pani]], [[fuerza-publica]], [[ministerio-publico]] para evitar ghost links.
-3. **Correr `/lint`** después del próximo ingest para detectar huérfanos y wikilinks rotos.
+1. **Crear stubs** para MEP, CCSS, MTSS, Fuerza Pública, Ministerio Público, Defensoría, IMAS — usando los datos verificados de `llm-wiki/raw/institutions/` (Pablo) como fuente complementaria.
+2. **Ingerir Ley 8589** (Penalización Violencia Mujeres) — refuerza casos de [[me-pega-mi-pareja]] con sanciones penales.
+3. **Ingerir Ley 7935** (Adulto Mayor sustantiva) — desbloquea cobertura completa de derechos del adulto mayor.
+4. **Correr `/lint`** ahora — el fanout de 30+ páginas creó varios wikilinks pendientes.

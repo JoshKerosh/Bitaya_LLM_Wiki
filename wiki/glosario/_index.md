@@ -12,8 +12,11 @@ Términos legales explicados en castellano simple. Cuando una página usa un té
 
 - [[medida-de-proteccion]] — Orden judicial rápida y gratis para protegerte de un agresor.
 - [[violencia-vicaria]] — Lastimar a personas, mascotas o bienes que te importan para hacerte daño emocional. Reconocida en CR desde 2025.
+- [[interes-superior-del-nino]] — Principio que pone el bienestar del menor por encima de la conveniencia del adulto en toda decisión.
+- [[accesibilidad]] — Medidas para que personas con discapacidad accedan a edificios, transporte, información, servicios en igualdad.
+- [[equiparacion-de-oportunidades]] — Ajustar el entorno, servicios e información para que las oportunidades sean reales, no solo formales.
 
-_(próximamente: violencia patrimonial, recurso de amparo, medida cautelar, femicidio, notificación, prestaciones laborales, etc.)_
+_(próximamente: violencia patrimonial, recurso de amparo, medida cautelar, femicidio, Cámara Gesell, ajustes razonables, etc.)_
 
 ---
 
