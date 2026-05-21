@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BITAYA Incluye</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green:   #1a5c3a;
+      --green-light: #e8f5ee;
+      --blue:    #1a3a5c;
+      --blue-light: #e8f0f8;
+      --gray:    #f4f6f8;
+      --gray-mid: #8a9bb0;
+      --white:   #ffffff;
+      --yellow:  #fff8e1;
+      --yellow-border: #f5c842;
+      --red:     #c0392b;
+      --red-light: #fdecea;
+      --orange:  #e67e22;
+      --radius:  12px;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--gray);
+      color: #1a2533;
+      line-height: 1.6;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: var(--green);
+      color: white;
+      padding: 20px 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+    .header-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .logo-circle {
+      width: 48px; height: 48px;
+      background: rgba(255,255,255,0.2);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px; font-weight: 800;
+      flex-shrink: 0;
+    }
+    header h1 { font-size: 1.6rem; font-weight: 700; }
+    header p  { font-size: 0.85rem; opacity: 0.85; margin-top: 2px; }
+
+    /* ── NAV TABS ── */
+    nav {
+      background: var(--blue);
+      display: flex;
+      max-width: 100%;
+    }
+    nav button {
+      color: rgba(255,255,255,0.75);
+      background: transparent;
+      border: none;
+      padding: 12px 28px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    nav button.active, nav button:hover {
+      color: white;
+      background: rgba(255,255,255,0.12);
+      border-bottom: 3px solid #4fc38a;
+    }
+
+    /* ── MAIN ── */
+    main { max-width: 900px; margin: 0 auto; padding: 32px 24px; }
+
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 32px;
+      margin-bottom: 24px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+    }
+    .hero h2 {
+      font-size: 1.5rem;
+      color: var(--blue);
+      margin-bottom: 8px;
+    }
+    .hero p {
+      color: #4a5568;
+      margin-bottom: 20px;
+    }
+    textarea {
+      width: 100%;
+      min-height: 120px;
+      border: 2px solid #d0dbe8;
+      border-radius: 8px;
+      padding: 14px;
+      font-size: 1rem;
+      font-family: inherit;
+      resize: vertical;
+      transition: border-color 0.2s;
+    }
+    textarea:focus {
+      outline: none;
+      border-color: var(--green);
+    }
+
+    /* ── EXAMPLES ── */
+    .examples-label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--gray-mid);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin: 16px 0 8px;
+    }
+    .examples {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+    .btn-example {
+      background: var(--green-light);
+      color: var(--green);
+      border: 1px solid #b2d8c5;
+      border-radius: 20px;
+      padding: 6px 14px;
+      font-size: 0.82rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn-example:hover {
+      background: var(--green);
+      color: white;
+    }
+
+    /* ── BUTTONS ── */
+    .btn-primary {
+      background: var(--green);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 14px 32px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+      width: 100%;
+    }
+    .btn-primary:hover { background: #14492e; }
+    .btn-primary:disabled { background: var(--gray-mid); cursor: not-allowed; }
+
+    .btn-copy {
+      background: var(--blue);
+      color: white;
+      border: none;
+      border-radius: 6px;
+      padding: 8px 18px;
+      font-size: 0.85rem;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: background 0.2s;
+    }
+    .btn-copy:hover { background: #122b47; }
+    .btn-copy.copied { background: var(--green); }
+
+    /* ── LOADING ── */
+    #loading {
+      display: none;
+      text-align: center;
+      padding: 40px;
+      color: var(--green);
+    }
+    .spinner {
+      width: 40px; height: 40px;
+      border: 4px solid #d0dbe8;
+      border-top-color: var(--green);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      margin: 0 auto 16px;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ── ERROR ── */
+    #error-box {
+      display: none;
+      background: var(--red-light);
+      border: 1px solid #f5c6c2;
+      border-radius: 8px;
+      padding: 16px;
+      color: var(--red);
+      margin-bottom: 20px;
+    }
+
+    /* ── RESULTS ── */
+    #results { display: none; }
+
+    .result-header {
+      background: linear-gradient(135deg, var(--blue), var(--green));
+      color: white;
+      border-radius: var(--radius);
+      padding: 24px;
+      margin-bottom: 16px;
+    }
+    .result-header h3 { font-size: 1.3rem; margin-bottom: 6px; }
+    .result-header p  { opacity: 0.9; font-size: 0.95rem; }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    @media (max-width: 600px) { .cards-grid { grid-template-columns: 1fr; } }
+
+    .card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 20px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+    }
+    .card-full { grid-column: 1 / -1; }
+    .card h4 {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--gray-mid);
+      margin-bottom: 10px;
+    }
+    .card p, .card li { color: #2d3748; font-size: 0.95rem; }
+    .card ul, .card ol { padding-left: 18px; }
+    .card li { margin-bottom: 4px; }
+
+    /* ── BADGES ── */
+    .badge {
+      display: inline-block;
+      border-radius: 20px;
+      padding: 4px 12px;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+    .badge-alta     { background: #fdecea; color: var(--red); }
+    .badge-media-alta { background: #fff3e0; color: var(--orange); }
+    .badge-media    { background: #fff8e1; color: #b07d00; }
+    .badge-baja     { background: var(--green-light); color: var(--green); }
+    .badge-revision { background: var(--red-light); color: var(--red); }
+
+    /* ── INSTITUCIONES ── */
+    .inst-list { display: flex; flex-wrap: wrap; gap: 8px; }
+    .inst-tag {
+      background: var(--blue-light);
+      color: var(--blue);
+      border-radius: 6px;
+      padding: 5px 12px;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    /* ── CALLOUTS ── */
+    .callout-yellow {
+      background: var(--yellow);
+      border-left: 4px solid var(--yellow-border);
+      border-radius: 0 8px 8px 0;
+      padding: 14px 16px;
+      font-size: 0.9rem;
+    }
+    .callout-red {
+      background: var(--red-light);
+      border-left: 4px solid var(--red);
+      border-radius: 0 8px 8px 0;
+      padding: 14px 16px;
+      font-size: 0.9rem;
+      color: var(--red);
+      font-weight: 600;
+    }
+
+    /* ── COPY TEXTAREA ── */
+    .copy-box {
+      background: var(--gray);
+      border-radius: 8px;
+      padding: 14px;
+      font-size: 0.9rem;
+      color: #2d3748;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    /* ── CONFIDENCE BAR ── */
+    .confidence-wrap { margin-top: 6px; }
+    .confidence-bar {
+      height: 8px;
+      background: #e2e8f0;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .confidence-fill {
+      height: 100%;
+      background: var(--green);
+      border-radius: 4px;
+      transition: width 0.5s ease;
+    }
+    .confidence-label { font-size: 0.8rem; color: var(--gray-mid); margin-top: 4px; }
+
+    /* ── AVISO LEGAL ── */
+    .aviso-legal {
+      background: var(--white);
+      border-top: 3px solid var(--green);
+      border-radius: var(--radius);
+      padding: 20px;
+      margin-top: 16px;
+      font-size: 0.85rem;
+      color: #4a5568;
+    }
+    .aviso-legal strong { color: var(--blue); }
+
+    /* ── DASHBOARD ── */
+    .dashboard-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+    @media (max-width: 700px) { .dashboard-grid { grid-template-columns: 1fr 1fr; } }
+
+    .metric-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+    }
+    .metric-card .metric-num {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--blue);
+    }
+    .metric-card .metric-label {
+      font-size: 0.8rem;
+      color: var(--gray-mid);
+      margin-top: 4px;
+    }
+
+    .dash-table-wrap {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+    }
+    .dash-table-wrap h3 {
+      font-size: 1rem;
+      color: var(--blue);
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+    thead th {
+      background: var(--gray);
+      text-align: left;
+      padding: 10px 14px;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--gray-mid);
+      font-weight: 700;
+    }
+    tbody tr { border-bottom: 1px solid #edf2f7; }
+    tbody tr:last-child { border-bottom: none; }
+    tbody td { padding: 12px 14px; color: #2d3748; }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 0.8rem;
+      color: var(--gray-mid);
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <div class="logo-circle">BI</div>
+    <div>
+      <h1>BITAYA Incluye</h1>
+      <p>IA responsable para convertir una situación vulnerable en una ruta clara de ayuda</p>
+    </div>
+  </div>
+</header>
+
+<!-- NAV -->
+<nav>
+  <button class="active" onclick="showTab('ciudadano', this)">Orientación ciudadana</button>
+  <button onclick="showTab('dashboard', this)">Dashboard institucional</button>
+</nav>
+
+<!-- MAIN -->
+<main>
+
+  <!-- TAB: CIUDADANO -->
+  <div id="tab-ciudadano" class="tab-content active">
+
+    <!-- ADVERTENCIA RESPONSABLE -->
+    <div class="callout-yellow" style="margin-bottom:20px;">
+      <strong>IA responsable:</strong> BITAYA Incluye no determina elegibilidad, no reemplaza instituciones públicas y no atiende emergencias. Su función es orientar y ayudar a preparar el primer contacto. <strong>Toda ruta requiere revisión humana.</strong>
+    </div>
+
+    <!-- FORMULARIO -->
+    <div class="hero">
+      <h2>¿No sabés dónde pedir ayuda?</h2>
+      <p>Contanos tu situación con tus propias palabras. BITAYA Incluye usa IA responsable para ayudarte a encontrar una ruta inicial de orientación.</p>
+
+      <textarea id="msg" placeholder="Escribí tu situación aquí. Por ejemplo: Estoy embarazada, no tengo trabajo y no sé a dónde acudir..."></textarea>
+
+      <div class="examples-label">Ejemplos — hacé clic para cargar</div>
+      <div class="examples">
+        <button class="btn-example" onclick="loadExample(0)">🤰 Embarazo sin ingresos</button>
+        <button class="btn-example" onclick="loadExample(1)">👴 Adulto mayor solo</button>
+        <button class="btn-example" onclick="loadExample(2)">🚨 Miedo a mi pareja</button>
+        <button class="btn-example" onclick="loadExample(3)">♿ Hermano con discapacidad</button>
+      </div>
+
+      <button class="btn-primary" id="btn-analizar" onclick="analizar()">Crear ruta de ayuda</button>
+    </div>
+
+    <!-- LOADING -->
+    <div id="loading">
+      <div class="spinner"></div>
+      <p>Analizando tu situación...</p>
+    </div>
+
+    <!-- ERROR -->
+    <div id="error-box"></div>
+
+    <!-- RESULTADOS -->
+    <div id="results">
+
+      <div class="result-header" id="result-header">
+        <h3 id="res-title"></h3>
+        <p id="res-situation"></p>
+      </div>
+
+      <div class="cards-grid">
+
+        <div class="card">
+          <h4>Categoría</h4>
+          <p id="res-category"></p>
+        </div>
+
+        <div class="card">
+          <h4>Nivel de urgencia</h4>
+          <p id="res-urgency"></p>
+        </div>
+
+        <div class="card card-full">
+          <h4>Instituciones sugeridas</h4>
+          <div class="inst-list" id="res-institutions"></div>
+        </div>
+
+        <div class="card">
+          <h4>Datos faltantes</h4>
+          <ul id="res-missing"></ul>
+        </div>
+
+        <div class="card">
+          <h4>Por qué esta ruta</h4>
+          <ul id="res-why"></ul>
+        </div>
+
+        <div class="card card-full">
+          <h4>Próximos pasos</h4>
+          <ol id="res-steps"></ol>
+        </div>
+
+        <div class="card card-full">
+          <h4>Mensaje listo para pedir ayuda</h4>
+          <div class="copy-box" id="res-message"></div>
+          <button class="btn-copy" id="btn-copy" onclick="copyMessage()">Copiar mensaje</button>
+        </div>
+
+        <div class="card card-full">
+          <h4>Confianza del análisis</h4>
+          <div class="confidence-wrap">
+            <div class="confidence-bar"><div class="confidence-fill" id="res-confidence-bar"></div></div>
+            <div class="confidence-label" id="res-confidence-label"></div>
+          </div>
+        </div>
+
+        <div class="card card-full">
+          <h4>Resumen institucional</h4>
+          <p id="res-summary"></p>
+        </div>
+
+      </div>
+
+      <!-- ADVERTENCIA IA -->
+      <div class="callout-yellow" style="margin-bottom:16px;">
+        <strong>⚠️ Advertencia:</strong> <span id="res-ai-warning"></span>
+      </div>
+
+      <!-- REVISIÓN HUMANA -->
+      <div class="callout-red" id="res-human-review" style="margin-bottom:16px;">
+        ✋ Revisión humana requerida — Esta orientación debe ser validada por una persona o institución competente.
+      </div>
+
+      <!-- AVISO LEGAL -->
+      <div class="aviso-legal">
+        <strong>Esto no es asesoría legal.</strong> Es información para que sepás qué leyes te protegen y a quién acudir. Para tu caso específico, buscá ayuda gratuita en la <strong>Defensa Pública (800-800-3000)</strong>, los <strong>consultorios jurídicos gratuitos de la UCR/UNA/ULACIT</strong>, o la <strong>Defensoría de los Habitantes (800-258-7474)</strong>.
+      </div>
+
+    </div>
+  </div>
+
+  <!-- TAB: DASHBOARD -->
+  <div id="tab-dashboard" class="tab-content">
+
+    <div class="dashboard-grid">
+      <div class="metric-card">
+        <div class="metric-num">4</div>
+        <div class="metric-label">Casos orientados</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-num">4</div>
+        <div class="metric-label">Requieren revisión humana</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-num" style="color:var(--red)">2</div>
+        <div class="metric-label">Alta prioridad</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-num">4</div>
+        <div class="metric-label">Mensajes generados</div>
+      </div>
+    </div>
+
+    <div class="dash-table-wrap">
+      <h3>Casos orientados (demo)</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Caso</th>
+            <th>Categoría</th>
+            <th>Urgencia</th>
+            <th>Estado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Embarazada sin ingresos</td>
+            <td>Salud y apoyo social</td>
+            <td><span class="badge badge-media-alta">Media-alta</span></td>
+            <td>Requiere orientación</td>
+          </tr>
+          <tr>
+            <td>Adulto mayor solo</td>
+            <td>Persona adulta mayor</td>
+            <td><span class="badge badge-alta">Alta</span></td>
+            <td>Prioritario</td>
+          </tr>
+          <tr>
+            <td>Mujer con miedo a su pareja</td>
+            <td>Violencia</td>
+            <td><span class="badge badge-alta">Alta</span></td>
+            <td>Seguridad primero</td>
+          </tr>
+          <tr>
+            <td>Persona con discapacidad</td>
+            <td>Discapacidad</td>
+            <td><span class="badge badge-media">Media</span></td>
+            <td>Orientación inicial</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+</main>
+
+<footer>
+  BITAYA Incluye — Hackathon IA Generativa · AI Day by FAIR / Costa Rica Tech Week 2026 · Equipo BITAYA
+</footer>
+
+<script>
+  const EXAMPLES = [
+    "Estoy embarazada, tengo 19 años, no tengo trabajo y no sé dónde pedir ayuda. Vivo con mi mamá y me preocupa no poder comprar cosas básicas.",
+    "Mi abuelo vive solo, casi no puede caminar y no sabemos dónde pedir ayuda para que alguien nos oriente.",
+    "Tengo miedo de mi pareja porque me amenaza y no sé qué hacer. Tengo un hijo pequeño.",
+    "Mi hermano tiene una discapacidad y no sabemos cómo pedir orientación para transporte, trabajo o certificación."
+  ];
+
+  const FALLBACK = {
+    caseTitle: "Ruta de ayuda generada en modo respaldo",
+    detectedSituation: "Situación vulnerable que requiere orientación inicial.",
+    vulnerabilityCategory: "Apoyo social",
+    urgencyLevel: "Media",
+    suggestedInstitutions: ["IMAS", "Municipalidad", "Centro de salud correspondiente"],
+    missingData: ["Cantón", "Edad", "Condición laboral", "Red de apoyo"],
+    nextSteps: [
+      "Recolectar información básica del caso.",
+      "Solicitar orientación en una institución social o municipal.",
+      "Validar requisitos directamente con la institución correspondiente."
+    ],
+    copyReadyMessage: "Buenas, solicito orientación porque estoy pasando por una situación vulnerable y necesito saber qué opciones de apoyo puedo recibir. Puedo brindar más información sobre mi cantón, condición familiar y situación económica.",
+    officialSummary: "Persona solicita orientación inicial por posible situación de vulnerabilidad. Requiere validación institucional.",
+    responsibleAIWarning: "Esta orientación es informativa. La IA no determina elegibilidad ni reemplaza la revisión humana o institucional.",
+    humanReviewRequired: true,
+    confidence: 0.5,
+    whyThisRoute: [
+      "El mensaje indica posible necesidad de apoyo social.",
+      "Faltan datos para orientar con mayor precisión.",
+      "Se recomienda revisión humana."
+    ]
+  };
+
+  function loadExample(i) {
+    document.getElementById('msg').value = EXAMPLES[i];
+  }
+
+  function showTab(tab, btn) {
+    document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
+    document.getElementById('tab-' + tab).classList.add('active');
+    btn.classList.add('active');
+  }
+
+  async function analizar() {
+    const msg = document.getElementById('msg').value.trim();
+    if (!msg) {
+      alert('Por favor escribí tu situación antes de continuar.');
+      return;
+    }
+
+    // Mostrar loading
+    document.getElementById('btn-analizar').disabled = true;
+    document.getElementById('results').style.display = 'none';
+    document.getElementById('error-box').style.display = 'none';
+    document.getElementById('loading').style.display = 'block';
+
+    let data;
+    try {
+      const res = await fetch('/api/analyze', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: msg })
+      });
+      if (!res.ok) throw new Error('API error ' + res.status);
+      data = await res.json();
+      if (!data.caseTitle) throw new Error('JSON inválido');
+    } catch (e) {
+      // Fallback silencioso
+      data = FALLBACK;
+    }
+
+    document.getElementById('loading').style.display = 'none';
+    document.getElementById('btn-analizar').disabled = false;
+    renderResults(data);
+  }
+
+  function renderResults(d) {
+    document.getElementById('res-title').textContent = d.caseTitle;
+    document.getElementById('res-situation').textContent = d.detectedSituation;
+    document.getElementById('res-category').textContent = d.vulnerabilityCategory;
+
+    // Urgency badge
+    const urgencyMap = {
+      'Alta': 'badge-alta',
+      'Media-alta': 'badge-media-alta',
+      'Media': 'badge-media',
+      'Baja': 'badge-baja'
+    };
+    const urgEl = document.getElementById('res-urgency');
+    urgEl.innerHTML = `<span class="badge ${urgencyMap[d.urgencyLevel] || 'badge-media'}">${d.urgencyLevel}</span>`;
+
+    // Institutions
+    const instEl = document.getElementById('res-institutions');
+    instEl.innerHTML = d.suggestedInstitutions.map(i => `<span class="inst-tag">${i}</span>`).join('');
+
+    // Lists
+    listItems('res-missing', d.missingData, 'ul');
+    listItems('res-why', d.whyThisRoute, 'ul');
+    listItems('res-steps', d.nextSteps, 'ol');
+
+    // Message
+    document.getElementById('res-message').textContent = d.copyReadyMessage;
+
+    // Confidence
+    const pct = Math.round((d.confidence || 0) * 100);
+    document.getElementById('res-confidence-bar').style.width = pct + '%';
+    document.getElementById('res-confidence-label').textContent = `Confianza: ${pct}%`;
+
+    // Summary & warnings
+    document.getElementById('res-summary').textContent = d.officialSummary;
+    document.getElementById('res-ai-warning').textContent = d.responsibleAIWarning;
+    document.getElementById('res-human-review').style.display = d.humanReviewRequired ? 'block' : 'none';
+
+    document.getElementById('results').style.display = 'block';
+    document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function listItems(id, arr, tag) {
+    const el = document.getElementById(id);
+    el.innerHTML = (arr || []).map(x => `<li>${x}</li>`).join('');
+  }
+
+  function copyMessage() {
+    const text = document.getElementById('res-message').textContent;
+    navigator.clipboard.writeText(text).then(() => {
+      const btn = document.getElementById('btn-copy');
+      btn.textContent = '✓ Copiado';
+      btn.classList.add('copied');
+      setTimeout(() => {
+        btn.textContent = 'Copiar mensaje';
+        btn.classList.remove('copied');
+      }, 2000);
+    });
+  }
+</script>
+
+</body>
+</html>
