@@ -99,13 +99,13 @@ export default function ChatPage() {
 
       {/* NAV TABS */}
       <nav className="bg-black border-b border-white/10">
-        <div className="mx-auto max-w-4xl px-6">
-          <div className="flex">
+        <div className="mx-auto max-w-4xl px-3 sm:px-6">
+          <div className="grid grid-cols-3">
             {(["ciudadano", "dashboard", "mapa"] as Tab[]).map((t) => (
               <button
                 key={t}
                 onClick={() => setTab(t)}
-                className={`border-b-[3px] px-7 py-3 text-sm font-medium transition-all ${
+                className={`min-w-0 border-b-[3px] px-2 py-3 text-xs font-medium transition-all sm:px-7 sm:text-sm ${
                   tab === t
                     ? "border-[#FF2D8D] text-white"
                     : "border-transparent text-white/50 hover:text-white/80"
