@@ -4,16 +4,19 @@ PDF scraper — downloads and extracts text from official Costa Rica PDFs.
 import sys
 from pathlib import Path
 from tqdm import tqdm
+from datetime import date
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 from config import RAW_LAWS, RAW_INSTITUTIONS, RAW_DIR, TARGET_PDFS
 from utils.http import get_bytes
 from utils.pdf_extractor import pdf_bytes_to_markdown
 
+TODAY = date.today().isoformat()
+
 FOLDER_MAP = {
     "laws": RAW_LAWS,
     "institutions": RAW_INSTITUTIONS,
-    "programs": RAW_DIR / "programs",
+    "programs": RAW_DIR,
 }
 
 
@@ -22,7 +25,7 @@ def scrape_all_pdfs() -> None:
         folder = FOLDER_MAP.get(entry["folder"], RAW_LAWS)
         folder.mkdir(parents=True, exist_ok=True)
 
-        out_path = folder / f"{entry['slug']}.md"
+        out_path = folder / f"{TODAY}-{entry['slug']}.md"
         if out_path.exists():
             print(f"  [SKIP] {out_path.name} already exists")
             continue

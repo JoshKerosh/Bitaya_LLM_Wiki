@@ -68,6 +68,12 @@ def _fetch_law_page(url: str) -> str:
 
 
 def scrape_asamblea() -> None:
+    # SIL is ASP.NET WebForms — GET search returns the empty form, not results.
+    # Needs POST with __VIEWSTATE/__EVENTVALIDATION hidden fields to work.
+    # Disabled for hackathon; SINALEVI covers all target laws already.
+    print("  [ASAMBLEA] disabled — SIL requires POST+ViewState (ASP.NET WebForms). Use SINALEVI instead.")
+    return
+
     RAW_LAWS.mkdir(parents=True, exist_ok=True)
     seen_urls: set[str] = set()
 

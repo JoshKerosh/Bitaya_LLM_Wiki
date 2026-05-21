@@ -1,7 +1,9 @@
 from pathlib import Path
 
 ROOT = Path(__file__).parent.parent
-RAW_DIR = ROOT / "raw"  # flat raw/ at repo root per GUIA-CURADOR
+RAW_DIR = ROOT / "raw"          # flat raw/ at repo root per GUIA-CURADOR
+RAW_LAWS = RAW_DIR              # alias — flat, no subdirs per GUIA-CURADOR
+RAW_INSTITUTIONS = RAW_DIR      # alias — flat, no subdirs per GUIA-CURADOR
 
 # Rate limiting — be respectful to .go.cr servers
 REQUEST_DELAY_SECONDS = 2.0
@@ -49,12 +51,6 @@ TARGET_PDFS = [
         "slug": "compilado_leyes_discapacidad",
         "description": "Compilado de leyes y decretos sobre discapacidad — MTSS",
         "folder": "laws",
-    },
-    {
-        "url": "https://costarica.iom.int/sites/g/files/tmzbdl1016/files/documents/2025-06/8.-ruta-de-referencia-inamu-para-imprimir.pdf",
-        "slug": "inamu_ruta_referencia",
-        "description": "Ruta de referencia INAMU — OIM Costa Rica",
-        "folder": "institutions",
     },
     {
         "url": "https://observatoriodegenero.poder-judicial.go.cr/images/Biblioteca/Otros/Guia-de-Servicios-INAMU.pdf",
