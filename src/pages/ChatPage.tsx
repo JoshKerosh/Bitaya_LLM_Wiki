@@ -29,10 +29,10 @@ const EXAMPLES = [
 ];
 
 const URGENCY_STYLES: Record<string, string> = {
-  Alta: "bg-red-50 text-red-700 border border-red-200",
-  "Media-alta": "bg-orange-50 text-orange-700 border border-orange-200",
-  Media: "bg-amber-50 text-amber-700 border border-amber-200",
-  Baja: "bg-green-50 text-[#1a5c3a] border border-green-200",
+  Alta: "bg-[#FF2D8D] text-white border border-[#FF2D8D]",
+  "Media-alta": "bg-[#FF2D8D]/15 text-[#FF2D8D] border border-[#FF2D8D]/30",
+  Media: "bg-black/10 text-black border border-black/20",
+  Baja: "bg-[#7CFF6B]/30 text-black border border-[#7CFF6B]",
 };
 
 const DASHBOARD_ROWS = [
@@ -78,17 +78,17 @@ export default function ChatPage() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="min-h-screen bg-[#F4F4F4]">
 
       {/* HEADER */}
-      <header className="bg-[#1a5c3a] shadow-md">
+      <header className="bg-black">
         <div className="mx-auto flex max-w-4xl items-center gap-4 px-6 py-5">
-          <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white/20 text-xl font-extrabold text-white">
+          <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border-2 border-[#FF2D8D] text-xl font-extrabold text-white">
             BI
           </div>
           <div className="flex-1">
             <h1 className="text-xl font-bold text-white">BITAYA Incluye</h1>
-            <p className="text-sm text-white/85">
+            <p className="text-sm text-white/60">
               IA responsable para convertir una situación vulnerable en una ruta clara de ayuda
             </p>
           </div>
@@ -97,7 +97,7 @@ export default function ChatPage() {
       </header>
 
       {/* NAV TABS */}
-      <nav className="bg-[#1a3a5c]">
+      <nav className="bg-black border-b border-white/10">
         <div className="mx-auto max-w-4xl px-6">
           <div className="flex">
             {(["ciudadano", "dashboard"] as Tab[]).map((t) => (
@@ -106,8 +106,8 @@ export default function ChatPage() {
                 onClick={() => setTab(t)}
                 className={`border-b-[3px] px-7 py-3 text-sm font-medium transition-all ${
                   tab === t
-                    ? "border-[#4fc38a] text-white"
-                    : "border-transparent text-white/70 hover:bg-white/10 hover:text-white"
+                    ? "border-[#FF2D8D] text-white"
+                    : "border-transparent text-white/50 hover:text-white/80"
                 }`}
               >
                 {t === "ciudadano" ? "Orientación ciudadana" : "Dashboard institucional"}
@@ -125,16 +125,19 @@ export default function ChatPage() {
           <div className="space-y-5">
 
             {/* Responsible AI callout */}
-            <div className="rounded-xl border border-amber-200 bg-amber-50 px-5 py-4 text-sm text-amber-900">
-              <strong>IA responsable:</strong> BITAYA Incluye no determina elegibilidad, no reemplaza
+            <div
+              className="rounded-xl bg-white px-5 py-4 text-sm text-black/70"
+              style={{ borderLeft: "4px solid #FF2D8D", boxShadow: "0 1px 4px rgba(0,0,0,0.06)" }}
+            >
+              <strong className="text-black">IA responsable:</strong> BITAYA Incluye no determina elegibilidad, no reemplaza
               instituciones públicas y no atiende emergencias. Su función es orientar y ayudar a preparar
-              el primer contacto. <strong>Toda ruta requiere revisión humana.</strong>
+              el primer contacto. <strong className="text-black">Toda ruta requiere revisión humana.</strong>
             </div>
 
             {/* Form card */}
-            <div className="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm">
-              <h2 className="mb-1 text-xl font-semibold text-[#1a3a5c]">¿No sabés dónde pedir ayuda?</h2>
-              <p className="mb-5 text-sm text-slate-500">
+            <div className="rounded-2xl bg-white p-8 shadow-sm">
+              <h2 className="mb-1 text-xl font-semibold text-black">¿No sabés dónde pedir ayuda?</h2>
+              <p className="mb-5 text-sm text-black/50">
                 Contanos tu situación con tus propias palabras. BITAYA Incluye usa IA responsable para
                 ayudarte a encontrar una ruta inicial de orientación.
               </p>
@@ -146,10 +149,10 @@ export default function ChatPage() {
                 placeholder="Escribí tu situación aquí. Por ejemplo: Estoy embarazada, no tengo trabajo y no sé a dónde acudir..."
                 rows={4}
                 disabled={isLoading}
-                className="w-full resize-y rounded-xl border-2 border-slate-200 px-4 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-[#1a5c3a] disabled:cursor-not-allowed disabled:text-slate-400"
+                className="w-full resize-y rounded-xl border-2 border-black/15 px-4 py-3 text-sm text-black bg-[#F4F4F4] outline-none transition placeholder:text-black/35 focus:border-[#FF2D8D] disabled:cursor-not-allowed disabled:text-black/30"
               />
 
-              <p className="mb-2 mt-4 text-xs font-semibold uppercase tracking-widest text-slate-400">
+              <p className="mb-2 mt-4 text-xs font-semibold uppercase tracking-widest text-black/35">
                 Ejemplos — hacé clic para cargar
               </p>
               <div className="mb-5 flex flex-wrap gap-2">
@@ -157,7 +160,7 @@ export default function ChatPage() {
                   <button
                     key={ex.label}
                     onClick={() => setInput(ex.text)}
-                    className="rounded-full border border-[#b2d8c5] bg-[#e8f5ee] px-4 py-1.5 text-xs font-medium text-[#1a5c3a] transition hover:bg-[#1a5c3a] hover:text-white"
+                    className="rounded-full border border-[#FF2D8D] bg-transparent px-4 py-1.5 text-xs font-medium text-[#FF2D8D] transition hover:bg-[#FF2D8D] hover:text-white"
                   >
                     {ex.icon} {ex.label}
                   </button>
@@ -167,7 +170,7 @@ export default function ChatPage() {
               <button
                 onClick={handleAnalyze}
                 disabled={!input.trim() || isLoading}
-                className="w-full rounded-xl bg-[#1a5c3a] py-3.5 text-sm font-semibold text-white transition hover:bg-[#14492e] disabled:cursor-not-allowed disabled:bg-slate-300"
+                className="w-full rounded-xl bg-[#FF2D8D] py-3.5 text-sm font-semibold text-white transition hover:bg-[#d4006e] disabled:cursor-not-allowed disabled:bg-black/20 disabled:text-black/40"
               >
                 {isLoading ? "Analizando..." : "Crear ruta de ayuda"}
               </button>
@@ -176,8 +179,8 @@ export default function ChatPage() {
             {/* Loading */}
             {isLoading && (
               <div className="flex flex-col items-center gap-3 py-10">
-                <div className="h-10 w-10 animate-spin rounded-full border-4 border-slate-200 border-t-[#1a5c3a]" />
-                <p className="text-sm text-[#1a5c3a]">Analizando tu situación...</p>
+                <div className="h-10 w-10 animate-spin rounded-full border-4 border-black/10 border-t-[#FF2D8D]" />
+                <p className="text-sm text-black/50">Analizando tu situación...</p>
               </div>
             )}
 
@@ -185,17 +188,17 @@ export default function ChatPage() {
             {result && !isLoading && (
               <div ref={resultsRef} className="space-y-4">
 
-                {/* Gradient header */}
-                <div className="rounded-2xl bg-gradient-to-r from-[#1a3a5c] to-[#1a5c3a] p-6 text-white">
+                {/* Header */}
+                <div className="rounded-2xl bg-black p-6 text-white">
                   <h3 className="mb-1 text-xl font-bold">{result.caseTitle}</h3>
-                  <p className="text-sm text-white/90">{result.detectedSituation}</p>
+                  <p className="text-sm text-white/70">{result.detectedSituation}</p>
                 </div>
 
                 {/* Cards grid */}
                 <div className="grid gap-4 sm:grid-cols-2">
 
                   <Card label="Categoría">
-                    <p className="text-sm text-slate-800">{result.vulnerabilityCategory}</p>
+                    <p className="text-sm text-black/80">{result.vulnerabilityCategory}</p>
                   </Card>
 
                   <Card label="Nivel de urgencia">
@@ -211,7 +214,7 @@ export default function ChatPage() {
                   <Card label="Instituciones sugeridas" full>
                     <div className="flex flex-wrap gap-2">
                       {result.suggestedInstitutions.map((inst) => (
-                        <span key={inst} className="rounded-lg bg-[#e8f0f8] px-3 py-1 text-xs font-medium text-[#1a3a5c]">
+                        <span key={inst} className="rounded-lg bg-[#F4F4F4] px-3 py-1 text-xs font-medium text-black">
                           {inst}
                         </span>
                       ))}
@@ -219,31 +222,33 @@ export default function ChatPage() {
                   </Card>
 
                   <Card label="Datos faltantes">
-                    <ul className="list-inside list-disc space-y-1 text-sm text-slate-700">
+                    <ul className="list-inside list-disc space-y-1 text-sm text-black/70">
                       {result.missingData.map((d) => <li key={d}>{d}</li>)}
                     </ul>
                   </Card>
 
                   <Card label="Por qué esta ruta">
-                    <ul className="list-inside list-disc space-y-1 text-sm text-slate-700">
+                    <ul className="list-inside list-disc space-y-1 text-sm text-black/70">
                       {result.whyThisRoute.map((r) => <li key={r}>{r}</li>)}
                     </ul>
                   </Card>
 
                   <Card label="Próximos pasos" full>
-                    <ol className="list-inside list-decimal space-y-1 text-sm text-slate-700">
+                    <ol className="list-inside list-decimal space-y-1 text-sm text-black/70">
                       {result.nextSteps.map((s) => <li key={s}>{s}</li>)}
                     </ol>
                   </Card>
 
                   <Card label="Mensaje listo para pedir ayuda" full>
-                    <div className="rounded-xl bg-slate-50 p-4 text-sm whitespace-pre-wrap text-slate-700">
+                    <div className="rounded-xl bg-[#F4F4F4] p-4 text-sm whitespace-pre-wrap text-black/70">
                       {result.copyReadyMessage}
                     </div>
                     <button
                       onClick={handleCopy}
-                      className={`mt-3 rounded-lg px-5 py-2 text-sm font-semibold text-white transition ${
-                        copied ? "bg-[#1a5c3a]" : "bg-[#1a3a5c] hover:bg-[#122b47]"
+                      className={`mt-3 rounded-lg px-5 py-2 text-sm font-semibold transition ${
+                        copied
+                          ? "bg-[#7CFF6B] text-black"
+                          : "bg-black text-white hover:bg-black/80"
                       }`}
                     >
                       {copied ? "✓ Copiado" : "Copiar mensaje"}
@@ -251,42 +256,48 @@ export default function ChatPage() {
                   </Card>
 
                   <Card label="Confianza del análisis" full>
-                    <div className="h-2 overflow-hidden rounded-full bg-slate-200">
+                    <div className="h-2 overflow-hidden rounded-full bg-black/10">
                       <div
-                        className="h-full rounded-full bg-[#1a5c3a] transition-all duration-500"
+                        className="h-full rounded-full bg-[#7CFF6B] transition-all duration-500"
                         style={{ width: `${Math.round(result.confidence * 100)}%` }}
                       />
                     </div>
-                    <p className="mt-1 text-xs text-slate-400">
+                    <p className="mt-1 text-xs text-black/40">
                       Confianza: {Math.round(result.confidence * 100)}%
                     </p>
                   </Card>
 
                   <Card label="Resumen institucional" full>
-                    <p className="text-sm text-slate-700">{result.officialSummary}</p>
+                    <p className="text-sm text-black/70">{result.officialSummary}</p>
                   </Card>
 
                 </div>
 
                 {/* AI warning */}
-                <div className="rounded-xl border border-amber-200 bg-amber-50 px-5 py-4 text-sm text-amber-900">
-                  <strong>⚠️ Advertencia:</strong> {result.responsibleAIWarning}
+                <div
+                  className="rounded-xl bg-white px-5 py-4 text-sm text-black/70"
+                  style={{ borderLeft: "4px solid #FF2D8D", boxShadow: "0 1px 4px rgba(0,0,0,0.06)" }}
+                >
+                  <strong className="text-black">⚠️ Advertencia:</strong> {result.responsibleAIWarning}
                 </div>
 
                 {/* Human review required */}
                 {result.humanReviewRequired && (
-                  <div className="rounded-xl border border-red-200 bg-red-50 px-5 py-4 text-sm font-semibold text-red-700">
+                  <div className="rounded-xl bg-[#FF2D8D] px-5 py-4 text-sm font-semibold text-white">
                     ✋ Revisión humana requerida — Esta orientación debe ser validada por una persona o institución competente.
                   </div>
                 )}
 
                 {/* Legal notice */}
-                <div className="rounded-2xl border border-slate-200 bg-white p-5 text-sm text-slate-500" style={{ borderTop: "3px solid #1a5c3a" }}>
-                  <strong className="text-[#1a3a5c]">Esto no es asesoría legal.</strong> Es información
+                <div
+                  className="rounded-2xl bg-white p-5 text-sm text-black/60"
+                  style={{ borderTop: "3px solid #FF2D8D", boxShadow: "0 1px 4px rgba(0,0,0,0.06)" }}
+                >
+                  <strong className="text-black">Esto no es asesoría legal.</strong> Es información
                   para que sepás qué leyes te protegen y a quién acudir. Para tu caso específico, buscá
-                  ayuda gratuita en la <strong>Defensa Pública (800-800-3000)</strong>, los{" "}
-                  <strong>consultorios jurídicos gratuitos de la UCR/UNA/ULACIT</strong>, o la{" "}
-                  <strong>Defensoría de los Habitantes (800-258-7474)</strong>.
+                  ayuda gratuita en la <strong className="text-black">Defensa Pública (800-800-3000)</strong>, los{" "}
+                  <strong className="text-black">consultorios jurídicos gratuitos de la UCR/UNA/ULACIT</strong>, o la{" "}
+                  <strong className="text-black">Defensoría de los Habitantes (800-258-7474)</strong>.
                 </div>
 
               </div>
@@ -303,27 +314,27 @@ export default function ChatPage() {
               {[
                 { num: "4", label: "Casos orientados" },
                 { num: "4", label: "Requieren revisión humana" },
-                { num: "2", label: "Alta prioridad", red: true },
+                { num: "2", label: "Alta prioridad", pink: true },
                 { num: "4", label: "Mensajes generados" },
               ].map((m) => (
-                <div key={m.label} className="rounded-2xl border border-slate-200 bg-white p-5 text-center shadow-sm">
-                  <div className={`text-3xl font-extrabold ${m.red ? "text-red-600" : "text-[#1a3a5c]"}`}>
+                <div key={m.label} className="rounded-2xl bg-white p-5 text-center shadow-sm">
+                  <div className={`text-3xl font-extrabold ${m.pink ? "text-[#FF2D8D]" : "text-black"}`}>
                     {m.num}
                   </div>
-                  <div className="mt-1 text-xs text-slate-400">{m.label}</div>
+                  <div className="mt-1 text-xs text-black/40">{m.label}</div>
                 </div>
               ))}
             </div>
 
-            <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-              <h3 className="mb-4 text-sm font-bold text-[#1a3a5c]">Casos orientados (demo)</h3>
+            <div className="rounded-2xl bg-white p-6 shadow-sm">
+              <h3 className="mb-4 text-sm font-bold text-black">Casos orientados (demo)</h3>
               <table className="w-full text-sm">
                 <thead>
                   <tr>
                     {["Caso", "Categoría", "Urgencia", "Estado"].map((h) => (
                       <th
                         key={h}
-                        className="bg-slate-50 px-4 py-2.5 text-left text-xs font-bold uppercase tracking-widest text-slate-400"
+                        className="bg-[#F4F4F4] px-4 py-2.5 text-left text-xs font-bold uppercase tracking-widest text-black/40"
                       >
                         {h}
                       </th>
@@ -332,9 +343,9 @@ export default function ChatPage() {
                 </thead>
                 <tbody>
                   {DASHBOARD_ROWS.map((row) => (
-                    <tr key={row.caso} className="border-t border-slate-100">
-                      <td className="px-4 py-3 text-slate-800">{row.caso}</td>
-                      <td className="px-4 py-3 text-slate-600">{row.cat}</td>
+                    <tr key={row.caso} className="border-t border-black/5">
+                      <td className="px-4 py-3 text-black">{row.caso}</td>
+                      <td className="px-4 py-3 text-black/60">{row.cat}</td>
                       <td className="px-4 py-3">
                         <span
                           className={`inline-block rounded-full px-2.5 py-0.5 text-xs font-bold ${
@@ -344,7 +355,7 @@ export default function ChatPage() {
                           {row.urg}
                         </span>
                       </td>
-                      <td className="px-4 py-3 text-slate-600">{row.estado}</td>
+                      <td className="px-4 py-3 text-black/60">{row.estado}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -356,7 +367,7 @@ export default function ChatPage() {
 
       </main>
 
-      <footer className="py-6 text-center text-xs text-slate-400">
+      <footer className="py-6 text-center text-xs text-black/35">
         BITAYA Incluye — Hackathon IA Generativa · AI Day by FAIR / Costa Rica Tech Week 2026 · Equipo BITAYA
       </footer>
 
@@ -374,8 +385,8 @@ function Card({
   children: React.ReactNode;
 }) {
   return (
-    <div className={`rounded-2xl border border-slate-200 bg-white p-5 shadow-sm ${full ? "sm:col-span-2" : ""}`}>
-      <p className="mb-2 text-xs font-bold uppercase tracking-widest text-slate-400">{label}</p>
+    <div className={`rounded-2xl bg-white p-5 shadow-sm ${full ? "sm:col-span-2" : ""}`}>
+      <p className="mb-2 text-xs font-bold uppercase tracking-widest text-black/35">{label}</p>
       {children}
     </div>
   );
