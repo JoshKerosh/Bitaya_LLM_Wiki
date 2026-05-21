@@ -9,9 +9,12 @@ from bs4 import BeautifulSoup
 from tqdm import tqdm
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
-from config import SINALEVI_TEXT, RAW_LAWS, TARGET_LAWS
+from config import SINALEVI_TEXT, RAW_DIR, TARGET_LAWS
 from utils.http import get
 from utils.html_to_md import wrap_with_frontmatter
+
+from datetime import date
+TODAY = date.today().isoformat()
 
 
 def _build_url(nvalor2: int) -> str:
@@ -61,11 +64,11 @@ def _fetch_law_text(nvalor2: int) -> str:
 
 
 def scrape_all_laws() -> None:
-    RAW_LAWS.mkdir(parents=True, exist_ok=True)
+    RAW_DIR.mkdir(parents=True, exist_ok=True)
 
     for ley_number, entry in tqdm(TARGET_LAWS.items(), desc="Laws"):
         nvalor2, slug, description = entry
-        out_path = RAW_LAWS / f"{slug}.md"
+        out_path = RAW_DIR / f"{TODAY}-{slug}.md"
 
         if out_path.exists():
             print(f"  [SKIP] {slug}.md already exists")
@@ -95,7 +98,7 @@ def scrape_all_laws() -> None:
             _write_stub(out_path, ley_number, description)
 
 
-def _write_stub(path: Path, ley_number: str, description: str) -> None:
+def _write_stub(path: Path, ley_number: str, description: str) -> None:  # noqa — stubs go to raw/ too, marked clearly
     path.write_text(
         f"""---
 title: Ley {ley_number}

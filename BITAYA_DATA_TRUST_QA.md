@@ -121,6 +121,128 @@ El scraper tiene allowlist explícita de dominios — solo procesa URLs que empi
 
 ---
 
+---
+
+## ¿Qué pasa si mi situación no está cubierta en el knowledge base?
+
+**El sistema tiene dos niveles de cobertura:**
+
+1. **Knowledge base local (8 categorías):** cubre las situaciones más frecuentes — pobreza, embarazo, niñez en riesgo, violencia doméstica, discapacidad, adulto mayor, empleo, emergencias. Si la situación encaja, la respuesta es precisa y fundamentada.
+
+2. **LLM como red de seguridad:** si la situación no encaja en ninguna categoría, el LLM igual responde, pero con `confidence` bajo y con instrucción explícita de sugerir instituciones generales (IMAS, municipalidad, centro de salud) y pedir revisión humana. Nunca deja a la persona sin orientación.
+
+**Lo que no hacemos:** inventar trámites específicos para situaciones no cubiertas. Si no está en el knowledge base, decimos "te orientamos hacia dónde empezar" — no "este es el trámite exacto".
+
+**Gaps conocidos para v2:** vivienda, adicciones, situación migratoria, deudas, orientación educativa. Los scrapeamos desde SINALEVI + MTSS cuando el MVP escale.
+
+---
+
+## ¿Cómo se actualizan los datos? ¿Cada cuánto?
+
+**Pipeline de actualización:**
+
+```
+SINALEVI / Instituciones (.go.cr)
+        ↓ scraper (Python)
+    raw/ (archivos .md con scraped_at)
+        ↓ compilador LLM
+    wiki/ (páginas estructuradas con last_compiled)
+        ↓ curación manual
+    knowledgeBase.ts (exportado al endpoint)
+```
+
+**Cadencia:**
+- **Para el hackathon:** scrapeado el día del evento — datos de hoy.
+- **Para producción:** scraper en cron mensual + re-run manual cuando se publican reformas relevantes en La Gaceta.
+- **Trigger de urgencia:** si SINALEVI publica una reforma a alguna de las 10 leyes cubiertas, se re-scrapea esa ley y se recompila la wiki page afectada.
+
+**Trazabilidad:** cada wiki page tiene `last_compiled` y `sources` en el frontmatter — el equipo institucional puede ver exactamente qué tan reciente es cada dato sin abrir código.
+
+---
+
+## ¿Guardan los mensajes o datos de los usuarios?
+
+**No.** Para el MVP:
+- No hay base de datos.
+- El mensaje viaja de browser → `/api/analyze` → LLM → respuesta → browser.
+- Nada se persiste en servidor.
+- El dashboard institucional usa datos estáticos demo, no casos reales.
+
+**Para producción:** si se quiere dashboard real con casos, se necesita consentimiento explícito del usuario, anonimización y política de retención. Eso está fuera del scope del MVP pero es diseñable.
+
+---
+
+## ¿Tienen responsabilidad legal si la IA da orientación incorrecta?
+
+**Diseño defensivo en tres capas:**
+
+1. **Disclaimer explícito en cada respuesta:** `"Esta orientación es informativa. La IA no determina elegibilidad ni reemplaza la revisión humana o institucional."` — visible, no escondido en términos.
+
+2. **`humanReviewRequired: true` siempre** — el sistema nunca produce una respuesta que no requiera validación humana.
+
+3. **La app orienta, no decide.** No dice "usted califica para X". Dice "podría considerar contactar X para verificar si califica". Esa distinción es legal y técnicamente importante.
+
+La app es comparable a una guía telefónica inteligente, no a un dictamen jurídico.
+
+---
+
+## ¿Qué pasa si la persona escribe con faltas de ortografía, jerga o muy poco texto?
+
+El LLM maneja lenguaje natural con variaciones ortográficas, jerga costarricense y textos cortos. El prompt instruye interpretar lenguaje humano, no lenguaje formal.
+
+**Si el texto es demasiado ambiguo:** el campo `missingData` lista qué información falta para orientar mejor. La app puede mostrar esos datos faltantes como preguntas de seguimiento.
+
+**Ejemplo real:** "me dejó mi marido y no tengo plata" → el LLM detecta posible vulnerabilidad económica y posible violencia, sugiere IMAS + INAMU, y pide datos adicionales: cantón, hijos, si hubo violencia.
+
+---
+
+## ¿Funciona fuera de San José? ¿Cubre todo Costa Rica?
+
+**Sí, legalmente.** Las leyes en el knowledge base son nacionales — aplican en todo el territorio.
+
+**Limitación actual:** las instituciones tienen oficinas regionales y los requisitos pueden variar por cantón. En v1 orientamos a la institución correcta; en v2 se puede añadir geolocalización o selección de cantón para dar dirección específica de la oficina más cercana.
+
+El campo `missingData` ya pide `"Cantón"` en casi todos los casos — eso prepara la orientación regional sin necesitar GPS.
+
+---
+
+## ¿Por qué no simplemente buscar en Google?
+
+Google devuelve 10 links. Una persona en situación vulnerable que no sabe qué institución buscar, qué ley aplica o cómo redactar su situación no puede usar esos links.
+
+BITAYA Incluye hace tres cosas que Google no hace:
+1. **Interpreta** la situación descrita en lenguaje humano.
+2. **Clasifica** el tipo de vulnerabilidad y la urgencia.
+3. **Produce** una acción concreta: institución, datos a preparar, mensaje listo para copiar.
+
+No es un buscador. Es un orientador de primer paso.
+
+---
+
+## ¿Cómo saben que el sistema funciona bien?
+
+Para el hackathon, validamos con 4 casos reales curados:
+- Embarazo vulnerable → detecta CCSS + IMAS, urgencia media-alta ✓
+- Adulto mayor solo → detecta CONAPAM, urgencia alta ✓
+- Violencia doméstica → detecta INAMU + 9-1-1, prioridad seguridad ✓
+- Discapacidad → detecta CONAPDIS, urgencia media ✓
+
+Para producción, métricas de calidad: `confidence` promedio por categoría, tasa de `humanReviewRequired`, derivaciones correctas validadas por trabajadores sociales.
+
+---
+
+## ¿Cuánto cuesta mantener esto?
+
+**Costo variable principal:** llamadas al LLM (GPT-4.1-mini).
+- Costo estimado: ~$0.002–$0.005 por consulta.
+- Para una municipalidad con 1,000 consultas/mes: ~$5/mes en tokens.
+
+**Costo fijo:** hosting de Next.js (Vercel free tier para MVP, ~$20/mes para producción), scraper en cron (GitHub Actions free tier).
+
+**El knowledge base es local** — no hay costo de vector DB ni embedding para el MVP.
+
+---
+
 ## Frase para el pitch
 
 > "Cada dato en nuestro knowledge base viene de un dominio `.go.cr`. Nada de Wikipedia, nada de blogs, nada de portales de noticias. La Procuraduría General como árbitro de leyes vigentes. Las instituciones como fuente de sus propios servicios. Y el LLM como traductor entre esa información oficial y la persona vulnerable que no sabe cómo usarla."
