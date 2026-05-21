@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import { analyzeMessage } from "../api/analyzeApi";
+import StatusBadge from "../components/StatusBadge";
 import type { AnalyzeResponse } from "../types/analyze";
 
 type Tab = "ciudadano" | "dashboard";
@@ -85,12 +86,13 @@ export default function ChatPage() {
           <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white/20 text-xl font-extrabold text-white">
             BI
           </div>
-          <div>
+          <div className="flex-1">
             <h1 className="text-xl font-bold text-white">BITAYA Incluye</h1>
             <p className="text-sm text-white/85">
               IA responsable para convertir una situación vulnerable en una ruta clara de ayuda
             </p>
           </div>
+          <StatusBadge />
         </div>
       </header>
 
