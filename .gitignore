@@ -26,3 +26,10 @@ tmp/
 
 # qmd (search engine local opcional)
 .qmd/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
