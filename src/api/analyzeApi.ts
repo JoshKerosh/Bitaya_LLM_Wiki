@@ -1,8 +1,9 @@
 import type { AnalyzeResponse } from "../types/analyze";
 
-const API_BASE_URL = (
-  import.meta.env.VITE_API_BASE_URL ?? "http://localhost:8000"
-).replace(/\/$/, "");
+const API_BASE_URL = (import.meta.env.VITE_API_BASE_URL ?? "").replace(
+  /\/$/,
+  "",
+);
 
 const FALLBACK: AnalyzeResponse = {
   caseTitle: "Ruta de ayuda generada en modo respaldo",

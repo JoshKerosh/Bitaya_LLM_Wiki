@@ -194,13 +194,28 @@ Ver guía completa: [docs/03-GUIA-DE-USO.md](docs/03-GUIA-DE-USO.md) y [docs/05-
 
 **Requisito:** tener el CLI de [Claude Code](https://docs.claude.com/en/docs/claude-code) instalado y autenticado (corré `claude` una vez para login). **No necesitás API key.**
 
+**Inicio rápido para correr la app:**
+
 ```bash
 npm install
 cp .env.example .env   # ajustá el modelo si querés, todos los valores son opcionales
 npm run dev
 ```
 
-`npm run dev` levanta el backend (puerto 8000) y el frontend (puerto 5173) en paralelo. Abrí `http://127.0.0.1:5173/`.
+Después abrí `http://127.0.0.1:5173/`.
+
+`npm run dev` levanta dos cosas:
+- El backend de Bitaya en el puerto `8787`.
+- El frontend en el puerto `5173`.
+
+Si ya habías corrido el repo antes y tu `.env` todavía dice `PORT=8000`, cambialo a:
+
+```env
+PORT=8787
+VITE_API_BASE_URL=
+```
+
+Si la consola muestra `GET /api/health 404` y la respuesta dice `server: uvicorn`, el frontend está llegando a otro backend Python, no al backend Express de Bitaya. Cambiá el `.env` como arriba, cerrá el proceso viejo y volvé a correr `npm run dev`.
 
 Arquitectura (patrón inspirado en QA-BRAIN):
 
@@ -223,7 +238,7 @@ El backend:
 Comandos útiles:
 - `npm run dev` — backend + frontend (dev)
 - `npm run server` — solo backend
-- `npm run dev:client` — solo frontend (apunta al backend en :8000 via Vite proxy)
+- `npm run dev:client` — solo frontend (apunta al backend configurado en `PORT` via Vite proxy)
 - `npm run build` — build de producción del frontend
 
 ### 3. MCP server (uso desde Claude Code en terminal)
