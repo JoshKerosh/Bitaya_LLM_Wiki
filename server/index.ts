@@ -5,7 +5,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import express from "express";
 import cors from "cors";
-import { buildWikiGraph, extractTitle, loadWiki, type WikiPage } from "./wiki.ts";
+import { buildWikiGraph, extractTitle, loadWiki, searchWiki, type WikiPage } from "./wiki.ts";
 
 const execFileP = promisify(execFile);
 
@@ -349,9 +349,9 @@ async function checkCliReady(): Promise<CliReadiness> {
 async function main() {
   console.log(`[bitaya] Cargando wiki desde ${WIKI_DIR}...`);
   const pages = await loadWiki(WIKI_DIR, PROJECT_ROOT);
-  const wikiBlock = formatWikiForPrompt(pages);
+  const totalKb = (pages.reduce((n, p) => n + p.content.length, 0) / 1024).toFixed(1);
   console.log(
-    `[bitaya] Cargadas ${pages.length} páginas (${(wikiBlock.length / 1024).toFixed(1)} KB).`,
+    `[bitaya] Cargadas ${pages.length} páginas (${totalKb} KB total).`,
   );
   console.log(`[bitaya] CLI: ${CLAUDE_CMD}  model: ${MODEL}`);
   const initialCli = await checkCliReady();
@@ -390,6 +390,15 @@ async function main() {
       return;
     }
 
+    const hits = searchWiki(pages, message, 12);
+    const relevantPages = hits
+      .map((h) => pages.find((p) => p.relPath === h.relPath))
+      .filter((p): p is WikiPage => p !== undefined);
+    const wikiBlock = formatWikiForPrompt(relevantPages);
+    console.log(
+      `[bitaya] /api/chat search: ${relevantPages.length} páginas (${(wikiBlock.length / 1024).toFixed(1)} KB)`,
+    );
+
     const userPayload = `=== CONTENIDO DEL WIKI BITAYA INCLUYE ===
 ${wikiBlock}
 
@@ -423,8 +432,17 @@ Respondé en JSON estricto como te pedí en el system prompt.`;
       return;
     }
 
+    const analyzeHits = searchWiki(pages, message, 12);
+    const analyzePages = analyzeHits
+      .map((h) => pages.find((p) => p.relPath === h.relPath))
+      .filter((p): p is WikiPage => p !== undefined);
+    const analyzeBlock = formatWikiForPrompt(analyzePages);
+    console.log(
+      `[bitaya] /api/analyze search: ${analyzePages.length} páginas (${(analyzeBlock.length / 1024).toFixed(1)} KB)`,
+    );
+
     const userPayload = `=== CONTENIDO DEL WIKI BITAYA INCLUYE ===
-${wikiBlock}
+${analyzeBlock}
 
 === SITUACIÓN DESCRITA POR LA PERSONA ===
 ${message}

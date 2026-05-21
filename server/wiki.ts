@@ -83,8 +83,12 @@ export function stripFrontmatter(content: string): string {
 
 const WIKILINK_RE = /\[\[([^\]]+)\]\]/g;
 
+function normalizeSep(relPath: string): string {
+  return relPath.replace(/\\/g, "/");
+}
+
 function pageId(relPath: string): string {
-  return relPath.replace(/^wiki\//, "").replace(/\.md$/, "");
+  return normalizeSep(relPath).replace(/^wiki\//, "").replace(/\.md$/, "");
 }
 
 function pageSection(relPath: string): string {
@@ -92,9 +96,10 @@ function pageSection(relPath: string): string {
 }
 
 function isGraphPage(page: WikiPage): boolean {
+  const normalized = normalizeSep(page.relPath);
   const id = pageId(page.relPath);
   return (
-    page.relPath.startsWith("wiki/") &&
+    normalized.startsWith("wiki/") &&
     !id.endsWith("/_index") &&
     !["index", "_hot", "log"].includes(id)
   );
@@ -105,6 +110,7 @@ function targetCandidates(rawTarget: string): string[] {
     .split("|")[0]
     .split("#")[0]
     .trim()
+    .replace(/\\/g, "/")
     .replace(/^wiki\//, "")
     .replace(/\.md$/, "")
     .replace(/^\/+|\/+$/g, "");
@@ -267,11 +273,11 @@ export function searchWiki(
     if (stems.length >= 2 && matchedTerms === 1) score = Math.floor(score / 2);
 
     // Boost por sección (situaciones es la puerta de entrada)
-    const section = page.relPath.split("/")[1];
+    const section = normalizeSep(page.relPath).split("/")[1];
     if (section && SECTION_BOOST[section]) score += SECTION_BOOST[section];
 
     // Penaliza _index.md (son catálogos, no respuestas)
-    if (page.relPath.endsWith("/_index.md")) score = Math.floor(score / 3);
+    if (normalizeSep(page.relPath).endsWith("/_index.md")) score = Math.floor(score / 3);
 
     // Encontrar el primer match para el snippet
     let snippetIdx = -1;
