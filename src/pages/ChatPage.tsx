@@ -84,11 +84,13 @@ export default function ChatPage() {
       {/* HEADER */}
       <header className="bg-black">
         <div className="mx-auto flex max-w-4xl items-center gap-4 px-6 py-5">
-          <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border-2 border-[#FF2D8D] text-xl font-extrabold text-white">
-            BI
-          </div>
+          <img
+            src="/logo.jpeg"
+            alt="Bitaya logo"
+            className="h-20 w-20 shrink-0 rounded-full object-cover"
+          />
           <div className="flex-1">
-            <h1 className="text-xl font-bold text-white">BITAYA Incluye</h1>
+            <h1 className="text-xl font-bold"><span className="text-[#FF2D8D]">BITAYA</span><span className="text-white"> Incluye</span></h1>
             <p className="text-sm text-white/60">
               IA responsable para convertir una situación vulnerable en una ruta clara de ayuda
             </p>
