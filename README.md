@@ -190,32 +190,79 @@ claude
 
 Ver guía completa: [docs/03-GUIA-DE-USO.md](docs/03-GUIA-DE-USO.md) y [docs/05-GUIA-CURADOR.md](docs/05-GUIA-CURADOR.md).
 
-### 2. Frontend (React + Vite)
+### 2. Frontend + backend (chat web)
+
+**Requisito:** tener el CLI de [Claude Code](https://docs.claude.com/en/docs/claude-code) instalado y autenticado (corré `claude` una vez para login). **No necesitás API key.**
 
 ```bash
 npm install
-cp .env.example .env.local
+cp .env.example .env   # ajustá el modelo si querés, todos los valores son opcionales
 npm run dev
 ```
 
-Abrir: `http://127.0.0.1:5173/`
+`npm run dev` levanta el backend (puerto 8000) y el frontend (puerto 5173) en paralelo. Abrí `http://127.0.0.1:5173/`.
 
-El frontend llama a:
-```text
-POST ${VITE_API_BASE_URL}/api/chat
+Arquitectura (patrón inspirado en QA-BRAIN):
+
+```
+Browser → POST /api/chat → Express (server/index.ts)
+                                  ↓
+                          spawn('claude', ['-p', ...])  ← tu Claude Code local
+                                  ↓ stdin
+                          system prompt + wiki/ completo + pregunta
+                                  ↓ stdout JSON
+                          { result: "<JSON con answer + sources>" }
 ```
 
-Configurar en `.env.local`:
+El backend:
+- Carga todas las páginas de `wiki/` en memoria al arrancar (~46 páginas, 127 KB).
+- Por cada pregunta, pipea el wiki completo + las reglas duras (tono, citas, aviso legal) a `claude -p --output-format json --tools "" --system-prompt ...` por stdin.
+- Parsea el JSON que devuelve el CLI y verifica que las `sources` apunten a paths reales del wiki.
+- Devuelve `{ answer, sources: [{ title, url }] }` al frontend.
+
+Comandos útiles:
+- `npm run dev` — backend + frontend (dev)
+- `npm run server` — solo backend
+- `npm run dev:client` — solo frontend (apunta al backend en :8000 via Vite proxy)
+- `npm run build` — build de producción del frontend
+
+### 3. MCP server (uso desde Claude Code en terminal)
+
+Para consultar el wiki desde Claude Code (o Claude Desktop / Cursor / Windsurf) en terminal, hay un MCP server stdio que expone el wiki como herramientas (`search_wiki`, `get_page`, `list_section`, `reload_wiki`).
+
+**Registrarlo en Claude Code (desde la raíz del repo):**
+
 ```bash
-VITE_API_BASE_URL=http://localhost:8000
+claude mcp add bitaya-wiki -- npx tsx server/mcp.ts
 ```
 
-Build de producción:
-```bash
-npm run build
+Esto agrega el server a tu config de Claude Code apuntando al repo actual. Después en cualquier sesión de `claude` podés preguntar cosas como:
+
+```
+> ¿qué dice el wiki sobre violencia vicaria?
+> dame los pasos para pedir medidas de protección
+> ¿qué teléfono tiene el PANI?
 ```
 
-### 3. Scraper de fuentes oficiales
+Claude llamará automáticamente a `search_wiki` y `get_page` cuando necesite mirar el wiki.
+
+**Config manual** (`~/.claude.json` o el `.mcp.json` del proyecto):
+
+```json
+{
+  "mcpServers": {
+    "bitaya-wiki": {
+      "command": "npx",
+      "args": ["tsx", "/ruta/absoluta/al/repo/server/mcp.ts"],
+      "env": { "WIKI_ROOT": "/ruta/absoluta/al/repo" }
+    }
+  }
+}
+```
+
+`WIKI_ROOT` es opcional — por defecto el server resuelve el repo desde su ubicación.
+
+### 4. Scraper de fuentes oficiales
 
 ```bash
 cd scraper
