@@ -8,22 +8,47 @@
 
 Andrej Karpathy (co-fundador de OpenAI) propuso un patrón para mantener bases de conocimiento personales con LLMs. **Tres capas:**
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│  RAW          fuentes inmutables (humano cura, LLM lee)     │
-│  ───          leyes, sentencias, manuales oficiales         │
-└─────────────────────────────────────────────────────────────┘
-                          │  ingest
-                          ▼
-┌─────────────────────────────────────────────────────────────┐
-│  WIKI         markdown interlinkeado (LLM mantiene)         │
-│  ────         situaciones, derechos, leyes, instituciones   │
-└─────────────────────────────────────────────────────────────┘
-                          │  query
-                          ▼
-┌─────────────────────────────────────────────────────────────┐
-│  PERSONA      respuestas con citas y pasos accionables      │
-└─────────────────────────────────────────────────────────────┘
+```mermaid
+flowchart TB
+    subgraph RAW["📂 RAW (humano cura, inmutable)"]
+        R1[Leyes SCIJ]
+        R2[Sentencias Sala IV]
+        R3[Manuales INAMU/PANI]
+    end
+
+    subgraph WIKI["📚 WIKI (LLM mantiene, markdown + git)"]
+        direction LR
+        SIT[situaciones/]
+        DER[derechos/]
+        LEY[leyes/]
+        INS[instituciones/]
+        PRO[procedimientos/]
+        GLO[glosario/]
+        SRC[sources/]
+        SYN[synthesis/]
+        SIT -.->|wikilinks| LEY
+        SIT -.->|wikilinks| INS
+        LEY -.->|wikilinks| INS
+        SIT -.->|wikilinks| PRO
+        DER -.->|wikilinks| LEY
+    end
+
+    subgraph PER["👤 PERSONA"]
+        Q[Pregunta en lenguaje de la calle]
+        A["Respuesta: pasos HOY + teléfono<br/>+ cita a ley + disclaimer"]
+    end
+
+    RAW -->|/ingest| WIKI
+    Q -->|/query| WIKI
+    WIKI --> A
+    WIKI -.->|/lint| WIKI
+
+    classDef raw fill:#FEF3C7,stroke:#D97706,color:#000
+    classDef wiki fill:#DBEAFE,stroke:#2563EB,color:#000
+    classDef per fill:#D1FAE5,stroke:#059669,color:#000
+    class R1,R2,R3 raw
+    class SIT,DER,LEY,INS,PRO,GLO,SRC,SYN wiki
+    class Q,A per
 ```
 
 **Las reglas del patrón:**
@@ -51,6 +76,65 @@ Andrej Karpathy (co-fundador de OpenAI) propuso un patrón para mantener bases d
 - RAG puede alucinar artículos inexistentes; el wiki obliga a citar.
 - RAG no detecta contradicciones entre fuentes; el wiki las explicita.
 - RAG es opaco; el wiki es 100% auditable por humanos.
+
+---
+
+## Navegación de 3 saltos (cómo el agente encuentra cosas)
+
+A diferencia de RAG (que necesita embeddings y vector DB), Bitaya navega con **3 lecturas constantes**, sea el wiki de 10 páginas o de 500.
+
+```mermaid
+sequenceDiagram
+    participant P as 👤 Persona
+    participant A as 🤖 Agente
+    participant I as wiki/index.md
+    participant S as wiki/<sección>/_index.md
+    participant Pg as wiki/<sección>/<pagina>.md
+    participant H as wiki/_hot.md
+
+    P->>A: /query "me pega mi pareja"
+    A->>H: lee foco activo (1)
+    A->>I: lee índice raíz (2)
+    Note over A,I: ¿Qué secciones existen?
+    A->>S: lee _index.md de la sección<br/>más probable (situaciones/) (3)
+    Note over A,S: ¿Qué páginas hay acá?
+    A->>Pg: lee 1-3 páginas relevantes (4)
+    Note over A,Pg: Sigue [[wikilinks]] a leyes/, instituciones/
+    A->>P: respuesta con citas + pasos + teléfono
+```
+
+**Resultado:** retrieval con O(1) lecturas. Sin vector DB. Sin embeddings. Sin chunking.
+
+---
+
+## Flujo de ingest (cómo una sola ley toca 10-20 páginas)
+
+```mermaid
+flowchart LR
+    F[📄 raw/2026-05-21-ley-8589.pdf] --> I[/ingest/]
+    I --> R[Resume + pide confirmación<br/>al curador]
+    R --> S[wiki/sources/2026-05-21-ley-8589.md]
+    R --> L[wiki/leyes/ley-8589-...md]
+    R --> D1[wiki/derechos/vivir-sin-violencia.md]
+    R --> I1[wiki/instituciones/inamu.md]
+    R --> I2[wiki/instituciones/poder-judicial.md]
+    R --> P1[wiki/procedimientos/medidas-de-proteccion.md]
+    R --> P2[wiki/procedimientos/denuncia-violencia.md]
+    R --> ST1[wiki/situaciones/me-pega-mi-pareja.md]
+    R --> ST2[wiki/situaciones/mi-pareja-me-amenaza.md]
+    R --> ST3[wiki/situaciones/mi-pareja-me-controla-el-dinero.md]
+    R --> G[wiki/glosario/femicidio.md, medida-cautelar.md]
+    R --> IDX[wiki/index.md + _index.md secciones]
+    R --> HOT[wiki/_hot.md actualizado]
+    R --> LOG[wiki/log.md ++ entry]
+
+    classDef src fill:#FEF3C7,stroke:#D97706,color:#000
+    classDef out fill:#DBEAFE,stroke:#2563EB,color:#000
+    class F src
+    class S,L,D1,I1,I2,P1,P2,ST1,ST2,ST3,G,IDX,HOT,LOG out
+```
+
+Lo que para ChatGPT sería 1 respuesta efímera, para Bitaya son **12-15 páginas persistentes y cross-linkeadas** que sirven a todas las preguntas futuras sobre el tema.
 
 ---
 

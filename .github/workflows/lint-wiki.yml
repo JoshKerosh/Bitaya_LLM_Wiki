@@ -1,0 +1,168 @@
+name: Lint Wiki Structure
+
+on:
+  push:
+    branches: [main, dev]
+  pull_request:
+    branches: [main, dev]
+
+jobs:
+  lint:
+    name: Validate scaffold integrity
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install PyYAML
+        run: pip install --quiet pyyaml
+
+      - name: ✅ Verify CLAUDE.md and AGENTS.md exist
+        run: |
+          test -f CLAUDE.md && echo "  OK  CLAUDE.md" || (echo "FAIL: CLAUDE.md missing"; exit 1)
+          test -e AGENTS.md && echo "  OK  AGENTS.md" || (echo "FAIL: AGENTS.md missing (should be symlink to CLAUDE.md)"; exit 1)
+          # AGENTS.md must point to CLAUDE.md
+          if [ -L AGENTS.md ]; then
+            target=$(readlink AGENTS.md)
+            test "$target" = "CLAUDE.md" && echo "  OK  AGENTS.md -> CLAUDE.md" || (echo "FAIL: AGENTS.md symlink points to $target, expected CLAUDE.md"; exit 1)
+          fi
+
+      - name: ✅ Verify 8 section _index.md files exist
+        run: |
+          for s in situaciones derechos leyes instituciones procedimientos glosario sources synthesis; do
+            test -f "wiki/$s/_index.md" && echo "  OK  wiki/$s/_index.md" || (echo "FAIL: wiki/$s/_index.md missing"; exit 1)
+          done
+
+      - name: ✅ Verify 8 templates exist
+        run: |
+          for t in situacion derecho ley institucion procedimiento termino source synthesis; do
+            test -f "_templates/$t.md" && echo "  OK  _templates/$t.md" || (echo "FAIL: _templates/$t.md missing"; exit 1)
+          done
+
+      - name: ✅ Verify wiki/index.md, _hot.md, log.md exist
+        run: |
+          for f in wiki/index.md wiki/_hot.md wiki/log.md; do
+            test -f "$f" && echo "  OK  $f" || (echo "FAIL: $f missing"; exit 1)
+          done
+
+      - name: ✅ Validate frontmatter YAML in all templates and wiki pages
+        run: |
+          python3 << 'EOF'
+          import os, sys, yaml
+          failed = False
+          targets = []
+          for root, _, files in os.walk("."):
+              if any(skip in root for skip in [".git", "node_modules", ".github"]):
+                  continue
+              for f in files:
+                  if f.endswith(".md") and f != "log.md":  # log.md is plain markdown
+                      targets.append(os.path.join(root, f))
+          for path in targets:
+              with open(path) as fh:
+                  content = fh.read()
+              if not content.startswith("---\n"):
+                  continue  # not all files have frontmatter (e.g. docs/, README)
+              # extract between first two ---
+              parts = content.split("---\n", 2)
+              if len(parts) < 3:
+                  print(f"FAIL: {path} has opening --- but no closing")
+                  failed = True
+                  continue
+              try:
+                  yaml.safe_load(parts[1])
+                  print(f"  OK  {path}")
+              except yaml.YAMLError as e:
+                  print(f"FAIL: {path} has invalid YAML: {e}")
+                  failed = True
+          sys.exit(1 if failed else 0)
+          EOF
+
+      - name: ✅ Public-facing templates must include legal disclaimer
+        run: |
+          for t in _templates/situacion.md _templates/derecho.md _templates/ley.md _templates/procedimiento.md _templates/synthesis.md; do
+            if grep -q "Esto no es asesoría legal" "$t"; then
+              echo "  OK  $t has disclaimer"
+            else
+              echo "FAIL: $t is public-facing but missing legal disclaimer"
+              exit 1
+            fi
+          done
+
+      - name: ✅ No stale wikilinks to deleted taxonomy
+        run: |
+          # Only check source files (templates, wiki, slash commands, schema).
+          # docs/ may legitimately discuss the historical taxonomy in prose.
+          # We look for actual wikilinks [[entities/...]] or [[concepts/...]], not the words.
+          if grep -rEn '\[\[(entities|concepts)/' _templates/ wiki/ .claude/ CLAUDE.md 2>/dev/null; then
+            echo "FAIL: found wikilinks to deleted taxonomy ([[entities/...]] or [[concepts/...]])"
+            exit 1
+          else
+            echo "  OK  no stale wikilinks"
+          fi
+
+      - name: ✅ All slash commands reference real templates
+        run: |
+          for cmd in .claude/commands/*.md; do
+            for ref in $(grep -oE '_templates/[a-z]+\.md' "$cmd" | sort -u); do
+              test -f "$ref" && echo "  OK  $cmd -> $ref" || (echo "FAIL: $cmd references missing $ref"; exit 1)
+            done
+          done
+
+      - name: ✅ All README relative .md links resolve
+        run: |
+          python3 << 'EOF'
+          import re, os, sys
+          failed = False
+          with open("README.md") as f:
+              content = f.read()
+          # find markdown links [text](path.md) or [text](path.md#anchor) where path is relative
+          links = re.findall(r'\]\(([^)#http][^)]*\.md)(?:#[^)]*)?\)', content)
+          for link in set(links):
+              if os.path.exists(link):
+                  print(f"  OK  {link}")
+              else:
+                  print(f"FAIL: README link {link} does not exist")
+                  failed = True
+          sys.exit(1 if failed else 0)
+          EOF
+
+      - name: ✅ Validate evals/golden-questions.json
+        run: |
+          python3 << 'EOF'
+          import json, sys, os
+          path = "evals/golden-questions.json"
+          if not os.path.exists(path):
+              print(f"SKIP: {path} not found")
+              sys.exit(0)
+          with open(path) as f:
+              data = json.load(f)
+          required = ["id", "question", "poblacion", "urgencia", "expected"]
+          required_expected = ["emergencia", "telefonos_esperados", "leyes_esperadas",
+                               "instituciones_esperadas", "min_pasos_accionables",
+                               "debe_incluir_disclaimer"]
+          failed = False
+          for q in data.get("questions", []):
+              for k in required:
+                  if k not in q:
+                      print(f"FAIL: question {q.get('id', '?')} missing field '{k}'")
+                      failed = True
+              for k in required_expected:
+                  if k not in q.get("expected", {}):
+                      print(f"FAIL: question {q.get('id', '?')}.expected missing field '{k}'")
+                      failed = True
+              print(f"  OK  {q.get('id')}: {q.get('question', '')[:50]}...")
+          sys.exit(1 if failed else 0)
+          EOF
+
+      - name: 🩺 Summary
+        if: success()
+        run: |
+          echo ""
+          echo "════════════════════════════════════════════════════"
+          echo "  ✅ All scaffold integrity checks passed"
+          echo "════════════════════════════════════════════════════"

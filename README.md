@@ -12,10 +12,15 @@ Para el hackatón, leer en este orden:
 
 0. **[docs/00-ESTADO.md](docs/00-ESTADO.md)** — 🩺 Reporte de salud auditado: qué está listo, qué está vacío por diseño, sin issues abiertos.
 1. **[docs/01-PITCH.md](docs/01-PITCH.md)** — Problema, solución, impacto. _(para audiencia y jurado)_
-2. **[docs/02-ARQUITECTURA.md](docs/02-ARQUITECTURA.md)** — Patrón LLM Wiki, anatomía del repo, por qué no RAG. _(para jurado técnico)_
+2. **[docs/02-ARQUITECTURA.md](docs/02-ARQUITECTURA.md)** — Patrón LLM Wiki, anatomía del repo, **diagramas Mermaid**, por qué no RAG. _(para jurado técnico)_
 3. **[docs/03-GUIA-DE-USO.md](docs/03-GUIA-DE-USO.md)** — Roles, comandos, reglas duras, workflow. _(para operadores)_
 4. **[docs/04-DEMO.md](docs/04-DEMO.md)** — Script paso a paso para la demo en vivo de 5 min.
 5. **[docs/05-GUIA-CURADOR.md](docs/05-GUIA-CURADOR.md)** — ⭐ **Si vas a alimentar el wiki, leé esto primero.** Cómo subir fuentes a `raw/`, qué entra y qué no, naming, checklist antes de `/ingest`.
+6. **[docs/06-FAQ-JURADO.md](docs/06-FAQ-JURADO.md)** — 🎤 **37 preguntas anticipadas** del jurado con respuestas listas (técnicas, producto, impacto, business, adversariales).
+7. **[docs/07-EVALS.md](docs/07-EVALS.md)** — Framework de evaluación con golden questions ([`evals/golden-questions.json`](evals/golden-questions.json)) y métricas por eje.
+8. **[docs/08-SEGURIDAD-RESPONSABLE.md](docs/08-SEGURIDAD-RESPONSABLE.md)** — Modelo de amenazas, anonimato de víctimas, qué NO hacemos, decisiones éticas.
+9. **[docs/09-ROADMAP.md](docs/09-ROADMAP.md)** — Plan a 90 días + visión 12 meses: validación con ONG, sitio público, WhatsApp bot, réplica regional.
+10. **[docs/10-COMPARATIVA.md](docs/10-COMPARATIVA.md)** — Matriz vs ChatGPT / RAG / sitios oficiales / knowledge graphs / apps legales / Karpathy gist.
 
 El **schema completo** del agente vive en [`CLAUDE.md`](CLAUDE.md) — ese archivo es el "código fuente" del comportamiento del LLM.
 

@@ -1,0 +1,132 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "version": "1.0.0",
+  "updated": "2026-05-21",
+  "description": "Golden questions para evaluar /query. Cada entrada simula una pregunta real de alguien vulnerable y declara qué páginas, teléfonos y elementos debe contener la respuesta correcta.",
+  "questions": [
+    {
+      "id": "vd-001",
+      "question": "mi pareja me pegó anoche y tengo miedo de que vuelva",
+      "poblacion": ["mujeres"],
+      "urgencia": "alta",
+      "expected": {
+        "emergencia": true,
+        "telefonos_esperados": ["911", "800-INAMU-00"],
+        "leyes_esperadas": [
+          "leyes/ley-8589-penalizacion-violencia-mujeres",
+          "leyes/ley-7586-violencia-domestica"
+        ],
+        "instituciones_esperadas": [
+          "instituciones/inamu",
+          "instituciones/poder-judicial"
+        ],
+        "procedimientos_esperados": [
+          "procedimientos/medidas-de-proteccion",
+          "procedimientos/denuncia-violencia-domestica"
+        ],
+        "min_pasos_accionables": 4,
+        "debe_incluir_disclaimer": true
+      },
+      "validado_por": "PENDIENTE",
+      "validado_fecha": null
+    },
+    {
+      "id": "lab-001",
+      "question": "me despidieron sin avisar y no me pagaron lo que me debían",
+      "poblacion": ["trabajadores"],
+      "urgencia": "media",
+      "expected": {
+        "emergencia": false,
+        "telefonos_esperados": ["800-MTSS-22-22"],
+        "leyes_esperadas": [
+          "leyes/codigo-de-trabajo"
+        ],
+        "instituciones_esperadas": [
+          "instituciones/mtss",
+          "instituciones/juzgado-de-trabajo"
+        ],
+        "procedimientos_esperados": [
+          "procedimientos/reclamo-prestaciones-laborales"
+        ],
+        "min_pasos_accionables": 3,
+        "debe_incluir_disclaimer": true
+      },
+      "validado_por": "PENDIENTE",
+      "validado_fecha": null
+    },
+    {
+      "id": "ninez-001",
+      "question": "mi vecino le pega a sus hijos, ¿qué puedo hacer?",
+      "poblacion": ["niñez"],
+      "urgencia": "alta",
+      "expected": {
+        "emergencia": true,
+        "telefonos_esperados": ["1147", "911"],
+        "leyes_esperadas": [
+          "leyes/codigo-de-la-ninez-y-la-adolescencia"
+        ],
+        "instituciones_esperadas": [
+          "instituciones/pani"
+        ],
+        "procedimientos_esperados": [
+          "procedimientos/denuncia-pani"
+        ],
+        "min_pasos_accionables": 3,
+        "debe_incluir_disclaimer": true,
+        "debe_aclarar_anonimato": true
+      },
+      "validado_por": "PENDIENTE",
+      "validado_fecha": null
+    },
+    {
+      "id": "disc-001",
+      "question": "el colegio no quiere recibir a mi hija porque tiene síndrome de Down",
+      "poblacion": ["discapacidad", "niñez"],
+      "urgencia": "media",
+      "expected": {
+        "emergencia": false,
+        "telefonos_esperados": ["800-258-7474"],
+        "leyes_esperadas": [
+          "leyes/ley-7600-igualdad-oportunidades-personas-discapacidad",
+          "leyes/ley-9379-promocion-autonomia-personas-discapacidad"
+        ],
+        "instituciones_esperadas": [
+          "instituciones/mep",
+          "instituciones/conapdis",
+          "instituciones/defensoria-de-los-habitantes"
+        ],
+        "procedimientos_esperados": [
+          "procedimientos/recurso-de-amparo-educacion-inclusiva"
+        ],
+        "min_pasos_accionables": 4,
+        "debe_incluir_disclaimer": true
+      },
+      "validado_por": "PENDIENTE",
+      "validado_fecha": null
+    },
+    {
+      "id": "am-001",
+      "question": "mi mamá tiene 78 años y su hijo le quita la pensión, ¿qué se puede hacer?",
+      "poblacion": ["adultos-mayores"],
+      "urgencia": "media",
+      "expected": {
+        "emergencia": false,
+        "telefonos_esperados": ["800-CONAPAM"],
+        "leyes_esperadas": [
+          "leyes/ley-7935-integral-persona-adulta-mayor"
+        ],
+        "instituciones_esperadas": [
+          "instituciones/conapam",
+          "instituciones/fiscalia"
+        ],
+        "procedimientos_esperados": [
+          "procedimientos/denuncia-violencia-patrimonial"
+        ],
+        "min_pasos_accionables": 4,
+        "debe_incluir_disclaimer": true
+      },
+      "validado_por": "PENDIENTE",
+      "validado_fecha": null
+    }
+  ]
+}

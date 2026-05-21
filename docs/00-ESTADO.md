@@ -48,17 +48,26 @@
 - ✅ `/lint` definido con punch list agrupada (calidad legal / estructura / cobertura / accesibilidad).
 - ✅ Todos los slash commands referencian archivos y rutas que existen.
 
-### Documentación
-- ✅ `docs/00-ESTADO.md` — este reporte de salud.
+### Documentación (11 documentos)
+- ✅ `docs/00-ESTADO.md` — este reporte de salud auditado.
 - ✅ `docs/01-PITCH.md` — pitch para audiencia/jurado.
-- ✅ `docs/02-ARQUITECTURA.md` — arquitectura técnica.
+- ✅ `docs/02-ARQUITECTURA.md` — arquitectura técnica con **3 diagramas Mermaid** (sistema, navegación 3-saltos, flujo de ingest).
 - ✅ `docs/03-GUIA-DE-USO.md` — workflow operativo con reglas duras.
 - ✅ `docs/04-DEMO.md` — script de demo de 5 minutos con Q&A anticipadas.
-- ✅ `docs/05-GUIA-CURADOR.md` — guía completa para el compañero que alimentará el wiki.
+- ✅ `docs/05-GUIA-CURADOR.md` — guía completa para el compañero que alimentará el wiki + `raw/README.md` como guardrail inline.
+- ✅ `docs/06-FAQ-JURADO.md` — **37 preguntas anticipadas** del jurado por categoría (técnicas, producto, impacto, business, adversariales).
+- ✅ `docs/07-EVALS.md` — framework de evaluación con golden questions y métricas por eje.
+- ✅ `docs/08-SEGURIDAD-RESPONSABLE.md` — modelo de amenazas, AI ética, qué NO hacemos.
+- ✅ `docs/09-ROADMAP.md` — plan a 90 días + visión 12 meses.
+- ✅ `docs/10-COMPARATIVA.md` — matriz vs ChatGPT / RAG / sitios oficiales / knowledge graphs / apps legales / Karpathy gist.
 - ✅ `README.md` raíz con índice a toda la documentación.
-- ✅ `raw/README.md` como guardrail inline al entrar a la carpeta `raw/`.
 - ✅ Todos los links relativos del README resuelven.
 - ✅ Sin caracteres mojibake / problemas de encoding UTF-8.
+
+### Evals y CI
+- ✅ `evals/golden-questions.json` — 5 golden questions iniciales con expected (leyes, instituciones, teléfonos, pasos).
+- ✅ `.github/workflows/lint-wiki.yml` — GitHub Action que valida estructura, frontmatter YAML, disclaimers, links, golden questions JSON en cada push.
+- ✅ El workflow corrió localmente y pasó todos los checks.
 
 ### Calidad legal
 - ✅ Aviso legal obligatorio definido en `CLAUDE.md` y replicado en plantillas públicas.
