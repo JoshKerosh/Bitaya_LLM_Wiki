@@ -6,6 +6,26 @@ export interface WikiPage {
   content: string;
 }
 
+export interface WikiGraphNode {
+  id: string;
+  title: string;
+  relPath: string;
+  section: string;
+  outgoingCount: number;
+  backlinkCount: number;
+}
+
+export interface WikiGraphEdge {
+  source: string;
+  target: string;
+  weight: number;
+}
+
+export interface WikiGraphData {
+  nodes: WikiGraphNode[];
+  edges: WikiGraphEdge[];
+}
+
 export async function listMarkdown(dir: string): Promise<string[]> {
   const entries = await readdir(dir, { withFileTypes: true });
   const out: string[] = [];
@@ -59,6 +79,108 @@ export function extractFrontmatter(content: string): Record<string, string> {
 
 export function stripFrontmatter(content: string): string {
   return content.replace(/^---\s*\n[\s\S]*?\n---\s*\n?/, "");
+}
+
+const WIKILINK_RE = /\[\[([^\]]+)\]\]/g;
+
+function pageId(relPath: string): string {
+  return relPath.replace(/^wiki\//, "").replace(/\.md$/, "");
+}
+
+function pageSection(relPath: string): string {
+  return pageId(relPath).split("/")[0] ?? "wiki";
+}
+
+function isGraphPage(page: WikiPage): boolean {
+  const id = pageId(page.relPath);
+  return (
+    page.relPath.startsWith("wiki/") &&
+    !id.endsWith("/_index") &&
+    !["index", "_hot", "log"].includes(id)
+  );
+}
+
+function targetCandidates(rawTarget: string): string[] {
+  const target = rawTarget
+    .split("|")[0]
+    .split("#")[0]
+    .trim()
+    .replace(/^wiki\//, "")
+    .replace(/\.md$/, "")
+    .replace(/^\/+|\/+$/g, "");
+
+  if (!target) return [];
+
+  const filename = target.split("/").at(-1);
+  return filename && filename !== target ? [target, filename] : [target];
+}
+
+export function buildWikiGraph(pages: WikiPage[]): WikiGraphData {
+  const graphPages = pages.filter(isGraphPage);
+  const pageById = new Map<string, WikiPage>();
+  const pageByFilename = new Map<string, WikiPage>();
+
+  for (const page of graphPages) {
+    const id = pageId(page.relPath);
+    pageById.set(id, page);
+
+    const filename = id.split("/").at(-1);
+    if (filename && !pageByFilename.has(filename)) {
+      pageByFilename.set(filename, page);
+    }
+  }
+
+  const incoming = new Map<string, Set<string>>();
+  const outgoing = new Map<string, Set<string>>();
+  const edgeWeights = new Map<string, WikiGraphEdge>();
+
+  for (const sourcePage of graphPages) {
+    const source = pageId(sourcePage.relPath);
+
+    for (const match of sourcePage.content.matchAll(WIKILINK_RE)) {
+      const targetPage = targetCandidates(match[1])
+        .map((candidate) => pageById.get(candidate) ?? pageByFilename.get(candidate))
+        .find((candidate): candidate is WikiPage => candidate !== undefined);
+
+      if (!targetPage) continue;
+
+      const target = pageId(targetPage.relPath);
+      if (source === target) continue;
+
+      const sourceOutgoing = outgoing.get(source) ?? new Set<string>();
+      sourceOutgoing.add(target);
+      outgoing.set(source, sourceOutgoing);
+
+      const targetIncoming = incoming.get(target) ?? new Set<string>();
+      targetIncoming.add(source);
+      incoming.set(target, targetIncoming);
+
+      const [first, second] = [source, target].sort();
+      const key = `${first}<->${second}`;
+      const edge = edgeWeights.get(key) ?? {
+        source: first,
+        target: second,
+        weight: 0,
+      };
+      edge.weight += 1;
+      edgeWeights.set(key, edge);
+    }
+  }
+
+  return {
+    nodes: graphPages.map((page) => {
+      const id = pageId(page.relPath);
+      return {
+        id,
+        title: extractTitle(page.content, page.relPath),
+        relPath: page.relPath,
+        section: pageSection(page.relPath),
+        outgoingCount: outgoing.get(id)?.size ?? 0,
+        backlinkCount: incoming.get(id)?.size ?? 0,
+      };
+    }),
+    edges: [...edgeWeights.values()],
+  };
 }
 
 export interface SearchHit {

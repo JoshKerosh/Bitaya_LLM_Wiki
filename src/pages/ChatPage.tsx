@@ -1,9 +1,10 @@
 import { useRef, useState } from "react";
 import { analyzeMessage } from "../api/analyzeApi";
 import StatusBadge from "../components/StatusBadge";
+import WikiGraph from "../components/WikiGraph";
 import type { AnalyzeResponse } from "../types/analyze";
 
-type Tab = "ciudadano" | "dashboard";
+type Tab = "ciudadano" | "dashboard" | "mapa";
 
 const EXAMPLES = [
   {
@@ -102,7 +103,7 @@ export default function ChatPage() {
       <nav className="bg-black border-b border-white/10">
         <div className="mx-auto max-w-4xl px-6">
           <div className="flex">
-            {(["ciudadano", "dashboard"] as Tab[]).map((t) => (
+            {(["ciudadano", "dashboard", "mapa"] as Tab[]).map((t) => (
               <button
                 key={t}
                 onClick={() => setTab(t)}
@@ -112,7 +113,11 @@ export default function ChatPage() {
                     : "border-transparent text-white/50 hover:text-white/80"
                 }`}
               >
-                {t === "ciudadano" ? "Orientación ciudadana" : "Dashboard institucional"}
+                {t === "ciudadano"
+                  ? "Orientación ciudadana"
+                  : t === "dashboard"
+                    ? "Dashboard institucional"
+                    : "Documentación"}
               </button>
             ))}
           </div>
@@ -366,6 +371,9 @@ export default function ChatPage() {
 
           </div>
         )}
+
+        {/* -- TAB: MAPA -- */}
+        {tab === "mapa" && <WikiGraph />}
 
       </main>
 

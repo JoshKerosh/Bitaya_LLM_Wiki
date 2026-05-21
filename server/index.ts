@@ -5,7 +5,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import express from "express";
 import cors from "cors";
-import { extractTitle, loadWiki, type WikiPage } from "./wiki.ts";
+import { buildWikiGraph, extractTitle, loadWiki, type WikiPage } from "./wiki.ts";
 
 const execFileP = promisify(execFile);
 
@@ -380,6 +380,10 @@ async function main() {
     });
   });
 
+  app.get("/api/graph", (_req, res) => {
+    res.json(buildWikiGraph(pages));
+  });
+
   app.post("/api/chat", async (req, res) => {
     const message =
       typeof req.body?.message === "string" ? req.body.message.trim() : "";
@@ -454,8 +458,19 @@ Analizá esta situación y devolvé el JSON estructurado como te pedí en el sys
     }
   });
 
-  app.listen(PORT, () => {
+  const httpServer = app.listen(PORT, () => {
     console.log(`[bitaya] Listo en http://localhost:${PORT}`);
+  });
+
+  httpServer.on("error", (err: NodeJS.ErrnoException) => {
+    if (err.code === "EADDRINUSE") {
+      console.error(
+        `[bitaya] El puerto ${PORT} ya está ocupado. Cerrá ese proceso o cambiá PORT en .env.`,
+      );
+    } else {
+      console.error("[bitaya] No se pudo levantar el servidor:", err);
+    }
+    process.exit(1);
   });
 }
 
