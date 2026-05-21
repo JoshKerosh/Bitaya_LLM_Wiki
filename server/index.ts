@@ -12,7 +12,7 @@ const execFileP = promisify(execFile);
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PROJECT_ROOT = path.resolve(__dirname, "..");
 const WIKI_DIR = path.join(PROJECT_ROOT, "wiki");
-const PORT = Number(process.env.PORT ?? 8000);
+const PORT = Number(process.env.PORT ?? 8001);
 const MODEL = process.env.BITAYA_MODEL ?? "sonnet";
 const CLAUDE_CMD = process.env.BITAYA_CLAUDE_CMD ?? "claude";
 const TIMEOUT_MS = Number(process.env.BITAYA_TIMEOUT_MS ?? 120000);
@@ -256,6 +256,7 @@ function spawnClaude(
     const child = spawn(CLAUDE_CMD, args, {
       cwd: PROJECT_ROOT,
       stdio: ["pipe", "pipe", "pipe"],
+      shell: true,
     });
 
     const stdoutChunks: Buffer[] = [];
@@ -330,6 +331,7 @@ async function checkCliReady(): Promise<CliReadiness> {
   try {
     const { stdout } = await execFileP(CLAUDE_CMD, ["--version"], {
       timeout: 5000,
+      shell: true,
     });
     const version = stdout.split(/\r?\n/).find((l) => l.trim())?.trim() ?? null;
     return { ready: true, version, error: null };
