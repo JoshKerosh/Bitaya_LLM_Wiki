@@ -178,6 +178,17 @@ Responde con pasos concretos, teléfonos, instituciones y citas a las leyes.
 
 Revisa contradicciones, claims sin citar, páginas sin aviso legal, teléfonos viejos, gaps por población.
 
+## Frontend
+
+La interfaz de chat vive en [`frontend/`](frontend/). La guía rápida del MVP está en [`frontend/README.md`](frontend/README.md).
+
+```bash
+cd frontend
+npm install
+cp .env.example .env.local
+npm run dev
+```
+
 ## Reglas duras del proyecto
 
 - **No es asesoría legal.** Es educativo. Cada página termina con un bloque que refiere a Defensa Pública / consultorios jurídicos gratuitos / Defensoría.
