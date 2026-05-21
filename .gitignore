@@ -1,0 +1,28 @@
+# Obsidian workspace files (personales, no compartibles)
+.obsidian/workspace
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache
+.obsidian/graph.json
+
+# macOS
+.DS_Store
+
+# Claude Code local settings (mantener .claude/commands/ versionado)
+.claude/settings.local.json
+.claude/.credentials.json
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs y temporales
+*.log
+tmp/
+.cache/
+
+# qmd (search engine local opcional)
+.qmd/
