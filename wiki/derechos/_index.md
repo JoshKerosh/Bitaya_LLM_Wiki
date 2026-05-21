@@ -12,15 +12,9 @@ Cada página de derecho explica: qué garantiza en palabras simples, fundamento 
 
 ## Listado
 
-_(vacío — al ingerir las primeras fuentes el agente crea acá las páginas de derechos.)_
+- [[derecho-a-vivir-sin-violencia]] — Protegido por art. 21 y 51 de la Constitución, Ley 7586, Convención Belém do Pará y CEDAW.
 
-Ejemplos esperados:
-- `derecho-a-vivir-sin-violencia.md`
-- `derecho-al-trabajo.md`
-- `derecho-a-la-salud.md`
-- `derecho-a-la-educacion.md`
-- `derecho-a-la-identidad.md`
-- `derecho-a-la-no-discriminacion.md`
+_(próximamente: derecho a la salud, derecho al trabajo, derecho a la educación inclusiva, derecho a la pensión, derecho a la no discriminación.)_
 
 ---
 

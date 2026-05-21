@@ -10,39 +10,41 @@ Resumen vivo (~500 palabras máx) de **qué cubre el wiki densamente hoy** y **d
 
 ## Qué cubre densamente
 
-_(vacío — el wiki todavía no tiene fuentes ingeridas. Cuando se ingieran las primeras leyes/manuales, esta sección listará por bloque temático qué tan densa está la cobertura.)_
-
-Plantilla esperada cuando haya contenido:
-
-> **Violencia doméstica** — Ley 7586 y Ley 8589 compiladas, 4 situaciones de cara al usuario (`me-pega-mi-pareja`, `mi-pareja-me-amenaza`, `quiero-medidas-de-proteccion`, `denuncia-no-fue-recibida`), institución INAMU verificada al 2026-05-15, procedimiento de medidas de protección documentado paso a paso.
->
-> **Laboral informal** — Código de Trabajo art. 28-35 cubiertos, 2 situaciones (`me-despidieron-sin-pagarme`, `mi-jefe-no-me-paga-horas-extra`), MTSS con teléfonos verificados.
-
----
+> **Violencia doméstica contra mujeres (Ley 7586)** — primera fuente ingerida. Cubre las 5 modalidades (física, psicológica, sexual, patrimonial, **vicaria** — esta última agregada por reforma 2025). Tres situaciones completas: [[me-pega-mi-pareja]], [[mi-pareja-me-amenaza]], [[mi-pareja-lastima-a-mi-hijo-para-hacerme-dano]]. Procedimiento [[solicitar-medidas-de-proteccion]] paso a paso. Instituciones [[poder-judicial]] e [[inamu]] documentadas con teléfonos verificados al 2026-05-21. Glosario inicial con [[medida-de-proteccion]] y [[violencia-vicaria]].
 
 ## Densidad actual por sección
 
 | Sección | Páginas | Profundidad |
 |---|---|---|
-| situaciones/ | 0 | — |
-| derechos/ | 0 | — |
-| leyes/ | 0 | — |
-| instituciones/ | 0 | — |
-| procedimientos/ | 0 | — |
-| glosario/ | 0 | — |
-| sources/ | 0 | — |
+| situaciones/ | 3 | violencia doméstica básica |
+| derechos/ | 1 | derecho a vivir sin violencia |
+| leyes/ | 1 | Ley 7586 completa |
+| instituciones/ | 2 | Poder Judicial + INAMU |
+| procedimientos/ | 2 | medidas de protección + denuncia penal |
+| glosario/ | 2 | medida de protección + violencia vicaria |
+| sources/ | 1 | Ley 7586 |
 | synthesis/ | 0 | — |
 
----
+## Huecos conocidos (priorizar para próximos `/ingest`)
 
-## Huecos conocidos (priorizar al ingerir)
+**Por urgencia:**
+1. **Niñez en riesgo** — falta Ley 7739 (Código de la Niñez y la Adolescencia). Pablo ya la subió a `raw/`. Faltan situaciones tipo `mi-vecino-le-pega-a-sus-hijos`, `mi-papa-me-toca`, página de [[pani]].
+2. **Adultos mayores en abandono** — Ley 7972 está en `raw/`. Falta CONAPAM como institución.
+3. **Personas con discapacidad** — Ley 7600 está en `raw/`. Falta CONAPDIS, MEP, situaciones de educación inclusiva.
 
-- Ninguna fuente ingerida todavía. Próximas candidatas naturales: Ley 7586 (violencia doméstica), Código de Trabajo, Código de la Niñez y la Adolescencia, Ley 7935 (adulto mayor), Ley 7600 (discapacidad), Ley 8764 (migración).
-- Cobertura por población: todas en cero.
-- Teléfonos y horarios institucionales: aún no verificados contra fuente primaria (memorizados solo en CLAUDE.md como referencia).
+**Wikilinks creados pero sin página destino (crear como stub para evitar ghost files):**
+- [[pani]] — referenciado en 4+ páginas.
+- [[fuerza-publica]] — referenciado en 5+ páginas.
+- [[ministerio-publico]] — referenciado en 3+ páginas.
 
----
+**Por población sub-cubierta:**
+- Migrantes y refugiados — 0 páginas.
+- LGBTIQ+ — 0 páginas.
+- Indígenas — 0 páginas.
+- Trabajadoras informales — 0 páginas.
 
-## Última auditoría
+## Próximas acciones sugeridas
 
-_(sin auditorías corridas — esperando que el wiki tenga contenido.)_
+1. **Ingerir Ley 7739 (Código Niñez)** — desbloquea PANI como institución completa y al menos 3 situaciones de niñez.
+2. **Crear stubs** para [[pani]], [[fuerza-publica]], [[ministerio-publico]] para evitar ghost links.
+3. **Correr `/lint`** después del próximo ingest para detectar huérfanos y wikilinks rotos.

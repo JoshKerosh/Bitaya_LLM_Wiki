@@ -12,15 +12,10 @@ Cada procedimiento debe responder: cuándo usarlo, requisitos, pasos numerados, 
 
 ## Listado
 
-_(vacío — al ingerir las primeras fuentes el agente crea acá las páginas de procedimientos.)_
+- [[solicitar-medidas-de-proteccion]] — Trámite ante el juzgado para sacar al agresor de tu casa. Gratis, sin abogado, mismo día si hay peligro.
+- [[denuncia-violencia-domestica]] — Denuncia penal paralela. Se hace ante Fuerza Pública, Fiscalía u OIJ.
 
-Ejemplos esperados:
-- `como-denunciar-violencia-domestica.md`
-- `como-pedir-medidas-de-proteccion.md`
-- `como-reclamar-prestaciones-laborales.md`
-- `como-presentar-recurso-de-amparo.md`
-- `como-pedir-pension-alimentaria.md`
-- `como-regularizar-estatus-migratorio.md`
+_(próximamente: denuncia PANI, recurso de amparo, reclamo prestaciones laborales, denuncia ante MTSS, regularización migratoria, etc.)_
 
 ---
 

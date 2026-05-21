@@ -14,17 +14,12 @@ Cada situación responde, en orden: ¿esto está mal? → qué te protege → qu
 
 ## Listado
 
-_(vacío — al ingerir las primeras fuentes el agente crea acá páginas en primera persona.)_
+### Violencia doméstica / contra mujeres
+- [[me-pega-mi-pareja]] — violencia física. 911 + 800-INAMU-00. Medidas de protección el mismo día.
+- [[mi-pareja-me-amenaza]] — violencia psicológica/amenazas. No tenés que esperar a que te pegue para protegerte.
+- [[mi-pareja-lastima-a-mi-hijo-para-hacerme-dano]] — violencia vicaria (reconocida en CR desde 2025). PANI + INAMU + medidas extendidas.
 
-Ejemplos esperados:
-- `me-pega-mi-pareja.md`
-- `me-despidieron-sin-pagarme.md`
-- `no-me-dejan-ver-a-mis-hijos.md`
-- `el-cole-no-acepta-a-mi-hija-con-discapacidad.md`
-- `mi-jefe-me-acosa.md`
-- `me-niegan-atencion-en-la-clinica.md`
-- `mi-casero-quiere-sacarme.md`
-- `me-discriminaron-por-ser-trans.md`
+_(próximamente: `mi-pareja-me-quita-el-dinero`, `mi-pareja-me-controla`, situaciones para niñez, adultos mayores, discapacidad, migrantes, LGBTIQ+, trabajo informal.)_
 
 ---
 

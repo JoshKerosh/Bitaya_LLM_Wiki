@@ -12,17 +12,9 @@ Cada página de ley explica qué dispone en castellano simple, artículos clave 
 
 ## Listado
 
-_(vacío — al ingerir las primeras fuentes el agente crea acá las páginas de leyes.)_
+- [[ley-7586-violencia-domestica]] — Medidas de protección judiciales contra violencia doméstica (Ley N° 7586, 1996). Cubre violencia física, psicológica, sexual, patrimonial y vicaria. Reformada por Ley 10634/2025.
 
-Ejemplos esperados:
-- `constitucion-politica.md`
-- `ley-7586-violencia-domestica.md`
-- `ley-8589-penalizacion-violencia-contra-las-mujeres.md`
-- `codigo-de-trabajo.md`
-- `codigo-de-la-ninez-y-adolescencia.md`
-- `ley-7935-adulto-mayor.md`
-- `ley-7600-igualdad-personas-con-discapacidad.md`
-- `ley-8764-migracion-y-extranjeria.md`
+_(próximamente: ley 7600 discapacidad, ley 7739 niñez, ley 7972 adultos mayores, ley 7801 INAMU, ley 8589 penalización violencia mujeres, código de trabajo.)_
 
 ---
 

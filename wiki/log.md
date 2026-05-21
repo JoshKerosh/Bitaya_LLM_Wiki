@@ -6,6 +6,22 @@ Operaciones: `init`, `ingest`, `query`, `lint`, `synthesis`.
 
 ---
 
+## [2026-05-21] ingest | Ley 7586 — Ley contra la Violencia Doméstica
+
+- **Fuente:** `raw/2026-05-21-ley-7586-violencia-domestica.md` (SCIJ, oficial).
+- **Páginas creadas (12):**
+  - `wiki/sources/2026-05-21-ley-7586-violencia-domestica.md` — extracción con citas y reforma vicaria.
+  - `wiki/leyes/ley-7586-violencia-domestica.md` — castellano simple, 17 medidas, reformas.
+  - `wiki/derechos/derecho-a-vivir-sin-violencia.md`.
+  - `wiki/instituciones/poder-judicial.md`, `wiki/instituciones/inamu.md`.
+  - `wiki/procedimientos/solicitar-medidas-de-proteccion.md`, `wiki/procedimientos/denuncia-violencia-domestica.md`.
+  - `wiki/situaciones/me-pega-mi-pareja.md`, `wiki/situaciones/mi-pareja-me-amenaza.md`, `wiki/situaciones/mi-pareja-lastima-a-mi-hijo-para-hacerme-dano.md`.
+  - `wiki/glosario/violencia-vicaria.md`, `wiki/glosario/medida-de-proteccion.md`.
+- **Índices actualizados:** los 7 `_index.md` de sección + `wiki/index.md` raíz + `wiki/_hot.md`.
+- **Wikilinks pendientes (crear como stubs en próximo ingest):** [[pani]], [[fuerza-publica]], [[ministerio-publico]].
+- **Calidad:** todas las páginas públicas con aviso legal obligatorio + citas a la fuente + `ultima_verificacion: 2026-05-21`.
+- **Páginas tocadas:** 12 creadas + 8 actualizadas = **20 archivos**. Fanout dentro del rango esperado (10-20).
+
 ## [2026-05-21] init | Wiki creado
 
 - Patrón [LLM Wiki de Karpathy (abril 2026)](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f) instanciado para dominio: **derechos y leyes de protección a personas vulnerables en Costa Rica**.

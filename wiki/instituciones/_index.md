@@ -14,18 +14,10 @@ Cada institución debe listar: teléfono(s), línea gratuita / 24h si existe, ho
 
 ## Listado
 
-_(vacío — al ingerir las primeras fuentes el agente crea acá las páginas de instituciones.)_
+- [[poder-judicial]] — Juzgados de Violencia Doméstica que dictan medidas de protección. Gratis, sin abogado. Info: 800-800-3000.
+- [[inamu]] — Instituto Nacional de las Mujeres. Atención 24/7. **800-INAMU-00 (800-46268-00)**. Incluye albergue.
 
-Ejemplos esperados:
-- `inamu.md` — Instituto Nacional de las Mujeres
-- `pani.md` — Patronato Nacional de la Infancia
-- `mtss.md` — Ministerio de Trabajo y Seguridad Social
-- `ccss.md` — Caja Costarricense de Seguro Social
-- `defensa-publica.md`
-- `defensoria-de-los-habitantes.md`
-- `conapam.md` — Consejo Nacional de la Persona Adulta Mayor
-- `conapdis.md` — Consejo Nacional de Personas con Discapacidad
-- `dgme.md` — Dirección General de Migración y Extranjería
+_(próximamente: PANI 1147, MTSS, CCSS, MEP, IMAS, CONAPAM, CONAPDIS, DGME, Defensoría de los Habitantes 800-258-7474, Defensa Pública, Fuerza Pública 911, Ministerio Público.)_
 
 ---
 

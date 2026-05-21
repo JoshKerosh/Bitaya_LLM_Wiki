@@ -10,17 +10,10 @@ Términos legales explicados en castellano simple. Cuando una página usa un té
 
 ## Listado
 
-_(vacío — al ingerir las primeras fuentes el agente crea acá las entradas del glosario.)_
+- [[medida-de-proteccion]] — Orden judicial rápida y gratis para protegerte de un agresor.
+- [[violencia-vicaria]] — Lastimar a personas, mascotas o bienes que te importan para hacerte daño emocional. Reconocida en CR desde 2025.
 
-Ejemplos esperados:
-- `medida-cautelar.md`
-- `recurso-de-amparo.md`
-- `notificacion.md`
-- `prestaciones-laborales.md`
-- `auto-de-apertura.md`
-- `cesantia.md`
-- `aguinaldo.md`
-- `legitimacion-activa.md`
+_(próximamente: violencia patrimonial, recurso de amparo, medida cautelar, femicidio, notificación, prestaciones laborales, etc.)_
 
 ---
 
