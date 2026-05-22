@@ -1,0 +1,96 @@
+- generic [ref=e3]:
+  - banner [ref=e4]:
+    - generic [ref=e5]:
+      - img "Bitaya logo" [ref=e6]
+      - generic [ref=e7]:
+        - heading "BITAYA Incluye" [level=1] [ref=e8]
+        - paragraph [ref=e9]: IA responsable para convertir una situación vulnerable en una ruta clara de ayuda
+      - generic "Backend OK · CLI 2.1.147 (Claude Code) · 50 páginas indexadas" [ref=e119]: 50 páginas · sonnet listo
+  - navigation [ref=e12]:
+    - generic [ref=e14]:
+      - button "Orientación ciudadana" [ref=e15] [cursor=pointer]
+      - button "Dashboard institucional" [ref=e16] [cursor=pointer]
+      - button "Documentación" [ref=e17] [cursor=pointer]
+  - main [ref=e18]:
+    - generic [ref=e104]:
+      - generic [ref=e105]:
+        - strong [ref=e106]: "IA responsable:"
+        - text: BITAYA Incluye no determina elegibilidad, no reemplaza instituciones públicas y no atiende emergencias. Su función es orientar y ayudar a preparar el primer contacto.
+        - strong [ref=e107]: Toda ruta requiere revisión humana.
+      - generic [ref=e108]:
+        - heading "¿No sabés dónde pedir ayuda?" [level=2] [ref=e109]
+        - paragraph [ref=e110]: Contanos tu situación con tus propias palabras. BITAYA Incluye usa IA responsable para ayudarte a encontrar una ruta inicial de orientación.
+        - 'textbox "Escribí tu situación aquí. Por ejemplo: Estoy embarazada, no tengo trabajo y no sé a dónde acudir..." [ref=e111]': Estoy embarazada, tengo 19 años, no tengo trabajo y no sé dónde pedir ayuda. Vivo con mi mamá y me preocupa no poder comprar cosas básicas.
+        - paragraph [ref=e112]: Ejemplos — hacé clic para cargar
+        - generic [ref=e113]:
+          - button "🤰 Embarazo sin ingresos" [ref=e114] [cursor=pointer]
+          - button "👴 Adulto mayor solo" [ref=e115] [cursor=pointer]
+          - button "🚨 Miedo a mi pareja" [ref=e116] [cursor=pointer]
+          - button "♿ Hermano con discapacidad" [ref=e117] [cursor=pointer]
+        - button "Crear ruta de ayuda" [ref=e124] [cursor=pointer]
+      - generic [ref=e125]:
+        - generic [ref=e126]:
+          - heading "Embarazo sin recursos, 19 años" [level=3] [ref=e127]
+          - paragraph [ref=e128]: Mujer de 19 años, embarazada, sin empleo ni ingresos propios, preocupada por no poder cubrir necesidades básicas para ella y su bebé.
+        - generic [ref=e129]:
+          - generic [ref=e130]:
+            - paragraph [ref=e131]: Categoría
+            - paragraph [ref=e132]: Apoyo social
+          - generic [ref=e133]:
+            - paragraph [ref=e134]: Nivel de urgencia
+            - generic [ref=e135]: Media-alta
+          - generic [ref=e136]:
+            - paragraph [ref=e137]: Instituciones sugeridas
+            - generic [ref=e138]:
+              - generic [ref=e139]: CCSS
+              - generic [ref=e140]: IMAS
+              - generic [ref=e141]: MTSS
+              - generic [ref=e142]: Defensoría de los Habitantes
+          - generic [ref=e143]:
+            - paragraph [ref=e144]: Datos faltantes
+            - list [ref=e145]:
+              - listitem [ref=e146]: Cédula de identidad
+              - listitem [ref=e147]: Dirección exacta de tu domicilio
+              - listitem [ref=e148]: Cuántas semanas de embarazo tenés y si ya tenés control prenatal
+              - listitem [ref=e149]: Si tenés o no seguro de la CCSS activo
+              - listitem [ref=e150]: Información sobre los ingresos del hogar (para evaluación del IMAS)
+          - generic [ref=e151]:
+            - paragraph [ref=e152]: Por qué esta ruta
+            - list [ref=e153]:
+              - listitem [ref=e154]: La CCSS garantiza atención prenatal gratuita para toda mujer embarazada sin importar si tiene seguro activo o no — es el primer paso de salud más urgente.
+              - listitem [ref=e155]: El IMAS tiene como grupo prioritario explícito a mujeres embarazadas sin seguro médico, y puede certificar pobreza para que el Estado pague el seguro de la CCSS.
+              - listitem [ref=e156]: El MTSS ofrece intermediación laboral gratuita a través de la ANE, lo que apoya la situación de desempleo a mediano plazo.
+              - listitem [ref=e157]: La Defensoría de los Habitantes es el canal de escalamiento si alguna institución no le brinda la atención que le corresponde por ley.
+          - generic [ref=e158]:
+            - paragraph [ref=e159]: Próximos pasos
+            - list [ref=e160]:
+              - listitem [ref=e161]: 1. Andá HOY al EBAIS más cercano a tu casa y decí que estás embarazada y sin seguro. La atención prenatal es gratis para toda mujer embarazada, con o sin seguro.
+              - listitem [ref=e162]: 2. En el mismo EBAIS, preguntá cómo tramitar el seguro por cuenta del Estado — si califican según tu situación económica, el Estado paga la cuota.
+              - listitem [ref=e163]: 3. Llamá al IMAS al 800-4627-800 para pedir una cita con un trabajador social. El IMAS tiene transferencias económicas para mujeres embarazadas sin seguro y familias en pobreza.
+              - listitem [ref=e164]: 4. Si no podés llamar, andá directamente a la Oficina Local del IMAS de tu cantón con tu cédula y comprobante de domicilio.
+              - listitem [ref=e165]: 5. Entrá a ane.cr (portal del MTSS) o llamá al MTSS para registrarte en la Agencia Nacional de Empleo — es gratis y conecta personas con empleadores.
+              - listitem [ref=e166]: "6. Si en alguna institución no te atienden bien, llamá a la Defensoría de los Habitantes: 800-258-7474, gratis."
+          - generic [ref=e167]:
+            - paragraph [ref=e168]: Mensaje listo para pedir ayuda
+            - generic [ref=e169]: Buenos días, soy una joven de 19 años que está embarazada, no tengo trabajo ni seguro médico activo y vivo con mi mamá. Quisiera saber cómo acceder a la atención prenatal y si calificó para recibir apoyo económico del IMAS. ¿Me pueden indicar los pasos a seguir?
+            - button "Copiar mensaje" [ref=e170] [cursor=pointer]
+          - generic [ref=e171]:
+            - paragraph [ref=e172]: Confianza del análisis
+            - paragraph [ref=e175]: "Confianza: 82%"
+          - generic [ref=e176]:
+            - paragraph [ref=e177]: Resumen institucional
+            - paragraph [ref=e178]: Mujer de 19 años, cursando embarazo, sin empleo ni aseguramiento activo, que convive con su madre. Reporta preocupación por incapacidad de cubrir necesidades básicas durante el proceso gestacional. Requiere orientación en acceso a atención prenatal gratuita (CCSS), evaluación socioeconómica para transferencias (IMAS) e intermediación laboral (MTSS).
+        - generic [ref=e179]:
+          - strong [ref=e180]: "⚠️ Advertencia:"
+          - text: Esta orientación es informativa y no determina elegibilidad a programas, no reemplaza la atención de un trabajador social o profesional en derecho, y no puede atender emergencias en tiempo real.
+        - generic [ref=e181]: ✋ Revisión humana requerida — Esta orientación debe ser validada por una persona o institución competente.
+        - generic [ref=e182]:
+          - strong [ref=e183]: Esto no es asesoría legal.
+          - text: Es información para que sepás qué leyes te protegen y a quién acudir. Para tu caso específico, buscá ayuda gratuita en la
+          - strong [ref=e184]: Defensa Pública (800-800-3000)
+          - text: ", los"
+          - strong [ref=e185]: consultorios jurídicos gratuitos de la UCR/UNA/ULACIT
+          - text: ", o la"
+          - strong [ref=e186]: Defensoría de los Habitantes (800-258-7474)
+          - text: .
+  - contentinfo [ref=e34]: BITAYA Incluye — Hackathon IA Generativa · AI Day by FAIR / Costa Rica Tech Week 2026 · Equipo BITAYA

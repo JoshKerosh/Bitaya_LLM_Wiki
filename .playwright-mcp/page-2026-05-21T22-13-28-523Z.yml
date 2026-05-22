@@ -1,0 +1,93 @@
+- generic [ref=e3]:
+  - banner [ref=e4]:
+    - generic [ref=e5]:
+      - img "Bitaya logo" [ref=e6]
+      - generic [ref=e7]:
+        - heading "BITAYA Incluye" [level=1] [ref=e8]
+        - paragraph [ref=e9]: IA responsable para convertir una situación vulnerable en una ruta clara de ayuda
+      - generic "Backend OK · CLI 2.1.147 (Claude Code) · 46 páginas indexadas" [ref=e34]: 46 páginas · sonnet listo
+  - navigation [ref=e12]:
+    - generic [ref=e14]:
+      - button "Orientación ciudadana" [ref=e15] [cursor=pointer]
+      - button "Dashboard institucional" [ref=e16] [cursor=pointer]
+  - main [ref=e17]:
+    - generic [ref=e18]:
+      - generic [ref=e19]:
+        - strong [ref=e20]: "IA responsable:"
+        - text: BITAYA Incluye no determina elegibilidad, no reemplaza instituciones públicas y no atiende emergencias. Su función es orientar y ayudar a preparar el primer contacto.
+        - strong [ref=e21]: Toda ruta requiere revisión humana.
+      - generic [ref=e22]:
+        - heading "¿No sabés dónde pedir ayuda?" [level=2] [ref=e23]
+        - paragraph [ref=e24]: Contanos tu situación con tus propias palabras. BITAYA Incluye usa IA responsable para ayudarte a encontrar una ruta inicial de orientación.
+        - 'textbox "Escribí tu situación aquí. Por ejemplo: Estoy embarazada, no tengo trabajo y no sé a dónde acudir..." [ref=e25]': Estoy embarazada, tengo 19 años, no tengo trabajo y no sé dónde pedir ayuda. Vivo con mi mamá y me preocupa no poder comprar cosas básicas.
+        - paragraph [ref=e26]: Ejemplos — hacé clic para cargar
+        - generic [ref=e27]:
+          - button "🤰 Embarazo sin ingresos" [ref=e28] [cursor=pointer]
+          - button "👴 Adulto mayor solo" [ref=e29] [cursor=pointer]
+          - button "🚨 Miedo a mi pareja" [ref=e30] [cursor=pointer]
+          - button "♿ Hermano con discapacidad" [ref=e31] [cursor=pointer]
+        - button "Crear ruta de ayuda" [ref=e39] [cursor=pointer]
+      - generic [ref=e40]:
+        - generic [ref=e41]:
+          - heading "Embarazo sin empleo ni recursos básicos" [level=3] [ref=e42]
+          - paragraph [ref=e43]: Joven de 19 años, embarazada, sin trabajo ni ingresos propios, convive con su madre y no sabe a quién acudir para cubrir necesidades básicas durante el embarazo.
+        - generic [ref=e44]:
+          - generic [ref=e45]:
+            - paragraph [ref=e46]: Categoría
+            - paragraph [ref=e47]: Apoyo social
+          - generic [ref=e48]:
+            - paragraph [ref=e49]: Nivel de urgencia
+            - generic [ref=e50]: Media
+          - generic [ref=e51]:
+            - paragraph [ref=e52]: Instituciones sugeridas
+            - generic [ref=e53]:
+              - generic [ref=e54]: IMAS
+              - generic [ref=e55]: CCSS
+              - generic [ref=e56]: Defensa Pública
+              - generic [ref=e57]: Defensoría de los Habitantes
+          - generic [ref=e58]:
+            - paragraph [ref=e59]: Datos faltantes
+            - list [ref=e60]:
+              - listitem [ref=e61]: Tu cédula de identidad
+              - listitem [ref=e62]: Semanas o meses de embarazo
+              - listitem [ref=e63]: Si tenés seguro de la CCSS (como asegurada directa, familiar o por cuenta del Estado)
+              - listitem [ref=e64]: Ingresos actuales del hogar (los de tu mamá o cualquier otro)
+              - listitem [ref=e65]: Si tuviste trabajo formal en los últimos meses (para saber si hay derechos laborales pendientes)
+          - generic [ref=e66]:
+            - paragraph [ref=e67]: Por qué esta ruta
+            - list [ref=e68]:
+              - listitem [ref=e69]: El wiki identifica al IMAS como la institución de subsidios económicos para personas en vulnerabilidad, y a la CCSS como la red de salud pública del país.
+              - listitem [ref=e70]: Defensa Pública es la vía gratuita recomendada en todo el wiki para orientación legal sobre derechos concretos sin necesidad de abogado.
+              - listitem [ref=e71]: "Esta situación (embarazo, vulnerabilidad económica, apoyo social) cae en un hueco conocido del wiki actual: no existe página de situación, ni institución detallada para este caso."
+              - listitem [ref=e72]: La confianza es baja precisamente por ese hueco — se recomienda verificación directa con las instituciones y revisión humana antes de cualquier acción.
+          - generic [ref=e73]:
+            - paragraph [ref=e74]: Próximos pasos
+            - list [ref=e75]:
+              - listitem [ref=e76]: 1. Andá al EBAIS más cercano con tu cédula e informate sobre cómo inscribir el embarazo y acceder a atención de salud a través de la CCSS.
+              - listitem [ref=e77]: 2. Llamá al IMAS al 800-MAS-MAS-MAS para preguntar por subsidios o ayudas económicas disponibles para personas embarazadas sin ingresos.
+              - listitem [ref=e78]: 3. Llamá a Defensa Pública al 800-800-3000 para recibir orientación legal gratuita sobre tus derechos durante el embarazo.
+              - listitem [ref=e79]: 4. Si en alguna institución te niegan un beneficio que creés que te corresponde, llamá a la Defensoría de los Habitantes al 800-258-7474 y explicá tu situación.
+          - generic [ref=e80]:
+            - paragraph [ref=e81]: Mensaje listo para pedir ayuda
+            - generic [ref=e82]: Buenas tardes, tengo 19 años, estoy embarazada y no tengo empleo ni ingresos propios. Vivo con mi mamá y necesito orientación sobre qué ayudas o subsidios puedo solicitar para cubrir mis necesidades básicas durante el embarazo. ¿Me pueden indicar cómo aplicar y qué requisitos necesito?
+            - button "Copiar mensaje" [ref=e83] [cursor=pointer]
+          - generic [ref=e84]:
+            - paragraph [ref=e85]: Confianza del análisis
+            - paragraph [ref=e88]: "Confianza: 40%"
+          - generic [ref=e89]:
+            - paragraph [ref=e90]: Resumen institucional
+            - paragraph [ref=e91]: Mujer joven de 19 años, embarazada, en situación de desempleo y vulnerabilidad socioeconómica, sin ingresos propios, conviviendo con su progenitora, requiere orientación sobre acceso a programas de asistencia social, cobertura de salud prenatal y derechos durante el embarazo.
+        - generic [ref=e92]:
+          - strong [ref=e93]: "⚠️ Advertencia:"
+          - text: Esta orientación es informativa y no determina elegibilidad a ningún programa social ni reemplaza atención humana especializada; tampoco atiende emergencias en tiempo real.
+        - generic [ref=e94]: ✋ Revisión humana requerida — Esta orientación debe ser validada por una persona o institución competente.
+        - generic [ref=e95]:
+          - strong [ref=e96]: Esto no es asesoría legal.
+          - text: Es información para que sepás qué leyes te protegen y a quién acudir. Para tu caso específico, buscá ayuda gratuita en la
+          - strong [ref=e97]: Defensa Pública (800-800-3000)
+          - text: ", los"
+          - strong [ref=e98]: consultorios jurídicos gratuitos de la UCR/UNA/ULACIT
+          - text: ", o la"
+          - strong [ref=e99]: Defensoría de los Habitantes (800-258-7474)
+          - text: .
+  - contentinfo [ref=e33]: BITAYA Incluye — Hackathon IA Generativa · AI Day by FAIR / Costa Rica Tech Week 2026 · Equipo BITAYA

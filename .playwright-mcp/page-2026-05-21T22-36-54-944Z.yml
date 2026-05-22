@@ -1,0 +1,60 @@
+- generic [ref=e3]:
+  - banner [ref=e4]:
+    - generic [ref=e5]:
+      - img "Bitaya logo" [ref=e6]
+      - generic [ref=e7]:
+        - heading "BITAYA Incluye" [level=1] [ref=e8]
+        - paragraph [ref=e9]: IA responsable para convertir una situación vulnerable en una ruta clara de ayuda
+      - generic "Backend OK · CLI 2.1.147 (Claude Code) · 46 páginas indexadas" [ref=e35]: 46 páginas · sonnet listo
+  - navigation [ref=e12]:
+    - generic [ref=e14]:
+      - button "Orientación ciudadana" [ref=e15] [cursor=pointer]
+      - button "Dashboard institucional" [ref=e16] [cursor=pointer]
+      - button "Documentación" [active] [ref=e17] [cursor=pointer]
+  - main [ref=e18]:
+    - generic [ref=e36]:
+      - generic [ref=e37]:
+        - generic [ref=e38]:
+          - paragraph [ref=e39]: Documentación BITAYA
+          - heading "Mapa de ayuda conectado" [level=2] [ref=e40]
+          - paragraph [ref=e41]: Situaciones reales unidas con derechos, leyes, pasos e instituciones de Costa Rica.
+        - generic [ref=e42]:
+          - generic [ref=e43]:
+            - strong [ref=e44]: "35"
+            - text: Páginas
+          - generic [ref=e45]:
+            - strong [ref=e46]: "159"
+            - text: Vínculos
+      - generic [ref=e47]:
+        - generic [ref=e48]:
+          - button "Wiki completo" [ref=e49] [cursor=pointer]
+          - button "Rutas de ayuda" [ref=e50] [cursor=pointer]
+        - searchbox "Buscar ley, caso o institución" [ref=e52]
+      - generic [ref=e53]:
+        - button "Ver mapa completo" [ref=e55] [cursor=pointer]
+        - complementary [ref=e64]:
+          - paragraph [ref=e65]: Capas visibles
+          - generic [ref=e66]:
+            - generic [ref=e67]:
+              - generic [ref=e70]: Situaciones
+              - generic [ref=e71]: "9"
+            - generic [ref=e72]:
+              - generic [ref=e75]: Instituciones
+              - generic [ref=e76]: "5"
+            - generic [ref=e77]:
+              - generic [ref=e80]: Procedimientos
+              - generic [ref=e81]: "4"
+            - generic [ref=e82]:
+              - generic [ref=e85]: Derechos
+              - generic [ref=e86]: "4"
+            - generic [ref=e87]:
+              - generic [ref=e90]: Leyes
+              - generic [ref=e91]: "4"
+            - generic [ref=e92]:
+              - generic [ref=e95]: Glosario
+              - generic [ref=e96]: "5"
+            - generic [ref=e97]:
+              - generic [ref=e100]: Fuentes oficiales
+              - generic [ref=e101]: "4"
+          - paragraph [ref=e103]: Seleccioná un nodo para seguir su ruta documental.
+  - contentinfo [ref=e34]: BITAYA Incluye — Hackathon IA Generativa · AI Day by FAIR / Costa Rica Tech Week 2026 · Equipo BITAYA

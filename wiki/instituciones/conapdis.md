@@ -6,7 +6,7 @@ poblacion: [discapacidad]
 tags: [discapacidad, certificacion, empleo-inclusivo, accesibilidad]
 created: 2026-05-21
 updated: 2026-05-21
-sources: [[2026-05-21-ley-7600-igualdad-discapacidad]]
+sources: [[sources/2026-05-21-ley-7600-igualdad-discapacidad], [sources/2026-05-21-conapdis-certificacion-empleo-transporte], [sources/2026-05-21-ley-9379-autonomia-personal-discapacidad], [sources/2026-05-21-ley-8661-convencion-discapacidad]]
 status: draft
 ultima_verificacion: 2026-05-21
 ---
@@ -63,16 +63,29 @@ Institución rectora en discapacidad en Costa Rica. Emite la **certificación de
 - [[reclamar-accesibilidad-o-inclusion]]
 - Denuncia por barreras arquitectónicas o falta de inclusión laboral.
 
+## Programa Autonomía Personal (Ley 9379)
+
+CONAPDIS administra el **Programa de Autonomía Personal** para personas con discapacidad que necesitan un [[glosario/asistente-personal]] para su vida independiente.
+
+- Elabora el plan individual de apoyo (Art. 13, Ley 9379).
+- Coordina con IMAS para certificar condición de pobreza (requisito para asistente personal subsidiado).
+- Financia vía FODESAF (0.1%) y Ley 7972 (0.5%).
+
 ## Situaciones donde acudir a esta institución
 
 - [[el-cole-no-acepta-a-mi-hija-con-discapacidad]]
 - [[me-niegan-trabajo-por-mi-discapacidad]]
+- [[necesito-ayuda-para-vivir-de-forma-independiente-con-mi-discapacidad]]
+- [[me-discriminan-en-el-trabajo-por-mi-discapacidad]]
+- [[no-me-dejan-entrar-a-un-lugar-por-mi-discapacidad]]
+- [[quiero-trabajar-pero-tengo-discapacidad-y-nadie-me-contrata]]
 
 ## Leyes que la rigen
 
-- [[ley-7600-igualdad-discapacidad]]
-- Ley 9379 (Promoción de la Autonomía Personal de las Personas con Discapacidad).
-- Convención sobre los Derechos de las Personas con Discapacidad (Ley 8661, CDPD-ONU).
+- [[leyes/ley-7600-igualdad-discapacidad]]
+- [[leyes/ley-9379-autonomia-personal-discapacidad]] — CONAPDIS como rector del Programa Autonomía Personal
+- [[leyes/ley-8661-convencion-discapacidad]] — CRPD-ONU
+- [[leyes/ley-5662-fodesaf]] — Art. 3 (0.1% FODESAF financia CONAPDIS)
 
 ## Si te tratan mal o no te atienden
 

@@ -6,7 +6,7 @@ poblacion: [adultos-mayores]
 tags: [adultos-mayores, linea-dorada, abuso, abandono]
 created: 2026-05-21
 updated: 2026-05-21
-sources: [[2026-05-21-ley-7972-financiamiento-adultos-mayores]]
+sources: [[sources/2026-05-21-ley-7972-financiamiento-adultos-mayores], [sources/2026-05-21-conapam-linea-dorada-cecuidam]]
 status: draft
 ultima_verificacion: 2026-05-21
 ---
@@ -17,7 +17,7 @@ Institución rectora en envejecimiento y vejez en Costa Rica. Protege a personas
 
 - **Línea Dorada 1165** — orientación y emergencias 24/7.
 - Recibir denuncias de **maltrato, abandono o negligencia** hacia adultos mayores.
-- CECUIDAM — Centros de Cuido Diurno en múltiples cantones.
+- **CECUIDAM** — Centros de Cuido Diurno: alimentación, actividad física, estimulación cognitiva, salud básica. Centros nuevos en Puntarenas y Palmar Sur (2025-2026).
 - Consultorio jurídico gratuito (pensiones, herencias, abuso patrimonial).
 - Coordinar Red de Cuido (CCSS + IMAS + municipalidades + ONGs).
 - Directorio nacional de hogares de ancianos y centros diurnos.

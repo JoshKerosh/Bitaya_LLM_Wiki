@@ -16,23 +16,23 @@ Catálogo de todo el wiki. El agente lee este archivo **primero** al responder c
 
 | Sección | Para qué | Páginas |
 |---|---|---|
-| [[situaciones/_index\|🆘 situaciones]] | Puerta de entrada. Escenarios reales en primera persona. | **8** |
-| [[derechos/_index\|⚖️ derechos]] | Derechos específicos protegidos por ley y tratados. | **4** |
-| [[leyes/_index\|📜 leyes]] | Leyes, códigos y decretos costarricenses. | **4** |
-| [[instituciones/_index\|🏛️ instituciones]] | Entidades que ayudan (PANI, INAMU, MTSS, CCSS, etc.). | **5** |
-| [[procedimientos/_index\|🧭 procedimientos]] | Pasos formales (denuncia, amparo, prestaciones). | **4** |
-| [[glosario/_index\|📖 glosario]] | Términos legales en castellano simple. | **5** |
-| [[sources/_index\|📂 sources]] | Una página por fuente oficial ingerida. | **4** |
-| [[synthesis/_index\|🧪 synthesis]] | Respuestas reutilizables y comparaciones. | 0 |
+| [[situaciones/_index\|situaciones]] | Puerta de entrada. Escenarios reales en primera persona. | **20** |
+| [[derechos/_index\|derechos]] | Derechos específicos protegidos por ley y tratados. | **7** |
+| [[leyes/_index\|leyes]] | Leyes, códigos y decretos costarricenses. | **10** |
+| [[instituciones/_index\|instituciones]] | Entidades que ayudan (PANI, INAMU, MTSS, CCSS, etc.). | **9** |
+| [[procedimientos/_index\|procedimientos]] | Pasos formales (denuncia, amparo, prestaciones). | **4** |
+| [[glosario/_index\|glosario]] | Términos legales en castellano simple. | **16** |
+| [[sources/_index\|sources]] | Una página por fuente oficial ingerida. | **19** |
+| [[synthesis/_index\|synthesis]] | Respuestas reutilizables y comparaciones. | 0 |
 
-**Total páginas wiki: 34** (sin contar índices ni este archivo).
+**Total páginas wiki: 85** (sin contar índices ni este archivo).
 
 ---
 
 ## Estado
 
-- **Últimas fuentes ingeridas:** Ley 7586 (violencia doméstica), Ley 7739 (niñez), Ley 7600 (discapacidad), Ley 7972 (financiamiento adultos mayores) — todas el 2026-05-21.
-- **Poblaciones cubiertas:** mujeres víctimas de violencia, niñez, personas con discapacidad, adultos mayores. **4 de 9.**
+- **Últimas fuentes ingeridas:** 23 fuentes procesadas el 2026-05-21: CCSS maternidad, IMAS programas, PANI protección niñez, INAMU violencia/delegación, INAMU ruta OIM, Ley 7060 IMAS, Ley 5662 FODESAF, Ley 7801 INAMU, Ley 7143 PANI, Sistema 9-1-1, CONAPAM línea dorada, Ley 8661 CRPD, Ley 9379 autonomía, CONAPDIS certificación, MTSS empleo. + 4 de la primera tanda.
+- **Poblaciones cubiertas:** mujeres víctimas de violencia, niñez y adolescencia, personas con discapacidad, adultos mayores, embarazadas, personas en pobreza. **6+ de 9.**
 - **Última auditoría (`/lint`):** ninguna — recomendado correr `/lint` ahora.
 - **Foco activo:** [[_hot]].
 - **Log completo:** [[log]].

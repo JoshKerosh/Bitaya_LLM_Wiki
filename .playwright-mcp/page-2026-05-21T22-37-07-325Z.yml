@@ -1,0 +1,31 @@
+- generic [ref=e3]:
+  - banner [ref=e4]:
+    - generic [ref=e5]:
+      - img "Bitaya logo" [ref=e6]
+      - generic [ref=e7]:
+        - heading "BITAYA Incluye" [level=1] [ref=e8]
+        - paragraph [ref=e9]: IA responsable para convertir una situación vulnerable en una ruta clara de ayuda
+      - generic "Backend OK · CLI 2.1.147 (Claude Code) · 46 páginas indexadas" [ref=e35]: 46 páginas · sonnet listo
+  - navigation [ref=e12]:
+    - generic [ref=e14]:
+      - button "Orientación ciudadana" [active] [ref=e15] [cursor=pointer]
+      - button "Dashboard institucional" [ref=e16] [cursor=pointer]
+      - button "Documentación" [ref=e17] [cursor=pointer]
+  - main [ref=e18]:
+    - generic [ref=e104]:
+      - generic [ref=e105]:
+        - strong [ref=e106]: "IA responsable:"
+        - text: BITAYA Incluye no determina elegibilidad, no reemplaza instituciones públicas y no atiende emergencias. Su función es orientar y ayudar a preparar el primer contacto.
+        - strong [ref=e107]: Toda ruta requiere revisión humana.
+      - generic [ref=e108]:
+        - heading "¿No sabés dónde pedir ayuda?" [level=2] [ref=e109]
+        - paragraph [ref=e110]: Contanos tu situación con tus propias palabras. BITAYA Incluye usa IA responsable para ayudarte a encontrar una ruta inicial de orientación.
+        - 'textbox "Escribí tu situación aquí. Por ejemplo: Estoy embarazada, no tengo trabajo y no sé a dónde acudir..." [ref=e111]'
+        - paragraph [ref=e112]: Ejemplos — hacé clic para cargar
+        - generic [ref=e113]:
+          - button "🤰 Embarazo sin ingresos" [ref=e114] [cursor=pointer]
+          - button "👴 Adulto mayor solo" [ref=e115] [cursor=pointer]
+          - button "🚨 Miedo a mi pareja" [ref=e116] [cursor=pointer]
+          - button "♿ Hermano con discapacidad" [ref=e117] [cursor=pointer]
+        - button "Crear ruta de ayuda" [disabled] [ref=e118]
+  - contentinfo [ref=e34]: BITAYA Incluye — Hackathon IA Generativa · AI Day by FAIR / Costa Rica Tech Week 2026 · Equipo BITAYA

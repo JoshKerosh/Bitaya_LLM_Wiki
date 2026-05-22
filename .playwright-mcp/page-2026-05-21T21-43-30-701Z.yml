@@ -1,0 +1,29 @@
+- generic [ref=e3]:
+  - banner [ref=e4]:
+    - generic [ref=e5]:
+      - generic [ref=e6]: BI
+      - generic [ref=e7]:
+        - heading "BITAYA Incluye" [level=1] [ref=e8]
+        - paragraph [ref=e9]: IA responsable para convertir una situación vulnerable en una ruta clara de ayuda
+  - navigation [ref=e10]:
+    - generic [ref=e12]:
+      - button "Orientación ciudadana" [ref=e13] [cursor=pointer]
+      - button "Dashboard institucional" [ref=e14] [cursor=pointer]
+  - main [ref=e15]:
+    - generic [ref=e16]:
+      - generic [ref=e17]:
+        - strong [ref=e18]: "IA responsable:"
+        - text: BITAYA Incluye no determina elegibilidad, no reemplaza instituciones públicas y no atiende emergencias. Su función es orientar y ayudar a preparar el primer contacto.
+        - strong [ref=e19]: Toda ruta requiere revisión humana.
+      - generic [ref=e20]:
+        - heading "¿No sabés dónde pedir ayuda?" [level=2] [ref=e21]
+        - paragraph [ref=e22]: Contanos tu situación con tus propias palabras. BITAYA Incluye usa IA responsable para ayudarte a encontrar una ruta inicial de orientación.
+        - 'textbox "Escribí tu situación aquí. Por ejemplo: Estoy embarazada, no tengo trabajo y no sé a dónde acudir..." [ref=e23]': Tengo miedo de mi pareja porque me amenaza y no sé qué hacer. Tengo un hijo pequeño.
+        - paragraph [ref=e24]: Ejemplos — hacé clic para cargar
+        - generic [ref=e25]:
+          - button "🤰 Embarazo sin ingresos" [ref=e26] [cursor=pointer]
+          - button "👴 Adulto mayor solo" [ref=e27] [cursor=pointer]
+          - button "🚨 Miedo a mi pareja" [active] [ref=e28] [cursor=pointer]
+          - button "♿ Hermano con discapacidad" [ref=e29] [cursor=pointer]
+        - button "Crear ruta de ayuda" [ref=e30] [cursor=pointer]
+  - contentinfo [ref=e31]: BITAYA Incluye — Hackathon IA Generativa · AI Day by FAIR / Costa Rica Tech Week 2026 · Equipo BITAYA

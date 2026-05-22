@@ -1,0 +1,88 @@
+- generic [ref=e3]:
+  - banner [ref=e4]:
+    - generic [ref=e5]:
+      - generic [ref=e6]: BI
+      - generic [ref=e7]:
+        - heading "BITAYA Incluye" [level=1] [ref=e8]
+        - paragraph [ref=e9]: IA responsable para convertir una situación vulnerable en una ruta clara de ayuda
+  - navigation [ref=e10]:
+    - generic [ref=e12]:
+      - button "Orientación ciudadana" [ref=e13] [cursor=pointer]
+      - button "Dashboard institucional" [ref=e14] [cursor=pointer]
+  - main [ref=e15]:
+    - generic [ref=e16]:
+      - generic [ref=e17]:
+        - strong [ref=e18]: "IA responsable:"
+        - text: BITAYA Incluye no determina elegibilidad, no reemplaza instituciones públicas y no atiende emergencias. Su función es orientar y ayudar a preparar el primer contacto.
+        - strong [ref=e19]: Toda ruta requiere revisión humana.
+      - generic [ref=e20]:
+        - heading "¿No sabés dónde pedir ayuda?" [level=2] [ref=e21]
+        - paragraph [ref=e22]: Contanos tu situación con tus propias palabras. BITAYA Incluye usa IA responsable para ayudarte a encontrar una ruta inicial de orientación.
+        - 'textbox "Escribí tu situación aquí. Por ejemplo: Estoy embarazada, no tengo trabajo y no sé a dónde acudir..." [ref=e23]': Tengo miedo de mi pareja porque me amenaza y no sé qué hacer. Tengo un hijo pequeño.
+        - paragraph [ref=e24]: Ejemplos — hacé clic para cargar
+        - generic [ref=e25]:
+          - button "🤰 Embarazo sin ingresos" [ref=e26] [cursor=pointer]
+          - button "👴 Adulto mayor solo" [ref=e27] [cursor=pointer]
+          - button "🚨 Miedo a mi pareja" [ref=e28] [cursor=pointer]
+          - button "♿ Hermano con discapacidad" [ref=e29] [cursor=pointer]
+        - button "Crear ruta de ayuda" [ref=e30] [cursor=pointer]
+      - generic [ref=e32]:
+        - generic [ref=e33]:
+          - heading "Ruta de ayuda generada en modo respaldo" [level=3] [ref=e34]
+          - paragraph [ref=e35]: Situación vulnerable que requiere orientación inicial.
+        - generic [ref=e36]:
+          - generic [ref=e37]:
+            - paragraph [ref=e38]: Categoría
+            - paragraph [ref=e39]: Apoyo social
+          - generic [ref=e40]:
+            - paragraph [ref=e41]: Nivel de urgencia
+            - generic [ref=e42]: Media
+          - generic [ref=e43]:
+            - paragraph [ref=e44]: Instituciones sugeridas
+            - generic [ref=e45]:
+              - generic [ref=e46]: IMAS
+              - generic [ref=e47]: Municipalidad
+              - generic [ref=e48]: Centro de salud correspondiente
+          - generic [ref=e49]:
+            - paragraph [ref=e50]: Datos faltantes
+            - list [ref=e51]:
+              - listitem [ref=e52]: Cantón
+              - listitem [ref=e53]: Edad
+              - listitem [ref=e54]: Condición laboral
+              - listitem [ref=e55]: Red de apoyo
+          - generic [ref=e56]:
+            - paragraph [ref=e57]: Por qué esta ruta
+            - list [ref=e58]:
+              - listitem [ref=e59]: El mensaje indica posible necesidad de apoyo social.
+              - listitem [ref=e60]: Faltan datos para orientar con mayor precisión.
+              - listitem [ref=e61]: Se recomienda revisión humana.
+          - generic [ref=e62]:
+            - paragraph [ref=e63]: Próximos pasos
+            - list [ref=e64]:
+              - listitem [ref=e65]: Recolectar información básica del caso.
+              - listitem [ref=e66]: Solicitar orientación en una institución social o municipal.
+              - listitem [ref=e67]: Validar requisitos directamente con la institución correspondiente.
+          - generic [ref=e68]:
+            - paragraph [ref=e69]: Mensaje listo para pedir ayuda
+            - generic [ref=e70]: Buenas, solicito orientación porque estoy pasando por una situación vulnerable y necesito saber qué opciones de apoyo puedo recibir. Puedo brindar más información sobre mi cantón, condición familiar y situación económica.
+            - button "Copiar mensaje" [ref=e71] [cursor=pointer]
+          - generic [ref=e72]:
+            - paragraph [ref=e73]: Confianza del análisis
+            - paragraph [ref=e76]: "Confianza: 50%"
+          - generic [ref=e77]:
+            - paragraph [ref=e78]: Resumen institucional
+            - paragraph [ref=e79]: Persona solicita orientación inicial por posible situación de vulnerabilidad. Requiere validación institucional.
+        - generic [ref=e80]:
+          - strong [ref=e81]: "⚠️ Advertencia:"
+          - text: Esta orientación es informativa. La IA no determina elegibilidad ni reemplaza la revisión humana o institucional.
+        - generic [ref=e82]: ✋ Revisión humana requerida — Esta orientación debe ser validada por una persona o institución competente.
+        - generic [ref=e83]:
+          - strong [ref=e84]: Esto no es asesoría legal.
+          - text: Es información para que sepás qué leyes te protegen y a quién acudir. Para tu caso específico, buscá ayuda gratuita en la
+          - strong [ref=e85]: Defensa Pública (800-800-3000)
+          - text: ", los"
+          - strong [ref=e86]: consultorios jurídicos gratuitos de la UCR/UNA/ULACIT
+          - text: ", o la"
+          - strong [ref=e87]: Defensoría de los Habitantes (800-258-7474)
+          - text: .
+  - contentinfo [ref=e31]: BITAYA Incluye — Hackathon IA Generativa · AI Day by FAIR / Costa Rica Tech Week 2026 · Equipo BITAYA

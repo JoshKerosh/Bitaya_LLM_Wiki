@@ -1,0 +1,31 @@
+- generic [ref=e3]:
+  - banner [ref=e4]:
+    - generic [ref=e5]:
+      - img "Bitaya logo" [ref=e6]
+      - generic [ref=e7]:
+        - heading "BITAYA Incluye" [level=1] [ref=e8]
+        - paragraph [ref=e9]: IA responsable para convertir una situación vulnerable en una ruta clara de ayuda
+      - generic "Backend OK · CLI 2.1.147 (Claude Code) · 46 páginas indexadas" [ref=e34]: 46 páginas · sonnet listo
+  - navigation [ref=e12]:
+    - generic [ref=e14]:
+      - button "Orientación ciudadana" [ref=e15] [cursor=pointer]
+      - button "Dashboard institucional" [ref=e16] [cursor=pointer]
+  - main [ref=e17]:
+    - generic [ref=e18]:
+      - generic [ref=e19]:
+        - strong [ref=e20]: "IA responsable:"
+        - text: BITAYA Incluye no determina elegibilidad, no reemplaza instituciones públicas y no atiende emergencias. Su función es orientar y ayudar a preparar el primer contacto.
+        - strong [ref=e21]: Toda ruta requiere revisión humana.
+      - generic [ref=e22]:
+        - heading "¿No sabés dónde pedir ayuda?" [level=2] [ref=e23]
+        - paragraph [ref=e24]: Contanos tu situación con tus propias palabras. BITAYA Incluye usa IA responsable para ayudarte a encontrar una ruta inicial de orientación.
+        - 'textbox "Escribí tu situación aquí. Por ejemplo: Estoy embarazada, no tengo trabajo y no sé a dónde acudir..." [disabled] [ref=e25]': Estoy embarazada, tengo 19 años, no tengo trabajo y no sé dónde pedir ayuda. Vivo con mi mamá y me preocupa no poder comprar cosas básicas.
+        - paragraph [ref=e26]: Ejemplos — hacé clic para cargar
+        - generic [ref=e27]:
+          - button "🤰 Embarazo sin ingresos" [ref=e28] [cursor=pointer]
+          - button "👴 Adulto mayor solo" [ref=e29] [cursor=pointer]
+          - button "🚨 Miedo a mi pareja" [ref=e30] [cursor=pointer]
+          - button "♿ Hermano con discapacidad" [ref=e31] [cursor=pointer]
+        - button "Analizando..." [disabled] [ref=e35]
+      - paragraph [ref=e38]: Analizando tu situación...
+  - contentinfo [ref=e33]: BITAYA Incluye — Hackathon IA Generativa · AI Day by FAIR / Costa Rica Tech Week 2026 · Equipo BITAYA
