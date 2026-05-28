@@ -256,7 +256,7 @@ function spawnClaude(
     const child = spawn(CLAUDE_CMD, args, {
       cwd: PROJECT_ROOT,
       stdio: ["pipe", "pipe", "pipe"],
-      shell: true,
+      shell: process.platform === "win32",
     });
 
     const stdoutChunks: Buffer[] = [];
@@ -331,7 +331,7 @@ async function checkCliReady(): Promise<CliReadiness> {
   try {
     const { stdout } = await execFileP(CLAUDE_CMD, ["--version"], {
       timeout: 5000,
-      shell: true,
+      shell: process.platform === "win32",
     });
     const version = stdout.split(/\r?\n/).find((l) => l.trim())?.trim() ?? null;
     return { ready: true, version, error: null };
