@@ -1,0 +1,50 @@
+{
+  "id": "am-001",
+  "question": "mi mamá tiene 78 años y su hijo le quita la pensión, ¿qué se puede hacer?",
+  "status": "PASS",
+  "score": "6/6",
+  "axes": [
+    {
+      "axis": "citacion",
+      "pass": true,
+      "detail": "6 fuente(s) válida(s)"
+    },
+    {
+      "axis": "cita_correcta",
+      "pass": true,
+      "detail": "coincide: wiki/situaciones/abusan-de-mi-abuelita.md, wiki/instituciones/conapam.md, wiki/leyes/ley-7586-violencia-domestica.md, wiki/procedimientos/solicitar-medidas-de-proteccion.md"
+    },
+    {
+      "axis": "pasos_accionables",
+      "pass": true,
+      "detail": "5 pasos (mínimo 4)"
+    },
+    {
+      "axis": "telefono_correcto",
+      "pass": true,
+      "detail": "presentes: 1165"
+    },
+    {
+      "axis": "aviso_legal",
+      "pass": true,
+      "detail": "disclaimer presente"
+    },
+    {
+      "axis": "deteccion_emergencia",
+      "pass": true,
+      "detail": "n/a (no es emergencia)"
+    }
+  ],
+  "extras": [],
+  "hallucinatedSources": [],
+  "validSources": [
+    "wiki/situaciones/abusan-de-mi-abuelita.md",
+    "wiki/instituciones/conapam.md",
+    "wiki/leyes/ley-7586-violencia-domestica.md",
+    "wiki/derechos/derecho-a-la-proteccion-del-adulto-mayor.md",
+    "wiki/procedimientos/solicitar-medidas-de-proteccion.md",
+    "wiki/situaciones/mi-mama-mayor-esta-en-abandono.md"
+  ],
+  "durationMs": 112489,
+  "answer": "🚨 **Si tu mamá está en peligro físico ahora, llamá al 911.** Para urgencias con adultos mayores: **Línea Dorada CONAPAM 1165 (gratuita, 24/7).**\n\n## ¿Esto está mal?\n\n**Sí. Es abuso patrimonial y es delito.** Que el hijo le quite la pensión a tu mamá es una forma de violencia patrimonial: quitarle el dinero que le pertenece a ella para vivir. Un familiar no tiene derecho a apropiarse de la pensión de otra persona.\n\nLo que la protege:\n- **Ley 7586 (Ley contra la Violencia Doméstica), Art. 2** — define como violencia patrimonial el acto de dañar o quitar dinero, bienes o recursos en el ámbito familiar. El hijo es familiar directo. (`wiki/leyes/ley-7586-violencia-domestica.md`)\n- **Constitución Política, Art. 51** — protección especial al adulto mayor.\n- El derecho a la protección integral del adulto mayor establece que el abandono o maltrato patrimonial es delito. (`wiki/derechos/derecho-a-la-proteccion-del-adulto-mayor.md`)\n\n> ⚠️ **Nota:** La ley sustantiva específica del adulto mayor (Ley 7935) aún no está ingresada en este wiki. Para los derechos específicos de tu mamá como adulta mayor, consultá directamente con el CONAPAM o la Defensa Pública.\n\n## Qué hacer HOY\n\n1. **Llamá a la Línea Dorada del CONAPAM: 1165** (gratuita, 24/7). Contales la situación. Pueden activar una visita de trabajador social el mismo día en casos urgentes.\n2. **Usá el consultorio jurídico gratuito del CONAPAM** — tienen asesoría específica para abuso patrimonial: pensiones, herencias, escrituras. Sitio: conapam.go.cr/consultorio-juridico/\n3. **Pedí medidas de protección en el Juzgado de Violencia Doméstica** más cercano. Un juez puede ordenarle al hijo que deje de interferir con la pensión de tu mamá y, si es necesario, **suspenderle la administración de bienes**. Es gratis y no se necesita abogado. (`wiki/procedimientos/solicitar-medidas-de-proteccion.md`)\n4. **Denunciá penalmente** en cualquier delegación de Fuerza Pública o en la Fiscalía. El abuso patrimonial contra un adulto mayor puede configurar delitos penales (estafa, coacción, apropiación).\n5. **Si la pensión llega a una cuenta bancaria**, con orientación del CONAPAM o la Defensa Pública, se puede gestionar que solo tu mamá pueda retirarla.\n\n## A quién llamar / dónde ir\n\n| Institución | Teléfono | Horario | ¿Gratis? | Para qué |\n|---|---|---|---|---|\n| **CONAPAM — Línea Dorada** | **1165** | 24/7 | Sí | Orientación urgente + consultorio jurídico |\n| **9-1-1** | 9-1-1 | 24/7 | Sí | Si hay peligro físico inmediato |\n| Poder Judicial — Juzgado VD | 800-800-3000 (info) | L-V 8-16 (urgencias 24/7) | Sí | Medidas de protección |\n| Fuerza Pública / Fiscalía | 9-1-1 / delegación | 24/7 | Sí | Denuncia penal |\n| Defensa Pública | 800-800-3000 | L-V 8-16 | Sí | Asesoría legal gratuita |\n| Defensoría de los Habitantes | 800-258-7474 | L-V 8-16 | Sí | Escalamiento si nadie te atiende |\n\n## Qué llevar\n\n- Cédula de tu mamá y la tuya.\n- Documentos que muestren que el hijo accede a la pensión: estado de cuenta, comprobantes de retiro, mensajes de texto o WhatsApp.\n- Nombre, cédula y dirección del hijo.\n- Datos de testigos si los hay.\n\n## Si no te hacen caso\n\n- **Defensoría de los Habitantes: 800-258-7474** — tienen defensoría especializada en adultos mayores.\n- Recurso de amparo ante la Sala Constitucional (gratuito, sin necesidad de abogado).\n\n---\n**Esto no es asesoría legal.** Es información para que sepás qué leyes te protegen y a quién acudir. Para tu caso, buscá ayuda gratuita en la **Defensa Pública (800-800-3000)**, los consultorios jurídicos gratuitos de UCR/UNA/ULACIT, o la **Defensoría de los Habitantes (800-258-7474)**."
+}

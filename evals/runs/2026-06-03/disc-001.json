@@ -1,0 +1,50 @@
+{
+  "id": "disc-001",
+  "question": "el colegio no quiere recibir a mi hija porque tiene síndrome de Down",
+  "status": "PASS",
+  "score": "6/6",
+  "axes": [
+    {
+      "axis": "citacion",
+      "pass": true,
+      "detail": "6 fuente(s) válida(s)"
+    },
+    {
+      "axis": "cita_correcta",
+      "pass": true,
+      "detail": "coincide: wiki/situaciones/el-cole-no-acepta-a-mi-hija-con-discapacidad.md, wiki/leyes/ley-7600-igualdad-discapacidad.md, wiki/procedimientos/reclamar-accesibilidad-o-inclusion.md, wiki/instituciones/conapdis.md"
+    },
+    {
+      "axis": "pasos_accionables",
+      "pass": true,
+      "detail": "5 pasos (mínimo 4)"
+    },
+    {
+      "axis": "telefono_correcto",
+      "pass": true,
+      "detail": "presentes: 800-258-7474"
+    },
+    {
+      "axis": "aviso_legal",
+      "pass": true,
+      "detail": "disclaimer presente"
+    },
+    {
+      "axis": "deteccion_emergencia",
+      "pass": true,
+      "detail": "n/a (no es emergencia)"
+    }
+  ],
+  "extras": [],
+  "hallucinatedSources": [],
+  "validSources": [
+    "wiki/situaciones/el-cole-no-acepta-a-mi-hija-con-discapacidad.md",
+    "wiki/leyes/ley-7600-igualdad-discapacidad.md",
+    "wiki/leyes/ley-8661-convencion-discapacidad.md",
+    "wiki/procedimientos/reclamar-accesibilidad-o-inclusion.md",
+    "wiki/instituciones/conapdis.md",
+    "wiki/derechos/derecho-a-la-igualdad-de-oportunidades.md"
+  ],
+  "durationMs": 57224,
+  "answer": "## Esto está mal. Es discriminación y es ilegal.\n\nNegarle la matrícula a tu hija por tener síndrome de Down es un acto discriminatorio **expresamente prohibido** por la ley costarricense. Ningún centro educativo —público ni privado— puede rechazarla por su discapacidad.\n\n---\n\n## 1. ¿Esto está mal?\n\n**Sí. Es discriminación ilegal.** La Sala Constitucional ha ordenado **inclusión inmediata** en cientos de casos como este.\n\nTe protege:\n- **Ley 7600**, arts. 56-58: las instituciones educativas *deben* matricular y atender a estudiantes con discapacidad. Negar la matrícula por discapacidad es un acto discriminatorio. (`wiki/leyes/ley-7600-igualdad-discapacidad.md`)\n- **Ley 8661** (Convención de la ONU, Art. 24): educación inclusiva en todos los niveles es un derecho reconocido en Costa Rica desde 2008. (`wiki/leyes/ley-8661-convencion-discapacidad.md`)\n- **Constitución Política**, Art. 33: igualdad ante la ley.\n\n---\n\n## 2. Qué hacer HOY\n\n1. **Pedí una respuesta por escrito al director o directora.** Decíle: *\"Por favor, déme por escrito las razones por las que no aceptan a mi hija.\"* Si te lo dan por escrito, ya tenés prueba. Si se niegan, anotá la fecha, el nombre de quien te atendió y testigos presentes.\n\n2. **Llamá al CONAPDIS al 2280-6500** (lunes a viernes, 8am-4pm). Pedí asesoría legal gratuita. Pueden mediar directamente con el colegio y son la institución rectora en discapacidad.\n\n3. **Denunciá al MEP** (Ministerio de Educación Pública) — Dirección Regional de Educación de tu zona. El MEP tiene la obligación de garantizar el acceso de tu hija al sistema educativo.\n\n4. **Si no resuelven rápido → Recurso de amparo ante la Sala Constitucional.** Es gratis, no necesitás abogado, se puede presentar en cualquier despacho judicial con un texto simple explicando qué pasó y qué pedís (que matriculen a tu hija). La Sala suele ordenar inclusión inmediata en estos casos.\n\n5. Podés también llamar a la **Defensoría de los Habitantes al 800-258-7474** — tienen defensoría especializada en discapacidad y pueden presionar al colegio.\n\n---\n\n## 3. A quién llamar / dónde ir\n\n| Institución | Teléfono | Horario | ¿Gratis? | Para qué |\n|---|---|---|---|---|\n| **CONAPDIS** | **2280-6500** | L-V 8am-4pm | Sí | Asesoría legal + mediación con el colegio |\n| **MEP — Dirección Regional** | Variable por zona | L-V 8am-4pm | Sí | Acción administrativa contra el colegio |\n| **Defensoría de los Habitantes** | **800-258-7474** | L-V 8am-4pm | Sí | Defensoría especializada en discapacidad |\n| **Sala Constitucional** | Cualquier despacho judicial | L-V 8am-4pm | Sí | Recurso de amparo (sin abogado) |\n\n---\n\n## 4. Qué llevar\n\n- Tu cédula y la de tu hija (o partida de nacimiento).\n- **Diagnóstico médico** del síndrome de Down.\n- **Certificado de discapacidad del CONAPDIS** si lo tenés — si no lo tenés todavía, no es indispensable para denunciar, pero es importante tramitarlo porque desbloquea muchos beneficios.\n- Cualquier comunicación escrita del colegio (carta, correo, mensaje de WhatsApp).\n- Nombre del director o directora y datos de testigos de la negativa.\n\n---\n\n## 5. Si no te hacen caso\n\nEl **recurso de amparo** es la herramienta más poderosa que tenés. Se escribe en lenguaje simple (no necesitás términos legales), se entrega en cualquier despacho judicial y la Sala Constitucional suele resolver en 1 a 3 meses — a veces antes en casos urgentes — ordenando **inclusión inmediata**.\n\nEl procedimiento completo con tres vías (CONAPDIS → Defensoría → amparo) está explicado en `wiki/procedimientos/reclamar-accesibilidad-o-inclusion.md`.\n\n---\n\n**Esto no es asesoría legal.** Es información para que sepás qué leyes te protegen y a quién acudir. Para tu caso, buscá ayuda gratuita en la **Defensa Pública (800-800-3000)**, los consultorios jurídicos gratuitos de UCR/UNA/ULACIT, o la **Defensoría de los Habitantes (800-258-7474)**."
+}

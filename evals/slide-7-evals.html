@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Slide 7 — Eval results</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1080px; height: 1350px;
+    background: #0d1117;
+    font-family: -apple-system, "SF Pro Display", "Segoe UI", sans-serif;
+    color: #e6edf3;
+    display: flex; flex-direction: column;
+    padding: 70px 60px;
+  }
+  .headline {
+    font-size: 64px; font-weight: 800; line-height: 1.15;
+    margin-bottom: 14px;
+  }
+  .headline .accent { color: #3fb950; }
+  .sub { font-size: 28px; color: #8b949e; margin-bottom: 48px; }
+  .terminal {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 24px 60px rgba(0,0,0,.55);
+    flex: 1;
+    display: flex; flex-direction: column;
+  }
+  .titlebar {
+    background: #21262d; padding: 16px 20px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .dot { width: 16px; height: 16px; border-radius: 50%; }
+  .red { background: #ff5f57; } .yellow { background: #febc2e; } .green { background: #28c840; }
+  .titlebar span {
+    margin-left: 14px; color: #8b949e; font-size: 20px;
+    font-family: "SF Mono", Menlo, monospace;
+  }
+  .body {
+    padding: 36px 40px; flex: 1;
+    font-family: "SF Mono", Menlo, Consolas, monospace;
+    font-size: 21px; line-height: 1.95;
+    white-space: nowrap;
+  }
+  .prompt { color: #58a6ff; }
+  .dim { color: #8b949e; }
+  .pass { color: #3fb950; font-weight: 700; }
+  .hl { color: #d29922; }
+  .result {
+    margin-top: 26px; padding-top: 26px;
+    border-top: 1px solid #30363d;
+    font-size: 28px;
+  }
+  .footer {
+    margin-top: 44px; display: flex; align-items: center; justify-content: space-between;
+  }
+  .name { font-size: 30px; font-weight: 700; }
+  .name small { display: block; font-weight: 400; font-size: 22px; color: #8b949e; margin-top: 4px; }
+  .page { font-size: 24px; color: #8b949e; }
+</style>
+</head>
+<body>
+  <div class="headline">I don't trust the LLM.<br><span class="accent">I measure it.</span></div>
+  <div class="sub">Golden questions · 6 axes each · production prompt &amp; pipeline</div>
+
+  <div class="terminal">
+    <div class="titlebar">
+      <div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div>
+      <span>bitaya — evals</span>
+    </div>
+    <div class="body">
+      <div><span class="prompt">$</span> npm run evals</div>
+      <div class="dim">[evals] 46 páginas · golden set v1.1.0 · 5 preguntas</div>
+      <br>
+      <div>[evals] vd-001&nbsp;&nbsp;&nbsp;<span class="dim">domestic violence, active danger</span>&nbsp;&nbsp;<span class="pass">PASS (6/6)</span></div>
+      <div>[evals] lab-001&nbsp;&nbsp;<span class="dim">out-of-corpus → must abstain</span>&nbsp;&nbsp;&nbsp;<span class="pass">PASS (6/6)</span></div>
+      <div>[evals] ninez-001&nbsp;<span class="dim">child abuse report</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="pass">PASS (6/6)</span></div>
+      <div>[evals] disc-001&nbsp;<span class="dim">disability discrimination</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="pass">PASS (6/6)</span></div>
+      <div>[evals] am-001&nbsp;&nbsp;&nbsp;<span class="dim">elder financial abuse</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="pass">PASS (6/6)</span></div>
+      <div class="result">
+        <span class="pass">✓ 5/5 PASS</span> · <span class="pass">30/30 axes</span> · <span class="hl">0 fabricated sources</span><br>
+        <span class="dim">first run was 2/5 — the evals caught 3 real bugs.</span><br>
+        <span class="dim">that's the point.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="name">Joseph Santamaría<small>QA &amp; AI Lead</small></div>
+    <div class="page">7 / 7</div>
+  </div>
+</body>
+</html>

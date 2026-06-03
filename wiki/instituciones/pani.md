@@ -6,7 +6,7 @@ poblacion: [niñez]
 tags: [proteccion-ninez, denuncia, albergue]
 created: 2026-05-21
 updated: 2026-05-21
-sources: [[2026-05-21-ley-7739-codigo-ninez-adolescencia]]
+sources: [[sources/2026-05-21-ley-7739-codigo-ninez-adolescencia], [sources/2026-05-21-pani-servicios-proteccion-ninez], [sources/2026-05-21-ley-7143-organica-pani]]
 status: draft
 ultima_verificacion: 2026-05-21
 ---
@@ -58,11 +58,16 @@ PANI tiene **una Oficina Local en cada cantón del país**. Para encontrar la tu
 - [[mi-vecino-le-pega-a-sus-hijos]]
 - [[sospecho-que-abusan-de-mi-hijo]]
 - [[mi-pareja-lastima-a-mi-hijo-para-hacerme-dano]]
+- [[soy-adolescente-y-estoy-embarazada]]
+- [[estoy-embarazada-sin-recursos]]
+- [[hay-violencia-en-mi-barrio-y-hay-ninos-en-peligro]]
 
 ## Leyes que la rigen
 
-- [[ley-7739-codigo-ninez-adolescencia]]
+- [[leyes/ley-7739-codigo-ninez-adolescencia]]
+- [[leyes/ley-7143-organica-pani]] — Ley Orgánica del PANI
 - Convención sobre los Derechos del Niño (CDN-ONU, ratificada por CR en 1990).
+- [[leyes/ley-5662-fodesaf]] — Art. 3 (2.59% FODESAF financia PANI)
 
 ## Si te tratan mal o no te atienden
 

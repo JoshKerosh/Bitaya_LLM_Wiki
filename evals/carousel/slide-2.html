@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    width:1080px; height:1350px; background:#0d1117;
+    font-family:-apple-system,"SF Pro Display","Segoe UI",sans-serif;
+    color:#e6edf3; display:flex; flex-direction:column;
+    padding:90px 80px; position:relative; overflow:hidden;
+  }
+  .topbar { position:absolute; top:0; left:0; right:0; height:12px;
+    background:linear-gradient(90deg,#3fb950,#2ea043); }
+  .kicker { font-size:26px; letter-spacing:6px; color:#3fb950; font-weight:700;
+    margin-bottom:32px; text-transform:uppercase; }
+  h1 { font-size:84px; font-weight:800; line-height:1.12; margin-bottom:70px; }
+  .card { border-radius:20px; padding:44px 48px; margin-bottom:36px; }
+  .card .label { font-size:24px; letter-spacing:3px; font-weight:700; text-transform:uppercase; margin-bottom:16px; }
+  .card .text { font-size:38px; line-height:1.35; font-weight:600; }
+  .ok { background:#11181f; border:1px solid #30363d; }
+  .ok .label { color:#8b949e; }
+  .ok .text { color:#8b949e; }
+  .bad { background:rgba(248,81,73,.08); border:1px solid rgba(248,81,73,.45); }
+  .bad .label { color:#f85149; }
+  .bad .text { color:#e6edf3; }
+  .footer { margin-top:auto; display:flex; align-items:center; justify-content:space-between; }
+  .name { font-size:24px; font-weight:700; }
+  .name small { display:block; font-weight:400; font-size:19px; color:#8b949e; margin-top:4px; }
+  .page { font-size:22px; color:#8b949e; }
+</style>
+</head>
+<body>
+  <div class="topbar"></div>
+  <div class="kicker">Why</div>
+  <h1>Error cost changes <span style="color:#3fb950">everything</span>.</h1>
+  <div class="card ok">
+    <div class="label">Most products</div>
+    <div class="text">A bad retrieval = a mediocre answer. Annoying. Survivable.</div>
+  </div>
+  <div class="card bad">
+    <div class="label">Legal aid</div>
+    <div class="text">A bad retrieval = someone in crisis sent to the wrong place, at the worst moment of their life.</div>
+  </div>
+  <div class="footer">
+    <div class="name">Joseph Santamaría<small>QA &amp; AI Lead</small></div>
+    <div class="page">2 / 7</div>
+  </div>
+</body>
+</html>

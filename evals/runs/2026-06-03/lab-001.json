@@ -1,0 +1,45 @@
+{
+  "id": "lab-001",
+  "question": "me despidieron sin avisar y no me pagaron lo que me debían",
+  "status": "PASS",
+  "score": "6/6",
+  "axes": [
+    {
+      "axis": "citacion",
+      "pass": true,
+      "detail": "sin fuentes fabricadas (válidas: 1)"
+    },
+    {
+      "axis": "cita_correcta",
+      "pass": true,
+      "detail": "reconoce el límite del corpus"
+    },
+    {
+      "axis": "pasos_accionables",
+      "pass": true,
+      "detail": "4 pasos (mínimo 0)"
+    },
+    {
+      "axis": "telefono_correcto",
+      "pass": true,
+      "detail": "presentes: 800-800-3000"
+    },
+    {
+      "axis": "aviso_legal",
+      "pass": true,
+      "detail": "disclaimer presente"
+    },
+    {
+      "axis": "deteccion_emergencia",
+      "pass": true,
+      "detail": "n/a (no es emergencia)"
+    }
+  ],
+  "extras": [],
+  "hallucinatedSources": [],
+  "validSources": [
+    "wiki/instituciones/mtss.md"
+  ],
+  "durationMs": 71020,
+  "answer": "## ¿Esto está mal?\n\n**Sí.** Despedirte sin aviso previo y sin pagarte lo que te deben — prestaciones, vacaciones proporcionales, aguinaldo proporcional, cesantía — viola los derechos laborales en Costa Rica.\n\n⚠️ **Límite del wiki:** el **Código de Trabajo** (la ley principal que regula despidos, preaviso y prestaciones) **no está ingresada en este wiki todavía**. Por eso no puedo citarte artículos específicos. La información abajo se basa en lo que sí está documentado sobre el MTSS. Para tu caso concreto, acudí ya a la **Defensa Pública (800-800-3000)** — es gratis y tienen abogados especializados en derecho laboral.\n\n---\n\n## Qué hacer HOY\n\n1. **Anotá todo lo que recordás:** fecha exacta en que empezaste a trabajar, fecha en que te despidieron, si te avisaron o no, cuánto te pagaron y cuánto creés que te deben.\n2. **Guardá todas las pruebas que tengas:** contrato de trabajo (si lo firmaste), recibos de salario, mensajes de WhatsApp o correos sobre el despido, testigos, cualquier documento de la empresa.\n3. **Ir a la Inspección Laboral del MTSS** (Ministerio de Trabajo y Seguridad Social) y presentar una denuncia. El inspector puede ir a la empresa a verificar y obligar al patrono a pagarte. Es gratis y no necesitás abogado para denunciar.\n4. **Llamar a la Defensa Pública: 800-800-3000** — si tu ingreso es bajo, tienen abogados gratis que te asesoran y pueden representarte en el Juzgado de Trabajo si el patrono no paga voluntariamente.\n\n---\n\n## A quién llamar / dónde ir\n\n| Institución | Teléfono / Contacto | Horario | ¿Gratis? | Para qué |\n|---|---|---|---|---|\n| **MTSS — Inspección Laboral** | Oficina regional más cercana (mtss.go.cr) | L-V horario regular | Sí | Denuncia laboral, obligar al patrono a pagar |\n| **Defensa Pública** | **800-800-3000** | L-V horario regular | Sí | Asesoría legal gratuita, representación en juicio |\n| **Defensoría de los Habitantes** | **800-258-7474** | L-V horario regular | Sí | Si el MTSS no te atiende correctamente |\n\n---\n\n## Qué llevar\n\n- Cédula de identidad.\n- Contrato de trabajo (si lo tenés, aunque sea informal).\n- Recibos, constancias de salario o extractos bancarios donde entraba el pago.\n- Fecha exacta de inicio y fin de la relación laboral.\n- Mensajes, correos o cualquier comunicación del despido (pantallazos de WhatsApp sirven).\n- Nombre completo, número de cédula o datos del patrono o empresa.\n\n---\n\n## Si no te hacen caso\n\n- **Juzgado de Trabajo** — con ayuda de la Defensa Pública (800-800-3000) podés demandar directamente al patrono para cobrar lo que te deben.\n- **Defensoría de los Habitantes (800-258-7474)** — si el MTSS no investigó o se tardó injustificadamente.\n- **Consultorios jurídicos gratuitos de la UCR, UNA o ULACIT** — también pueden orientarte sin costo.\n\n---\n\n📌 *Nota para el equipo del wiki:* falta ingerir el **Código de Trabajo** para poder responder situaciones laborales con citas legales específicas (preaviso, cesantía, artículos del despido justificado/injustificado). Es un hueco crítico.\n\n---\n\n**Esto no es asesoría legal.** Es información para que sepás qué leyes te protegen y a quién acudir. Para tu caso, buscá ayuda gratuita en la **Defensa Pública (800-800-3000)**, los consultorios jurídicos gratuitos de UCR/UNA/ULACIT, o la **Defensoría de los Habitantes (800-258-7474)**."
+}

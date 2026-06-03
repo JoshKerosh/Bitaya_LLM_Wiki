@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    width:1080px; height:1350px; background:#0d1117;
+    font-family:-apple-system,"SF Pro Display","Segoe UI",sans-serif;
+    color:#e6edf3; display:flex; flex-direction:column;
+    padding:90px 80px; position:relative; overflow:hidden;
+  }
+  .topbar { position:absolute; top:0; left:0; right:0; height:12px;
+    background:linear-gradient(90deg,#3fb950,#2ea043); }
+  .glow { position:absolute; width:700px; height:700px; border-radius:50%;
+    background:radial-gradient(circle,rgba(63,185,80,.12) 0%,transparent 70%);
+    top:-200px; right:-200px; }
+  .photo { width:200px; height:200px; border-radius:50%; object-fit:cover;
+    border:4px solid #3fb950; margin-bottom:60px;
+    box-shadow:0 12px 40px rgba(63,185,80,.25); }
+  h1 { font-size:92px; font-weight:800; line-height:1.1; margin-bottom:36px; }
+  .accent { color:#3fb950; }
+  .sub { font-size:40px; color:#8b949e; line-height:1.4; }
+  .sub b { color:#e6edf3; }
+  .footer { margin-top:auto; display:flex; align-items:flex-end; justify-content:space-between; }
+  .name { font-size:30px; font-weight:700; }
+  .name small { display:block; font-weight:400; font-size:23px; color:#8b949e; margin-top:6px; }
+  .swipe { font-size:26px; color:#3fb950; font-weight:700; letter-spacing:2px; }
+</style>
+</head>
+<body>
+  <div class="topbar"></div>
+  <div class="glow"></div>
+  <img class="photo" src="file:///Users/joseph/Downloads/4C1E677B-BC09-47AD-B448-D25293B81A43.PNG" alt="">
+  <h1>I killed the <span class="accent">vector DB</span> in the first 30 minutes.</h1>
+  <div class="sub">And <b>won the hackathon</b> because of it. 🏆<br><br>The engineering decision behind a legal-aid AI — and the eval harness that proves it.</div>
+  <div class="footer">
+    <div class="name">Joseph Santamaría<small>QA &amp; AI Lead</small></div>
+    <div class="swipe">swipe →</div>
+  </div>
+</body>
+</html>

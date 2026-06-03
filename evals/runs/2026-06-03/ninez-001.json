@@ -1,0 +1,55 @@
+{
+  "id": "ninez-001",
+  "question": "mi vecino le pega a sus hijos, ¿qué puedo hacer?",
+  "status": "PASS",
+  "score": "6/6",
+  "axes": [
+    {
+      "axis": "citacion",
+      "pass": true,
+      "detail": "5 fuente(s) válida(s)"
+    },
+    {
+      "axis": "cita_correcta",
+      "pass": true,
+      "detail": "coincide: wiki/situaciones/mi-vecino-le-pega-a-sus-hijos.md, wiki/leyes/ley-7739-codigo-ninez-adolescencia.md, wiki/procedimientos/denuncia-pani.md, wiki/instituciones/pani.md"
+    },
+    {
+      "axis": "pasos_accionables",
+      "pass": true,
+      "detail": "4 pasos (mínimo 3)"
+    },
+    {
+      "axis": "telefono_correcto",
+      "pass": true,
+      "detail": "presentes: 911"
+    },
+    {
+      "axis": "aviso_legal",
+      "pass": true,
+      "detail": "disclaimer presente"
+    },
+    {
+      "axis": "deteccion_emergencia",
+      "pass": true,
+      "detail": "abre con número de emergencia"
+    }
+  ],
+  "extras": [
+    {
+      "axis": "aclara_anonimato",
+      "pass": true,
+      "detail": "menciona denuncia anónima"
+    }
+  ],
+  "hallucinatedSources": [],
+  "validSources": [
+    "wiki/situaciones/mi-vecino-le-pega-a-sus-hijos.md",
+    "wiki/leyes/ley-7739-codigo-ninez-adolescencia.md",
+    "wiki/procedimientos/denuncia-pani.md",
+    "wiki/instituciones/pani.md",
+    "wiki/instituciones/emergencias-911.md"
+  ],
+  "durationMs": 78015,
+  "answer": "🚨 **Si los golpes están pasando AHORA o el niño está en peligro inmediato, llamá al 9-1-1.**\n\n## ¿Esto está mal?\n\n**Sí. Es un delito.** Pegar a un niño o niña es violencia física. No importa si es el padre, la madre u otro familiar: nadie tiene derecho a maltratar a una persona menor de 18 años en Costa Rica.\n\n## Qué te protege\n\n- **Ley 7739 — Código de la Niñez y la Adolescencia**, Art. 5: toda decisión pública o privada debe priorizar el **interés superior del niño** por encima de cualquier otra consideración. (`wiki/leyes/ley-7739-codigo-ninez-adolescencia.md`)\n- **Art. 4 de la misma ley:** el Estado **no puede alegar falta de presupuesto** para no actuar cuando un menor está en riesgo. (`wiki/leyes/ley-7739-codigo-ninez-adolescencia.md`)\n- **Art. 2:** los derechos de los menores aplican sin ninguna distinción. Cualquier acción u omisión contraria al interés superior es un acto discriminatorio y violatorio de derechos fundamentales.\n\n## Qué hacer HOY\n\n1. **Si hay golpes ahora mismo → llamá al 9-1-1.** La policía puede intervenir de inmediato y también activa al PANI.\n2. **Denunciá al PANI.** Podés hacerlo de forma **anónima** — nunca le dicen al denunciado quién denunció.\n   - **En línea** (disponible 24/7, la opción más rápida): https://pani.go.cr/tramites-y-servicios/denuncias-en-linea/\n   - **Presencial o por teléfono:** en la Oficina Local del PANI de tu cantón (hay una en cada cantón del país).\n3. **Contá lo que viste o escuchaste** con el mayor detalle posible: qué pasó, cuándo, con qué frecuencia, si el niño tiene marcas visibles, nombre o descripción del menor y dirección del lugar.\n4. **No necesitás certeza absoluta.** Con una sospecha razonable es suficiente para que el PANI investigue. (`wiki/procedimientos/denuncia-pani.md`)\n\n## A quién llamar / dónde ir\n\n| Institución | Contacto | Horario | ¿Gratis? | Para qué |\n|---|---|---|---|---|\n| **9-1-1** | 9-1-1 | 24/7 | Sí | Peligro activo o golpes en este momento |\n| PANI — denuncia en línea | pani.go.cr/tramites-y-servicios/denuncias-en-linea/ | 24/7 (web) | Sí | Denuncia anónima |\n| PANI — oficina local | Ver pani.go.cr para tu cantón | L-V horario regular | Sí | Denuncia presencial |\n| Fuerza Pública | 9-1-1 o delegación local | 24/7 | Sí | Intervención policial inmediata |\n\n## Qué llevar o informar\n\n- Nombre o descripción del niño/a y edad aproximada.\n- Dirección o referencia donde vive.\n- Qué viste o escuchaste, con fechas y frecuencia.\n- Si hay testigos.\n- **No necesitás pruebas formales** — el PANI investiga a partir de lo que reportás.\n\n## Si no te hacen caso\n\n- Si hay riesgo inminente y el PANI no responde → **volvé a llamar al 9-1-1**.\n- **Defensoría de los Habitantes: 800-258-7474** — para denunciar si el PANI no actúa.\n- Recurso de amparo ante la Sala Constitucional por inacción del Estado (gratuito, sin abogado).\n\n---\n**Esto no es asesoría legal.** Es información para que sepás qué leyes te protegen y a quién acudir. Para tu caso, buscá ayuda gratuita en la **Defensa Pública (800-800-3000)**, los consultorios jurídicos gratuitos de UCR/UNA/ULACIT, o la **Defensoría de los Habitantes (800-258-7474)**."
+}

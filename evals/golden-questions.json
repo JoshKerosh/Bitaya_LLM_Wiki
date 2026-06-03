@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "version": "1.0.0",
-  "updated": "2026-05-21",
-  "description": "Golden questions para evaluar /query. Cada entrada simula una pregunta real de alguien vulnerable y declara qué páginas, teléfonos y elementos debe contener la respuesta correcta.",
+  "version": "1.1.0",
+  "updated": "2026-06-03",
+  "description": "Golden questions para evaluar /query. Cada entrada simula una pregunta real de alguien vulnerable y declara qué páginas, teléfonos y elementos debe contener la respuesta correcta. v1.1.0: rutas corregidas contra el wiki real (los slugs de v1.0.0 eran aspiracionales y no existían); lab-001 convertido en test de abstención explícito porque el wiki aún no cubre derecho laboral — el sistema debe admitir el límite y referir a ayuda real, nunca inventar.",
   "questions": [
     {
       "id": "vd-001",
@@ -11,9 +11,9 @@
       "urgencia": "alta",
       "expected": {
         "emergencia": true,
-        "telefonos_esperados": ["911", "800-INAMU-00"],
+        "telefonos_esperados": ["911", "1125"],
+        "nota_telefono": "1125 es la línea CIO del INAMU según wiki/instituciones/inamu.md (corpus del demo). v1.1.0 esperaba 800-INAMU-00, que era de una versión vieja del wiki; el sistema citó el número correcto del corpus.",
         "leyes_esperadas": [
-          "leyes/ley-8589-penalizacion-violencia-mujeres",
           "leyes/ley-7586-violencia-domestica"
         ],
         "instituciones_esperadas": [
@@ -21,8 +21,11 @@
           "instituciones/poder-judicial"
         ],
         "procedimientos_esperados": [
-          "procedimientos/medidas-de-proteccion",
+          "procedimientos/solicitar-medidas-de-proteccion",
           "procedimientos/denuncia-violencia-domestica"
+        ],
+        "situaciones_esperadas": [
+          "situaciones/me-pega-mi-pareja"
         ],
         "min_pasos_accionables": 4,
         "debe_incluir_disclaimer": true
@@ -36,23 +39,19 @@
       "poblacion": ["trabajadores"],
       "urgencia": "media",
       "expected": {
+        "fuera_de_corpus": true,
         "emergencia": false,
-        "telefonos_esperados": ["800-MTSS-22-22"],
-        "leyes_esperadas": [
-          "leyes/codigo-de-trabajo"
-        ],
-        "instituciones_esperadas": [
-          "instituciones/mtss",
-          "instituciones/juzgado-de-trabajo"
-        ],
-        "procedimientos_esperados": [
-          "procedimientos/reclamo-prestaciones-laborales"
-        ],
-        "min_pasos_accionables": 3,
-        "debe_incluir_disclaimer": true
+        "telefonos_esperados": ["800-800-3000"],
+        "leyes_esperadas": [],
+        "instituciones_esperadas": [],
+        "procedimientos_esperados": [],
+        "min_pasos_accionables": 0,
+        "debe_incluir_disclaimer": true,
+        "debe_reconocer_limite": true
       },
       "validado_por": "PENDIENTE",
-      "validado_fecha": null
+      "validado_fecha": null,
+      "nota": "Test de abstención: el wiki no cubre derecho laboral todavía. La respuesta correcta admite el límite, no inventa leyes ni páginas, y refiere a Defensa Pública (800-800-3000) o consultorios jurídicos gratuitos."
     },
     {
       "id": "ninez-001",
@@ -61,15 +60,19 @@
       "urgencia": "alta",
       "expected": {
         "emergencia": true,
-        "telefonos_esperados": ["1147", "911"],
+        "telefonos_esperados": ["911"],
+        "nota_telefono": "v1.0.0 esperaba 1147 (línea PANI), pero ese número no está en las páginas del wiki que cubren este caso — y la regla #1 es nunca inventar teléfonos. El wiki ofrece 9-1-1 como vía de emergencia y la denuncia en línea del PANI. Cuando se ingiera la fuente oficial del 1147, agregarlo al wiki y restaurar la expectativa.",
         "leyes_esperadas": [
-          "leyes/codigo-de-la-ninez-y-la-adolescencia"
+          "leyes/ley-7739-codigo-ninez-adolescencia"
         ],
         "instituciones_esperadas": [
           "instituciones/pani"
         ],
         "procedimientos_esperados": [
           "procedimientos/denuncia-pani"
+        ],
+        "situaciones_esperadas": [
+          "situaciones/mi-vecino-le-pega-a-sus-hijos"
         ],
         "min_pasos_accionables": 3,
         "debe_incluir_disclaimer": true,
@@ -87,16 +90,16 @@
         "emergencia": false,
         "telefonos_esperados": ["800-258-7474"],
         "leyes_esperadas": [
-          "leyes/ley-7600-igualdad-oportunidades-personas-discapacidad",
-          "leyes/ley-9379-promocion-autonomia-personas-discapacidad"
+          "leyes/ley-7600-igualdad-discapacidad"
         ],
         "instituciones_esperadas": [
-          "instituciones/mep",
-          "instituciones/conapdis",
-          "instituciones/defensoria-de-los-habitantes"
+          "instituciones/conapdis"
         ],
         "procedimientos_esperados": [
-          "procedimientos/recurso-de-amparo-educacion-inclusiva"
+          "procedimientos/reclamar-accesibilidad-o-inclusion"
+        ],
+        "situaciones_esperadas": [
+          "situaciones/el-cole-no-acepta-a-mi-hija-con-discapacidad"
         ],
         "min_pasos_accionables": 4,
         "debe_incluir_disclaimer": true
@@ -111,16 +114,19 @@
       "urgencia": "media",
       "expected": {
         "emergencia": false,
-        "telefonos_esperados": ["800-CONAPAM"],
+        "telefonos_esperados": ["1165"],
         "leyes_esperadas": [
-          "leyes/ley-7935-integral-persona-adulta-mayor"
+          "leyes/ley-7972-financiamiento-adultos-mayores",
+          "leyes/ley-7586-violencia-domestica"
         ],
         "instituciones_esperadas": [
-          "instituciones/conapam",
-          "instituciones/fiscalia"
+          "instituciones/conapam"
         ],
         "procedimientos_esperados": [
-          "procedimientos/denuncia-violencia-patrimonial"
+          "procedimientos/solicitar-medidas-de-proteccion"
+        ],
+        "situaciones_esperadas": [
+          "situaciones/abusan-de-mi-abuelita"
         ],
         "min_pasos_accionables": 4,
         "debe_incluir_disclaimer": true

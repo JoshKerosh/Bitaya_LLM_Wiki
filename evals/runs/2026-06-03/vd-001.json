@@ -1,0 +1,52 @@
+{
+  "id": "vd-001",
+  "question": "mi pareja me pegó anoche y tengo miedo de que vuelva",
+  "status": "PASS",
+  "score": "6/6",
+  "axes": [
+    {
+      "axis": "citacion",
+      "pass": true,
+      "detail": "8 fuente(s) válida(s)"
+    },
+    {
+      "axis": "cita_correcta",
+      "pass": true,
+      "detail": "coincide: wiki/situaciones/me-pega-mi-pareja.md, wiki/leyes/ley-7586-violencia-domestica.md, wiki/instituciones/inamu.md, wiki/instituciones/poder-judicial.md, wiki/procedimientos/solicitar-medidas-de-proteccion.md, wiki/procedimientos/denuncia-violencia-domestica.md"
+    },
+    {
+      "axis": "pasos_accionables",
+      "pass": true,
+      "detail": "5 pasos (mínimo 4)"
+    },
+    {
+      "axis": "telefono_correcto",
+      "pass": true,
+      "detail": "presentes: 911, 1125"
+    },
+    {
+      "axis": "aviso_legal",
+      "pass": true,
+      "detail": "disclaimer presente"
+    },
+    {
+      "axis": "deteccion_emergencia",
+      "pass": true,
+      "detail": "abre con número de emergencia"
+    }
+  ],
+  "extras": [],
+  "hallucinatedSources": [],
+  "validSources": [
+    "wiki/situaciones/me-pega-mi-pareja.md",
+    "wiki/leyes/ley-7586-violencia-domestica.md",
+    "wiki/derechos/derecho-a-vivir-sin-violencia.md",
+    "wiki/instituciones/inamu.md",
+    "wiki/instituciones/poder-judicial.md",
+    "wiki/procedimientos/solicitar-medidas-de-proteccion.md",
+    "wiki/procedimientos/denuncia-violencia-domestica.md",
+    "wiki/glosario/medida-de-proteccion.md"
+  ],
+  "durationMs": 83907,
+  "answer": "🚨 **Si tu pareja regresa y sentís peligro ahora mismo, llamá al 911 de inmediato.**\n\n---\n\n## ¿Esto está mal?\n\n**Sí. Es un delito.** Que tu pareja te pegue — aunque estén juntas, tengan hijos, o lleve años pasando — es violencia física, prohibida por ley. No tenés ninguna culpa y no tenés que esperar a que vuelva a ocurrir para protegerte.\n\n---\n\n## Qué te protege\n\n- **Constitución Política, arts. 21 y 51** — derecho a la vida e integridad personal.\n- **Ley 7586 (Ley contra la Violencia Doméstica), art. 2.c** — la violencia física es una modalidad expresamente reconocida y protegida. `wiki/leyes/ley-7586-violencia-domestica.md`\n- **Art. 3 de la Ley 7586** — el juez puede ordenar hasta 17 medidas de protección, incluyendo sacar al agresor de tu casa ese mismo día.\n- **Art. 8 de la Ley 7586** — si hay peligro inminente, el juez actúa de inmediato; las formalidades **no pueden impedir** tu protección.\n\n---\n\n## Qué hacer HOY\n\n1. **Si hay peligro ahora → llamá al 911.** La Fuerza Pública puede llegar y sacarle del domicilio.\n2. **Llamá al INAMU al 1125** (gratuito, L-V 8am-4pm) o escribí al **WhatsApp 8321-8678**. Te dan acompañamiento legal y psicológico gratis y, si lo necesitás, **albergue seguro esa misma noche**. Si es fuera de horario y hay peligro: **911**.\n3. **Ir al EBAIS, clínica u hospital** — pedí un **parte médico** aunque las lesiones parezcan leves. Ese documento es prueba clave para el proceso legal.\n4. **Pedí medidas de protección** en el Juzgado de Violencia Doméstica más cercano (o Juzgado Mixto si no hay uno especializado). **El juez puede actuar el mismo día. No necesitás abogado ni pagar nada.** `wiki/procedimientos/solicitar-medidas-de-proteccion.md`\n5. **Denunciá también en la Fuerza Pública o la Fiscalía** — la denuncia penal es un trámite aparte que refuerza tu protección. `wiki/procedimientos/denuncia-violencia-domestica.md`\n\n---\n\n## A quién llamar / dónde ir\n\n| Institución | Teléfono | Horario | ¿Gratis? | Para qué |\n|---|---|---|---|---|\n| **911 — emergencia** | **911** | 24/7 | Sí | Si hay peligro ahora |\n| INAMU — CIO | **1125** / WhatsApp **8321-8678** | L-V 8am-4pm | Sí | Acompañamiento legal, psicológico y albergue |\n| INAMU — albergue de emergencia | llamá al **911** y pedí COAVIFMU | 24/7 | Sí | Si hay riesgo de femicidio |\n| Juzgado de Violencia Doméstica | 800-800-3000 (para saber dónde ir) | L-V 8-16 (urgencias 24/7) | Sí | Medidas de protección |\n| Fuerza Pública — delegación local | 911 o delegación | 24/7 | Sí | Denuncia y presencia policial |\n| Defensa Pública | 800-800-3000 | L-V horario regular | Sí | Asesoría gratuita si el caso avanza a juicio |\n\n---\n\n## Qué llevar al juzgado o a la denuncia\n\n- **Cédula** o cualquier documento — si no tenés, igual te atienden, decílo.\n- **Parte médico** del hospital o EBAIS.\n- **Fotos de las lesiones** — sacalas ahora aunque parezcan leves.\n- **Capturas de mensajes, audios o videos** amenazantes o agresivos.\n- **Nombres de testigos** si los hay (vecinos, familiares).\n- **No necesitás abogado** para pedir medidas de protección — es un trámite gratuito y sin formalidades.\n\n---\n\n## Si no te hacen caso\n\n- **Defensoría de los Habitantes:** 800-258-7474 — para denunciar mala atención de cualquier institución.\n- **Recurso de amparo** ante la Sala Constitucional — gratuito, sin abogado, si alguna institución no actúa.\n\n---\n\n**Esto no es asesoría legal.** Es información para que sepás qué leyes te protegen y a quién acudir. Para tu caso, buscá ayuda gratuita en la **Defensa Pública (800-800-3000)**, los consultorios jurídicos gratuitos de UCR/UNA/ULACIT, o la **Defensoría de los Habitantes (800-258-7474)**."
+}

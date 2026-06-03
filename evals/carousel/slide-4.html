@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    width:1080px; height:1350px; background:#0d1117;
+    font-family:-apple-system,"SF Pro Display","Segoe UI",sans-serif;
+    color:#e6edf3; display:flex; flex-direction:column;
+    padding:90px 80px; position:relative; overflow:hidden;
+  }
+  .topbar { position:absolute; top:0; left:0; right:0; height:12px;
+    background:linear-gradient(90deg,#3fb950,#2ea043); }
+  .kicker { font-size:26px; letter-spacing:6px; color:#3fb950; font-weight:700;
+    margin-bottom:32px; text-transform:uppercase; }
+  h1 { font-size:76px; font-weight:800; line-height:1.12; margin-bottom:24px; }
+  h1 .accent { color:#3fb950; }
+  .ctx { font-size:30px; color:#8b949e; margin-bottom:64px; line-height:1.4; }
+  .flow { display:flex; align-items:stretch; gap:0; margin-bottom:64px; }
+  .step { flex:1; background:#161b22; border:1px solid #30363d; border-radius:18px;
+    padding:34px 24px; text-align:center; }
+  .step .icon { font-size:46px; margin-bottom:14px; }
+  .step .t { font-size:28px; font-weight:700; margin-bottom:8px; }
+  .step .d { font-size:21px; color:#8b949e; line-height:1.35; }
+  .arrow { display:flex; align-items:center; padding:0 14px; font-size:40px; color:#3fb950; font-weight:800; }
+  .stats { display:flex; gap:28px; }
+  .stat { flex:1; text-align:center; background:rgba(63,185,80,.06);
+    border:1px solid rgba(63,185,80,.3); border-radius:18px; padding:34px 12px; }
+  .stat .n { font-size:62px; font-weight:800; color:#3fb950; }
+  .stat .l { font-size:23px; color:#8b949e; margin-top:8px; }
+  .footer { margin-top:auto; display:flex; align-items:center; justify-content:space-between; }
+  .name { font-size:24px; font-weight:700; }
+  .name small { display:block; font-weight:400; font-size:19px; color:#8b949e; margin-top:4px; }
+  .page { font-size:22px; color:#8b949e; }
+</style>
+</head>
+<body>
+  <div class="topbar"></div>
+  <div class="kicker">The pattern</div>
+  <h1>So I shipped <span class="accent">Karpathy's LLM&nbsp;Wiki</span>.</h1>
+  <div class="ctx">The April gist everyone's been debating — shipped for legal aid in a 4-hour hackathon, 6 weeks after he published it.</div>
+  <div class="flow">
+    <div class="step"><div class="icon">📜</div><div class="t">Raw sources</div><div class="d">official law, immutable</div></div>
+    <div class="arrow">→</div>
+    <div class="step"><div class="icon">📖</div><div class="t">Compiled wiki</div><div class="d">interlinked markdown</div></div>
+    <div class="arrow">→</div>
+    <div class="step"><div class="icon">⚙️</div><div class="t">Schema</div><div class="d">the agent's contract</div></div>
+  </div>
+  <div class="stats">
+    <div class="stat"><div class="n">28</div><div class="l">official sources</div></div>
+    <div class="stat"><div class="n">96</div><div class="l">interlinked pages</div></div>
+    <div class="stat"><div class="n">0</div><div class="l">embeddings</div></div>
+  </div>
+  <div class="footer">
+    <div class="name">Joseph Santamaría<small>QA &amp; AI Lead</small></div>
+    <div class="page">4 / 7</div>
+  </div>
+</body>
+</html>

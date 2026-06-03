@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    width:1080px; height:1350px; background:#0d1117;
+    font-family:-apple-system,"SF Pro Display","Segoe UI",sans-serif;
+    color:#e6edf3; display:flex; flex-direction:column;
+    padding:90px 80px; position:relative; overflow:hidden;
+  }
+  .topbar { position:absolute; top:0; left:0; right:0; height:12px;
+    background:linear-gradient(90deg,#3fb950,#2ea043); }
+  .kicker { font-size:26px; letter-spacing:6px; color:#3fb950; font-weight:700;
+    margin-bottom:48px; text-transform:uppercase; }
+  .big { font-size:150px; font-weight:800; line-height:1; margin-bottom:18px; }
+  .big .score { color:#f85149; }
+  .big-label { font-size:40px; color:#8b949e; font-weight:600; margin-bottom:64px; }
+  .caught { font-size:28px; letter-spacing:4px; color:#8b949e; font-weight:700;
+    text-transform:uppercase; margin-bottom:28px; }
+  .bug { display:flex; gap:22px; align-items:center; margin-bottom:26px;
+    background:#161b22; border:1px solid #30363d; border-radius:16px; padding:26px 32px; }
+  .bug .ico { font-size:36px; }
+  .bug .t { font-size:31px; font-weight:600; line-height:1.3; }
+  .punch { margin-top:54px; font-size:46px; font-weight:800; line-height:1.25; }
+  .punch .accent { color:#3fb950; }
+  .footer { margin-top:auto; display:flex; align-items:center; justify-content:space-between; }
+  .name { font-size:24px; font-weight:700; }
+  .name small { display:block; font-weight:400; font-size:19px; color:#8b949e; margin-top:4px; }
+  .page { font-size:22px; color:#8b949e; }
+</style>
+</head>
+<body>
+  <div class="topbar"></div>
+  <div class="kicker">The QA part</div>
+  <div class="big">First run: <span class="score">2/5</span></div>
+  <div class="big-label">My eval harness, against my own system.</div>
+  <div class="caught">It caught</div>
+  <div class="bug"><div class="ico">🚨</div><div class="t">The emergency number buried under three sections of legal theory</div></div>
+  <div class="bug"><div class="ico">🐛</div><div class="t">A JSON-parse bug that would've shown raw JSON to a person in crisis</div></div>
+  <div class="bug"><div class="ico">📋</div><div class="t">An error in my own golden set — expecting a phone the corpus never had</div></div>
+  <div class="punch">That's not failure.<br><span class="accent">That's evals working.</span></div>
+  <div class="footer">
+    <div class="name">Joseph Santamaría<small>QA &amp; AI Lead</small></div>
+    <div class="page">6 / 7</div>
+  </div>
+</body>
+</html>

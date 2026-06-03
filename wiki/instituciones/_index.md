@@ -14,13 +14,17 @@ Cada institución debe listar: teléfono(s), línea gratuita / 24h si existe, ho
 
 ## Listado
 
-- [[inamu]] — Instituto Nacional de las Mujeres. Atención 24/7. **800-INAMU-00 (800-46268-00)**. Incluye albergue.
+- [[inamu]] — Instituto Nacional de las Mujeres. CIO: **1125 / WhatsApp 8321-8678** (L-V 8-16). Riesgo femicidio: 9-1-1 → COAVIFMU. Incluye albergue CEAAM.
+- [[ccss]] — Caja Costarricense de Seguro Social. **800-000-2272**. Salud, maternidad, pensiones. Atención prenatal gratis para toda embarazada.
+- [[imas]] — Instituto Mixto de Ayuda Social. **800-4627-800**. Transferencias, AVANCEMOS, vivienda, seguro por Estado.
 - [[poder-judicial]] — Juzgados de Violencia Doméstica que dictan medidas de protección. Gratis, sin abogado. Info: 800-800-3000.
-- [[pani]] — Patronato Nacional de la Infancia. Denuncia online + Oficina Local en cada cantón. Emergencias: 9-1-1.
-- [[conapdis]] — Consejo Nacional de Personas con Discapacidad. **2280-6500**. Certificación de discapacidad + asesoría legal.
-- [[conapam]] — Consejo Nacional de la Persona Adulta Mayor. **Línea Dorada 1165 (gratuita, 24/7)**.
+- [[pani]] — Patronato Nacional de la Infancia. Denuncia online anónima + Oficina Local en cada cantón. Emergencias: 9-1-1.
+- [[conapdis]] — Consejo Nacional de Personas con Discapacidad. **2280-6500**. Barrio Tournón, San José. Certificación + asesoría legal + Programa Autonomía Personal.
+- [[conapam]] — Consejo Nacional de la Persona Adulta Mayor. **Línea Dorada 1165 (gratuita, 24/7)**. CECUIDAM, consultorio jurídico.
+- [[mtss]] — Ministerio de Trabajo. ANE (ane.cr), PRONAE, inspección laboral. Empleo inclusivo personas con discapacidad.
+- [[emergencias-911]] — Sistema 9-1-1. **9-1-1** gratuito 24/7. Activa FP + INAMU + PANI + Cruz Roja según emergencia.
 
-_(próximamente: MTSS 800-MTSS-22-22, CCSS, MEP, IMAS, DGME, Defensoría de los Habitantes 800-258-7474, Defensa Pública 800-800-3000, Fuerza Pública 9-1-1, Ministerio Público.)_
+_(próximamente: MEP, DGME, Defensoría de los Habitantes 800-258-7474, Defensa Pública 800-800-3000, Ministerio Público, Fuerza Pública, IMAS SACI.)_
 
 ---
 
