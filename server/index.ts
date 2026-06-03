@@ -1,5 +1,7 @@
 import "dotenv/config";
 import { execFile, spawn } from "node:child_process";
+import { writeFileSync, mkdtempSync } from "node:fs";
+import { tmpdir } from "node:os";
 import { promisify } from "node:util";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -238,9 +240,21 @@ function extractResultText(stdout: string): string {
   return trimmed;
 }
 
+// Temp dir for system prompt files — avoids Windows shell quoting issues with --system-prompt
+const PROMPT_TMPDIR = mkdtempSync(path.join(tmpdir(), "bitaya-"));
+
+function writePromptFile(name: string, content: string): string {
+  const filePath = path.join(PROMPT_TMPDIR, name);
+  writeFileSync(filePath, content, "utf8");
+  return filePath;
+}
+
+const SYSTEM_RULES_FILE = writePromptFile("chat-system.txt", SYSTEM_RULES);
+const ANALYZE_RULES_FILE = writePromptFile("analyze-system.txt", ANALYZE_RULES);
+
 function spawnClaude(
   userMessage: string,
-  systemPrompt: string = SYSTEM_RULES,
+  systemPromptFile: string = SYSTEM_RULES_FILE,
 ): Promise<{ result: string; durationMs: number; costUsd?: number }> {
   return new Promise((resolve, reject) => {
     const startedAt = Date.now();
@@ -248,13 +262,12 @@ function spawnClaude(
       "-p",
       "--output-format", "json",
       "--no-session-persistence",
-      "--tools", "",
-      "--system-prompt", systemPrompt,
+      "--system-prompt-file", systemPromptFile,
       "--model", MODEL,
       "--permission-mode", "bypassPermissions",
     ];
     const child = spawn(CLAUDE_CMD, args, {
-      cwd: PROJECT_ROOT,
+      cwd: PROMPT_TMPDIR,
       stdio: ["pipe", "pipe", "pipe"],
       shell: process.platform === "win32",
     });
@@ -437,7 +450,7 @@ Analizá esta situación y devolvé el JSON estructurado como te pedí en el sys
       console.log(`[bitaya] /api/analyze ← (${message.length} chars)`);
       const { result, durationMs, costUsd } = await spawnClaude(
         userPayload,
-        ANALYZE_RULES,
+        ANALYZE_RULES_FILE,
       );
       const parsed = parseAnalyzeJson(result);
       if (!parsed) {
