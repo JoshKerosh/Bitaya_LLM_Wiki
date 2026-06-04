@@ -262,18 +262,6 @@ export default function ChatPage() {
                     </button>
                   </Card>
 
-                  <Card label="Confianza del análisis" full>
-                    <div className="h-2 overflow-hidden rounded-full bg-black/10">
-                      <div
-                        className="h-full rounded-full bg-[#7CFF6B] transition-all duration-500"
-                        style={{ width: `${Math.round(result.confidence * 100)}%` }}
-                      />
-                    </div>
-                    <p className="mt-1 text-xs text-black/40">
-                      Confianza: {Math.round(result.confidence * 100)}%
-                    </p>
-                  </Card>
-
                   <Card label="Resumen institucional" full>
                     <p className="text-sm text-black/70">{result.officialSummary}</p>
                   </Card>
